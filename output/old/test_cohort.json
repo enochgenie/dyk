@@ -1,0 +1,470 @@
+{
+  "cohorts": [
+    {
+      "cohort_id": "cohort_0001",
+      "cohort_params": {
+        "age_group": [
+          "30-44",
+          "45-59"
+        ],
+        "bmi": [
+          "overweight",
+          "obese"
+        ],
+        "physical_activity": [
+          "sedentary"
+        ],
+        "occupation_context": [
+          "desk_job"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Sedentary office workers at high diabetes risk",
+      "rationale": "Singapore's 8.6% diabetes rate driven by sedentary work culture + weight. Sitting 8+ hrs daily compounds metabolic risk. High prevention potential through workplace interventions.",
+      "insight_angles": [
+        "Desk-based micro-movements (standing breaks, walking meetings)",
+        "Hawker center meal optimization for busy workers",
+        "Post-lunch walks to manage blood sugar spikes",
+        "Weekend activity catch-up strategies"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0002",
+      "cohort_params": {
+        "age_group": [
+          "30-44",
+          "45-59"
+        ],
+        "occupation_context": [
+          "shift_work"
+        ],
+        "health_conditions": [
+          "prediabetes",
+          "hypertension"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Shift workers with disrupted circadian rhythms",
+      "rationale": "Night shift work increases metabolic syndrome by 36%, diabetes by 40%. Large Singapore workforce (healthcare, transport, F&B). Circadian disruption is modifiable.",
+      "insight_angles": [
+        "Eating windows optimization for night shifts",
+        "Sleep hygiene for shift workers",
+        "Light exposure management",
+        "Meal timing strategies"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0003",
+      "cohort_params": {
+        "age_group": [
+          "30-44",
+          "45-59"
+        ],
+        "occupation_context": [
+          "high_stress_job"
+        ],
+        "health_conditions": [
+          "hypertension",
+          "high-cholesterol"
+        ],
+        "lifestyle": [
+          "insufficient_sleep"
+        ]
+      },
+      "priority_level": 1,
+      "description": "High-stress professionals with CVD risk factors",
+      "rationale": "Work stress increases CVD by 23%. Singapore's long work hours (45+ hrs/week) + multiple CVD risks create perfect storm. Stress management is underutilized intervention.",
+      "insight_angles": [
+        "Stress-reduction techniques during workday",
+        "Sleep optimization for busy professionals",
+        "Mediterranean diet adaptations for local context",
+        "Efficient exercise for time-poor adults"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0004",
+      "cohort_params": {
+        "race": [
+          "malay",
+          "indian"
+        ],
+        "age_group": [
+          "30-44",
+          "45-59"
+        ],
+        "health_conditions": [
+          "diabetes",
+          "hypertension",
+          "high-cholesterol"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Malay/Indian adults with multiple CVD risk factors",
+      "rationale": "Indians develop CVD 10 years earlier with 3-4x higher risk. Cultural dietary patterns (ghee, coconut milk, refined carbs) are modifiable. Ethnicity-aware interventions needed.",
+      "insight_angles": [
+        "Traditional recipe modifications (reduce santan, swap oils)",
+        "Ethnic-specific genetic considerations",
+        "Culturally-appropriate exercise options",
+        "Family-based intervention strategies"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0005",
+      "cohort_params": {
+        "age_group": [
+          "45-59"
+        ],
+        "gender": [
+          "female"
+        ],
+        "life_stage": [
+          "perimenopause"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Women navigating perimenopausal transition",
+      "rationale": "Women lose 20% bone density post-menopause, CVD risk doubles. Critical prevention window. Asian women experience menopause 2 years earlier (avg age 48-49).",
+      "insight_angles": [
+        "Bone density preservation strategies",
+        "Hot flash management (non-hormonal)",
+        "Weight management during hormonal shifts",
+        "Strength training for bone/muscle health"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0008",
+      "cohort_params": {
+        "age_group": [
+          "60+"
+        ],
+        "physical_activity": [
+          "sedentary",
+          "insufficiently-active"
+        ],
+        "health_concerns": [
+          "fall_risk",
+          "sarcopenia",
+          "cognitive_decline"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Seniors at risk of functional decline",
+      "rationale": "1 in 3 seniors fall annually. Sarcopenia accelerates disability. Exercise reduces dementia by 35%. Singapore's aging population (19% over 65 by 2030) needs intervention.",
+      "insight_angles": [
+        "Fall prevention exercises (balance, strength)",
+        "Sarcopenia prevention (protein + resistance training)",
+        "Cognitive stimulation activities",
+        "Social engagement for brain health"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0009",
+      "cohort_params": {
+        "age_group": [
+          "60+"
+        ],
+        "health_conditions": [
+          "diabetes",
+          "hypertension",
+          "high-cholesterol"
+        ],
+        "medication_adherence": [
+          "suboptimal"
+        ]
+      },
+      "priority_level": 1,
+      "description": "Seniors managing multiple chronic conditions",
+      "rationale": "70% of seniors have 2+ chronic diseases. Medication non-adherence increases stroke risk by 30%. Polypharmacy complications. Need medication adherence + lifestyle support.",
+      "insight_angles": [
+        "Medication adherence strategies",
+        "Drug-nutrient interactions awareness",
+        "Disease-specific diet modifications",
+        "Exercise safety with chronic conditions"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0006",
+      "cohort_params": {
+        "age_group": [
+          "18-29",
+          "30-44"
+        ],
+        "gender": [
+          "female"
+        ],
+        "life_stage": [
+          "postpartum"
+        ]
+      },
+      "priority_level": 2,
+      "description": "New mothers managing postpartum weight",
+      "rationale": "Postpartum weight retention increases long-term obesity risk. Singapore's high C-section rate (30%) and cultural confinement practices impact recovery. Targeted support can improve maternal health.",
+      "insight_angles": [
+        "Culturally-sensitive postpartum nutrition",
+        "Safe exercise routines post-C-section",
+        "Mental health support for new mothers",
+        "Time-efficient workouts for busy moms"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0007",
+      "cohort_params": {
+        "age_group": [
+          "18-29"
+        ],
+        "occupation_context": [
+          "student"
+        ],
+        "health_conditions": [
+          "stress",
+          "anxiety",
+          "poor_sleep"
+        ]
+      },
+      "priority_level": 2,
+      "description": "Students under academic pressure",
+      "rationale": "1 in 7 students experience depression. Exam stress, social media comparison, sleep deprivation compound. Mental health intervention in youth prevents lifelong issues.",
+      "insight_angles": [
+        "Stress management during exam periods",
+        "Social media reduction strategies",
+        "Sleep hygiene for students",
+        "Exercise as antidepressant"
+      ]
+    },
+    {
+      "cohort_id": "cohort_0010",
+      "cohort_params": {
+        "age_group": [
+          "30-44"
+        ],
+        "health_engagement": [
+          "high"
+        ],
+        "physical_activity": [
+          "moderately-active",
+          "highly-active"
+        ]
+      },
+      "priority_level": 3,
+      "description": "Health-engaged adults seeking optimization",
+      "rationale": "Already motivated but may lack evidence-based guidance. Willing to adopt advanced strategies. Focus on optimization vs. basic prevention.",
+      "insight_angles": [
+        "Performance nutrition",
+        "Advanced training strategies",
+        "Biohacking (sleep, fasting, etc.)",
+        "Preventive screening timelines"
+      ]
+    },
+    {
+      "cohort_id": "cohort_10000",
+      "cohort_params": {
+        "age_group": "0-17"
+      },
+      "priority_level": 3,
+      "description": "0-17"
+    },
+    {
+      "cohort_id": "cohort_10001",
+      "cohort_params": {
+        "age_group": "18-29"
+      },
+      "priority_level": 1,
+      "description": "18-29"
+    },
+    {
+      "cohort_id": "cohort_10002",
+      "cohort_params": {
+        "age_group": "30-44"
+      },
+      "priority_level": 1,
+      "description": "30-44"
+    },
+    {
+      "cohort_id": "cohort_10003",
+      "cohort_params": {
+        "age_group": "45-59"
+      },
+      "priority_level": 1,
+      "description": "45-59"
+    },
+    {
+      "cohort_id": "cohort_10004",
+      "cohort_params": {
+        "age_group": "60+"
+      },
+      "priority_level": 1,
+      "description": "60+"
+    },
+    {
+      "cohort_id": "cohort_10005",
+      "cohort_params": {
+        "gender": "male"
+      },
+      "priority_level": 1,
+      "description": "male"
+    },
+    {
+      "cohort_id": "cohort_10006",
+      "cohort_params": {
+        "gender": "female"
+      },
+      "priority_level": 1,
+      "description": "female"
+    },
+    {
+      "cohort_id": "cohort_10007",
+      "cohort_params": {
+        "race": "chinese"
+      },
+      "priority_level": 1,
+      "description": "chinese"
+    },
+    {
+      "cohort_id": "cohort_10008",
+      "cohort_params": {
+        "race": "malay"
+      },
+      "priority_level": 1,
+      "description": "malay"
+    },
+    {
+      "cohort_id": "cohort_10009",
+      "cohort_params": {
+        "race": "indian"
+      },
+      "priority_level": 1,
+      "description": "indian"
+    },
+    {
+      "cohort_id": "cohort_10010",
+      "cohort_params": {
+        "race": "other"
+      },
+      "priority_level": 3,
+      "description": "other"
+    },
+    {
+      "cohort_id": "cohort_10011",
+      "cohort_params": {
+        "smoking_status": "smoker"
+      },
+      "priority_level": 1,
+      "description": "smoker"
+    },
+    {
+      "cohort_id": "cohort_10012",
+      "cohort_params": {
+        "smoking_status": "former-smoker"
+      },
+      "priority_level": 3,
+      "description": "former smoker"
+    },
+    {
+      "cohort_id": "cohort_10013",
+      "cohort_params": {
+        "smoking_status": "non-smoker"
+      },
+      "priority_level": 2,
+      "description": "non smoker"
+    },
+    {
+      "cohort_id": "cohort_10014",
+      "cohort_params": {
+        "physical_activity": "sedentary"
+      },
+      "priority_level": 1,
+      "description": "sedentary"
+    },
+    {
+      "cohort_id": "cohort_10015",
+      "cohort_params": {
+        "physical_activity": "insufficiently-active"
+      },
+      "priority_level": 1,
+      "description": "insufficiently active"
+    },
+    {
+      "cohort_id": "cohort_10016",
+      "cohort_params": {
+        "physical_activity": "moderately-active"
+      },
+      "priority_level": 2,
+      "description": "moderately active"
+    },
+    {
+      "cohort_id": "cohort_10017",
+      "cohort_params": {
+        "physical_activity": "highly-active"
+      },
+      "priority_level": 2,
+      "description": "highly active"
+    },
+    {
+      "cohort_id": "cohort_10018",
+      "cohort_params": {
+        "bmi": "underweight"
+      },
+      "priority_level": 2,
+      "description": "underweight"
+    },
+    {
+      "cohort_id": "cohort_10019",
+      "cohort_params": {
+        "bmi": "normal"
+      },
+      "priority_level": 3,
+      "description": "normal"
+    },
+    {
+      "cohort_id": "cohort_10020",
+      "cohort_params": {
+        "bmi": "overweight"
+      },
+      "priority_level": 1,
+      "description": "overweight"
+    },
+    {
+      "cohort_id": "cohort_10021",
+      "cohort_params": {
+        "bmi": "obese"
+      },
+      "priority_level": 1,
+      "description": "obese"
+    },
+    {
+      "cohort_id": "cohort_10022",
+      "cohort_params": {
+        "health_conditions": "diabetes"
+      },
+      "priority_level": 1,
+      "description": "diabetes"
+    },
+    {
+      "cohort_id": "cohort_10023",
+      "cohort_params": {
+        "health_conditions": "hypertension"
+      },
+      "priority_level": 1,
+      "description": "hypertension"
+    },
+    {
+      "cohort_id": "cohort_10024",
+      "cohort_params": {
+        "health_conditions": "high-cholesterol"
+      },
+      "priority_level": 1,
+      "description": "high cholesterol"
+    },
+    {
+      "cohort_id": "cohort_10025",
+      "cohort_params": {
+        "health_conditions": "fatty-liver"
+      },
+      "priority_level": 1,
+      "description": "fatty liver"
+    }
+  ],
+  "total_priority": 10,
+  "total_single": 26,
+  "generation_strategy": "priority_based"
+}

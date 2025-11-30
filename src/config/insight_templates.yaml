@@ -1,0 +1,328 @@
+# Enhanced Insight Templates
+# Based on analysis of high-performing "Did You Know" insights
+#
+# STRUCTURE: All insights follow this pattern:
+# 1. Opening hook: "Did you know? [Surprising stat/fact]"
+# 2. Mechanism/context: Why this matters (biological, social, or practical reason)
+# 3. Actionable CTA: Specific, immediate action to take
+#
+# TONE: Punchy, direct, evidence-based, no fluff
+# LENGTH: 2-3 sentences max (50-80 words)
+
+insight_templates:
+
+  # === HIGH-IMPACT QUANTIFIED ACTIONS ===
+  # Pattern: "Action X for Y time → Z% improvement in outcome"
+  
+  quantified_action_benefit:
+    type: "quantified_action_benefit"
+    description: "Specific action with precise time/frequency that produces measurable outcome"
+    weight: 15  # HIGHEST - This is the most common pattern in ideal examples
+    structure: |
+      [Action] for [duration/frequency] [produces dramatic result with %].
+      [Brief mechanism why]. [Immediate specific action to start today].
+    example:
+      - "150 minutes moderate activity weekly reduces chronic disease by 30%—that's only 21 minutes daily. Start with a brisk walk during lunch break today."
+      - "Sleeping 7-8 hours nightly has lowest mortality risk. This sweet spot optimizes immune function, metabolism, cellular repair. Prioritize consistent 7-8 hour sleep windows."
+      - "Eating 1 handful (30g) nuts daily reduces heart disease by 30%, stroke by 20%, all-cause mortality by 22%. Include almonds, walnuts, pistachios daily."
+    tone: "Direct, evidence-driven, immediately actionable"
+    
+  comparative_effectiveness:
+    type: "comparative_effectiveness"
+    description: "Compare two approaches showing one is surprisingly more/equally effective"
+    weight: 8
+    structure: |
+      [Surprising comparison with specific numbers showing efficiency].
+      [Why the less obvious approach works]. [Action to implement the better approach].
+    example:
+      - "Just 75 minutes weekly vigorous exercise equals heart benefits of 150 min moderate. This HPB-recommended minimum dose cuts cardiovascular mortality by 20-30%. Do 25-min HIIT 3x/week."
+      - "10-minute walk after each meal lowers blood sugar 12% more than one 30-minute daily walk. Post-meal activity uses glucose as muscles contract. Walk 10 minutes after dinner tonight."
+      - "Protein-rich breakfast improves concentration by 25%, reduces cravings by 60% vs. sugary cereals. Protein stabilizes blood sugar. Start with eggs, Greek yogurt, or tofu."
+    tone: "Surprising, efficiency-focused, motivating"
+
+  # === RISK QUANTIFICATION + REVERSAL ===
+  # Pattern: "Condition X increases risk by Y% BUT action Z reverses it"
+  
+  risk_reversal:
+    type: "risk_reversal"
+    description: "Present significant risk THEN show how to reverse/mitigate it dramatically"
+    weight: 12
+    structure: |
+      [Behavior/condition] increases [serious outcome] by [shocking %].
+      [Mechanism of harm]. [Specific action that reverses/prevents it with % improvement].
+    example:
+      - "Sleeping less than 7 hours increases anxiety risk by 2.5x. Your brain needs deep sleep to consolidate memories and regulate emotions. Aim to be in bed by 11pm tonight."
+      - "Sitting 8+ hours daily increases metabolic syndrome risk by 90%, independent of exercise. Prolonged sitting impairs glucose metabolism. Stand/walk 2 minutes every 30 minutes."
+      - "Young men who binge drink (5+ drinks) are 70% more likely to develop hypertension by age 35. That Friday night out could mean lifelong medication. Try alternating drinks with water."
+    tone: "Urgent but not alarmist, empowering through solution"
+
+  # === BIOLOGICAL MECHANISM EXPLANATIONS ===
+  # Pattern: "Outcome happens because of [fascinating biological reason]"
+  
+  mechanism_reveal:
+    type: "mechanism_reveal"
+    description: "Explain the surprising 'why' behind a health phenomenon"
+    weight: 10
+    structure: |
+      [Health outcome or recommendation with numbers].
+      [Fascinating biological/physiological mechanism that explains it].
+      [Action that leverages this mechanism].
+    example:
+      - "Sleeping less than 6 hours increases obesity risk by 41% by dysregulating hunger hormones—ghrelin rises 15%, leptin drops 15%. Sleep deprivation makes you hungrier and less satisfied. Prioritize 7-8 hours."
+      - "Exercise is as effective as antidepressants for mild depression, reducing symptoms 40-50%. Physical activity boosts endorphins and serotonin naturally. Schedule 30 min movement 5 days weekly."
+      - "Your gut microbiome has 100 trillion bacteria influencing weight, mood, immunity. Eating 30+ different plant foods weekly increases beneficial bacteria by 40%. Track plant variety this week."
+    tone: "Educational, fascinating, science-backed"
+
+  # === UNEXPECTED CONSEQUENCES ===
+  # Pattern: "Seemingly innocent behavior X causes surprising outcome Y"
+  
+  hidden_consequence:
+    type: "hidden_consequence"
+    description: "Reveal non-obvious or underestimated consequences of common behaviors"
+    weight: 9
+    structure: |
+      [Common behavior] increases [unexpected outcome] by [surprising %].
+      [Why this connection exists - often counterintuitive]. [Alternative behavior to adopt].
+    example:
+      - "Checking work emails after hours increases stress by 50%, reduces next-day productivity by 30%. Your brain never fully disengages. Set auto-replies after 7pm, turn off notifications weekends."
+      - "Fast eating (under 10 min) doubles obesity risk—satiety signals take 20 minutes to register. You consume 15% more before feeling full. Put utensils down between bites, take minimum 20 minutes."
+      - "2+ hours daily social media comparing yourself to others increases depression by 70%. Social comparison damages self-esteem. Unfollow triggering accounts, limit scrolling to 30 min daily."
+    tone: "Eye-opening, cautionary but constructive"
+
+  # === THRESHOLD/TIPPING POINTS ===
+  # Pattern: "Just X amount produces Y% of maximum benefit"
+  
+  minimum_effective_dose:
+    type: "minimum_effective_dose"
+    description: "Identify the surprisingly low threshold needed for major benefits"
+    weight: 7
+    structure: |
+      [Minimal intervention] produces [impressive % of maximum outcome].
+      [Why this threshold is so powerful]. [Easy action to hit this minimum].
+    example:
+      - "Losing just 5% body weight reverses prediabetes by 58%—that's only 5kg for 70kg person. This percentage produces dramatic metabolic improvements. Aim for 0.5kg/week."
+      - "Walking 7,000 steps daily reduces mortality by 50-70% vs. 4,000 steps. You don't need 10,000—7,000 provides maximum benefit. Track steps, aim for 7,000-8,000 daily."
+      - "Just 20g dark chocolate (70%+ cocoa) daily lowers blood pressure 2-3 mmHg, improves blood flow 20%. Flavanols act as natural vasodilators. Enjoy 15-20g as afternoon treat."
+    tone: "Encouraging, removes barriers, motivating"
+
+  # === MULTIPLIER EFFECTS ===
+  # Pattern: "Combining X + Y produces Z times better results than either alone"
+  
+  synergistic_multiplier:
+    type: "synergistic_multiplier"
+    description: "Show how combining interventions creates exponential, not additive, benefits"
+    weight: 6
+    structure: |
+      [Action 1] + [Action 2] produces [X-fold better outcome] than either alone.
+      [Why the combination is synergistic]. [How to implement both simultaneously].
+    example:
+      - "Mediterranean diet + 150min weekly exercise reduces heart attack by 50%—far more than either alone. Combined effect protects vessels and metabolism. Eat fatty fish 2x/week, walk 30min 5 days."
+      - "Strength training + adequate protein preserves muscle in calorie deficit—you lose fat, not muscle. Protein protects lean mass during weight loss. Aim for 1.2-1.6g/kg protein + lift 3x/week."
+      - "Green tea 3+ cups + berries daily slashes cancer risk 40% through combined antioxidant protection. Catechins and anthocyanins work synergistically. Add both to daily routine."
+    tone: "Empowering, holistic, synergy-focused"
+
+  # === TIME-SENSITIVE WINDOWS ===
+  # Pattern: "Acting during critical period X prevents outcome Y decades later"
+  
+  critical_window:
+    type: "critical_window"
+    description: "Highlight time-sensitive opportunities for maximum long-term impact"
+    weight: 6
+    structure: |
+      [Action during specific life stage/time window] prevents [serious future outcome by %].
+      [Why this window is critical]. [Urgent but positive call to act now].
+    example:
+      - "Peak bone mass occurs at age 30, then declines 0.5-1% yearly. Weight-bearing exercise in 30s-40s builds density protecting against osteoporosis later. Do bodyweight squats/lunges 3x weekly."
+      - "Starting bone-strengthening exercises in your 50s prevents 60% of age-related bone loss. This decade is crucial before rapid decline. Begin resistance training focusing on hips/spine twice weekly."
+      - "Folic acid 3 months before conception reduces neural tube defects by 70%. Neural tube forms first 28 days—often before pregnancy known. Start supplementation now if planning pregnancy."
+    tone: "Urgent but optimistic, opportunity-focused"
+
+  # === SOCIAL/PEER COMPARISON ===
+  # Pattern: "X% of people do Y, resulting in Z outcome—join them"
+  
+  normative_social_proof:
+    type: "normative_social_proof"
+    description: "Use peer behavior statistics to normalize and encourage adoption"
+    weight: 5
+    structure: |
+      [X%] of [peer group] [perform behavior] achieving [positive outcome].
+      [Why widespread adoption matters]. [How to join/participate].
+    example:
+      - "65% of Singaporean men 50+ now get regular prostate screening. Early detection saves lives when cure rates exceed 90%. Schedule your screening via Screen for Life."
+      - "60% of women 50+ maintain healthy bone density through simple daily habits. Peer modeling shows it's achievable. Include walking, resistance training, and calcium-rich foods."
+      - "1 million Singaporeans joined National Steps Challenge for better heart health. Participating boosts daily activity, aids weight management. Download HealthHub, aim for 10,000 steps."
+    tone: "Normative, inclusive, aspirational"
+
+  # === SURPRISING STATISTICS ===
+  # Pattern: "Shocking statistic that most people don't know"
+  
+  counterintuitive_fact:
+    type: "counterintuitive_fact"
+    description: "Lead with surprising, memorable statistic that challenges assumptions"
+    weight: 8
+    structure: |
+      [Shocking/counterintuitive statistic that defies common belief].
+      [Scientific explanation for why this is true]. [Action that leverages this knowledge].
+    example:
+      - "Reading for just 6 minutes reduces stress by 68%—more than music (61%), tea (54%), or walking (42%). Reading provides mental escape, slows heart rate. Keep book by bedside for evening relaxation."
+      - "Laughing 10 minutes reduces stress hormones by 30%, boosts immune cells by 25%. Laughter triggers endorphins, relaxes muscles for 45 minutes. Watch comedy or call funny friend weekly."
+      - "Brisk walkers live 15-20 years longer than slow walkers—regardless of body weight. Walking pace reveals cardiovascular fitness better than most tests. Aim for 100 steps/min (3 mph)."
+    tone: "Surprising, memorable, evidence-based"
+
+  # === LIFE STAGE TARGETING ===
+  # Pattern: "During [life stage], [specific concern] affects you, but [solution works]"
+  
+  life_stage_specific:
+    type: "life_stage_specific"
+    description: "Address unique concerns of specific life stages with targeted solutions"
+    weight: 7
+    structure: |
+      [Life stage group] experiences [specific challenge/risk with numbers].
+      [Why this stage is particularly vulnerable]. [Stage-appropriate action].
+    example:
+      - "Perimenopausal women lose up to 20% bone density in 5-7 years after menopause. Estrogen loss accelerates bone breakdown. Get 1,200mg calcium daily plus vitamin D, 15 min morning sun."
+      - "Seniors need 25-30% more protein than younger adults (1-1.2g/kg) to prevent sarcopenia. Age-related anabolic resistance requires more. Aim for 25-30g protein at each meal."
+      - "Young adults who limit social media to 30min daily reduce depression by 40%, loneliness by 35% within 3 weeks. Excessive use rewires reward pathways. Set app timers to auto-lock after 30 min."
+    tone: "Relevant, empathetic, stage-appropriate"
+
+  # === SIMPLE SWAPS ===
+  # Pattern: "Replace X with Y and get Z% improvement"
+  
+  easy_substitution:
+    type: "easy_substitution"
+    description: "Identify simple swaps that produce outsized benefits"
+    weight: 9
+    structure: |
+      [Replace/swap behavior X with behavior Y] and [achieve Z% improvement].
+      [Why the substitution is so effective]. [Specific swap to make starting now].
+    example:
+      - "Use 9-inch plates instead of 12-inch and cut portions by 30% without feeling deprived. Your brain perceives fullness from plate appearance, not volume. Replace dinner plates with salad plates."
+      - "Switching to Mediterranean diet reduces dementia by 40%. Omega-3s, polyphenols, antioxidants protect neurons. Replace butter with olive oil, eat fish 2-3x weekly."
+      - "Replace one sugary drink daily with water and prevent 0.5kg yearly weight gain. Liquid calories don't trigger satiety. Switch to water, unsweetened tea, or sparkling water with lime."
+    tone: "Practical, accessible, immediately implementable"
+
+  # === CASCADE/DOMINO EFFECTS ===
+  # Pattern: "Action X triggers Y, which causes Z, leading to outcome W"
+  
+  cascade_multiplier:
+    type: "cascade_multiplier"
+    description: "Show how one action triggers beneficial chain reaction across systems"
+    weight: 5
+    structure: |
+      [Single action] → [immediate effect] → [secondary effect] → [ultimate outcome with %].
+      [Explain the cascade mechanism]. [Leverage point to trigger the cascade].
+    example:
+      - "Improving sleep quality → better glucose control → lower inflammation → 30% reduced cancer risk. Sleep regulates multiple disease pathways. Protect 7-8 hours nightly."
+      - "Building muscle → higher metabolism → easier weight maintenance → 40% lower diabetes risk. Muscle burns 3x more calories at rest. Strength train 2-3x weekly."
+      - "Social connection → lower cortisol → stronger immunity → 50% lower depression risk. Social support literally changes your stress response. Maintain 3-5 close friendships."
+    tone: "Holistic, interconnected, systems-thinking"
+
+  # === ETHNIC/CULTURAL SPECIFICITY ===
+  # Pattern: "[Ethnic group] has X times higher risk due to Y—but Z action cuts it"
+  
+  ethnic_targeted:
+    type: "ethnic_targeted"
+    description: "Address ethnicity-specific risks with culturally-relevant solutions"
+    weight: 4
+    structure: |
+      [Ethnic group] has [X-fold higher risk] of [condition] due to [genetic/cultural factors].
+      [Explain the specific vulnerability]. [Culturally-appropriate mitigation strategy].
+    example:
+      - "Indians develop diabetes 10 years earlier than others, with higher insulin resistance. Reducing refined carbs, adding fiber cuts risk by 40%. Choose whole grain chapati over white flour."
+      - "Malay Singaporeans have 2x higher diabetes prevalence. Traditional foods high in coconut milk and sugar contribute. Reduce santan in curries by 50%, limit kueh to special occasions."
+      - "Chinese men who smoke have 3-4x higher lung cancer risk due to genetic factors affecting tobacco metabolism. Quitting reduces risk by 50% within 10 years. Visit cessation clinic this week."
+    tone: "Respectful, culturally-aware, actionable"
+
+  # === FINANCIAL/PRACTICAL VALUE ===
+  # Pattern: "Small investment/action X saves Y dollars/time"
+  
+  practical_roi:
+    type: "practical_roi"
+    description: "Emphasize financial or time ROI of health actions"
+    weight: 5
+    structure: |
+      [Small investment/effort] saves [large amount of money/time/suffering].
+      [Quantify the return on investment]. [Practical step to realize the benefit].
+    example:
+      - "Batch cooking weekends slashes weeknight takeout by 70%, saves $200+ monthly, improves diet quality by 40%. Decision fatigue when tired leads to poor choices. Dedicate 2-3 hours Sunday to meal prep."
+      - "Home cooking 5+ times weekly consumes 200 fewer daily calories, 30% less sugar/fat than eating out. Complete control over ingredients and portions. Start cooking dinner at home one more night weekly."
+      - "Regular cancer screening detects precancerous changes when cure rates exceed 90%. Early detection prevents expensive late-stage treatment. Schedule overdue screenings this month."
+    tone: "Practical, value-focused, ROI-driven"
+
+  # === HABIT STACKING ===
+  # Pattern: "Add tiny behavior X to existing routine Y → Z cumulative benefit"
+  
+  micro_habit_anchor:
+    type: "micro_habit_anchor"
+    description: "Attach new micro-habit to existing routine for compounding benefits"
+    weight: 6
+    structure: |
+      [Add tiny new behavior] to [existing daily routine] → [impressive cumulative outcome over time].
+      [Why the compound effect is so powerful]. [Specific habit stack to implement].
+    example:
+      - "10 squats while brushing teeth → 3,650 squats yearly → dramatically stronger bones and balance. Small actions compound over time. Add 10 squats to your morning/evening routine."
+      - "2-minute standing breaks every hour cut diabetes risk by 30% (no gym needed). Frequent movement prevents metabolic slowdown. Set hourly timer to stand, stretch, or walk briefly."
+      - "15-minute walk after each meal lowers blood sugar 12% more than one 45-minute walk. Post-meal timing uses glucose immediately. Make 10-15 min post-dinner walk non-negotiable."
+    tone: "Simple, cumulative, achievable"
+
+  # === RELATIONSHIP/CONNECTION BENEFITS ===
+  # Pattern: "Social connection X produces Y health benefit through Z mechanism"
+  
+  social_health_nexus:
+    type: "social_health_nexus"
+    description: "Quantify health benefits of social connections and relationships"
+    weight: 5
+    structure: |
+      [Type of social connection] reduces [health risk by %] through [biological/psychological mechanism].
+      [Explain the connection-health link]. [Action to strengthen social ties].
+    example:
+      - "Having 3-5 close friends reduces stress hormone cortisol by 30%, strengthens immunity. Social support changes your body's stress response. Schedule weekly time with a friend."
+      - "Strong social relationships increase survival odds by 50%—comparable to quitting smoking. Loneliness is as deadly as smoking 15 cigarettes daily. Invest in 3-5 close relationships—call friends weekly."
+      - "Seniors with strong social networks have 70% lower cognitive decline and dementia risk. Social interaction stimulates multiple brain regions. Join community activity or call friend weekly."
+    tone: "Warm, connection-focused, evidence-based"
+
+
+# === FORMATTING RULES ===
+formatting_guidelines:
+  structure: |
+    All insights must follow this 3-part structure:
+    1. Opening hook (15-25 words): Surprising fact/statistic
+    2. Mechanism/context (10-20 words): Why this matters
+    3. Actionable CTA (10-15 words): Specific immediate action
+  
+  length: "50-80 words total (excluding 'Did you know?')"
+  
+  tone_requirements:
+    - Direct, conversational, punchy
+    - Lead with surprising numbers/statistics
+    - Avoid hedging language ("may," "might," "could")
+    - Use em-dashes for emphasis and flow
+    - Second-person ("you," "your") for relevance
+  
+  statistical_specificity:
+    - Always include specific percentages
+    - Use exact timeframes (e.g., "3x weekly," "20 minutes")
+    - Quantify outcomes precisely (e.g., "by 40%," "2-3 mmHg")
+  
+  cta_requirements:
+    intensity_distribution:
+      light: 40%  # "Try...", "Consider...", "Add..."
+      medium: 40%  # "Start...", "Replace...", "Schedule..."
+      strong: 20%  # "Never...", "Always...", "Quit..."
+    
+    specificity: "CTAs must be immediately actionable with clear next step"
+    examples:
+      - "Walk 10 minutes after dinner tonight"
+      - "Replace butter with olive oil in today's cooking"
+      - "Schedule screening via HealthHub this week"
+      - "Set phone alarm for hourly movement breaks"
+
+# === WHAT TO AVOID ===
+anti_patterns:
+  - "Long-winded explanations (keep under 80 words)"
+  - "Explicit mention of cohort characteristics (age/BMI)"
+  - "Weak CTAs like 'talk to your doctor' without specifics"
+  - "Multiple CTAs in one insight (focus on one clear action)"
+  - "Hedging language that reduces impact"
+  - "Generic advice without specific numbers"
+  - "Program names repeated excessively (HealthHub, National Steps Challenge)"

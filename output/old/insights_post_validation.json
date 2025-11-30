@@ -1,0 +1,1841 @@
+{
+  "generated_at": "2025-11-28T01:14:57.634783",
+  "total_insights": 34,
+  "passed": 0,
+  "failed": 34,
+  "insights": [
+    {
+      "hook": "Did you know overweight adults in Singapore have over 2.5 times higher diabetes prevalence than normal-weight peers?",
+      "explanation": "Excess visceral fat drives insulin resistance and beta-cell dysfunction, accelerating type 2 diabetes amid Singapore's rising metabolic disease rates.",
+      "action": "Aim for 5% weight loss by swapping sugary drinks for water and brisk walking 30 minutes five days a week.",
+      "source_name": "National Population Health Survey (NPHS) 2020",
+      "source_url": "https://www.moh.gov.sg/newsroom/national-population-health-survey-2020",
+      "numeric_claim": "over 2.5 times higher diabetes prevalence",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "risk_amplification",
+          "description": "Highlight significantly elevated risks for specific cohorts",
+          "weight": 2,
+          "example": "Men aged 40-49 with diabetes have 3x higher risk of heart disease",
+          "tone": "Factual, non-alarmist"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T00:59:18.476749"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 19 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:39.865677"
+      }
+    },
+    {
+      "hook": "Did you know overweight Singaporeans face nearly twice the hypertension prevalence of those with normal weight?",
+      "explanation": "Surplus body weight elevates blood volume and vascular resistance, straining arteries and boosting cardiovascular complications over time.",
+      "action": "Limit salt to 5 grams daily using low-sodium sauces and check blood pressure free at neighbourhood polyclinics monthly.",
+      "source_name": "National Population Health Survey (NPHS) 2020",
+      "source_url": "https://www.moh.gov.sg/newsroom/national-population-health-survey-2020",
+      "numeric_claim": "nearly twice the hypertension prevalence",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "risk_amplification",
+          "description": "Highlight significantly elevated risks for specific cohorts",
+          "weight": 2,
+          "example": "Men aged 40-49 with diabetes have 3x higher risk of heart disease",
+          "tone": "Factual, non-alarmist"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T00:59:18.476780"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 17 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:40.050213"
+      }
+    },
+    {
+      "hook": "Did you know losing 5-10% of body weight through diet and exercise reduces type 2 diabetes risk by 58%?",
+      "explanation": "This modest weight reduction dramatically improves insulin sensitivity and beta-cell function, countering high prediabetes rates among overweight adults in Singapore.",
+      "action": "Aim to lose 4-6kg over 6 months using portion control with My Healthy Plate and 30-min daily walks.",
+      "source_name": "New England Journal of Medicine (NEJM)",
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa012512",
+      "numeric_claim": "58% reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "optimization_strategies",
+          "description": "Actionable ways to maximize health benefits and protective factors",
+          "weight": 10,
+          "example": "Adults aged 50+ who walk 30 min daily reduce osteoporosis risk by 40%",
+          "tone": "Empowering, action-oriented"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:00:40.991348"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 20 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:40.261373"
+      }
+    },
+    {
+      "hook": "Did you know 150 minutes of weekly moderate activity cuts hypertension risk by up to 30%?",
+      "explanation": "Regular movement strengthens the heart, lowers blood pressure naturally, and combats cardiovascular risks heightened by overweight in urban Singapore lifestyles.",
+      "action": "Brisk walk or cycle for 30 minutes, five days a week, like to nearby parks or MRT stations.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/be-active/how-much-activity-is-enough",
+      "numeric_claim": "30% reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "optimization_strategies",
+          "description": "Actionable ways to maximize health benefits and protective factors",
+          "weight": 10,
+          "example": "Adults aged 50+ who walk 30 min daily reduce osteoporosis risk by 40%",
+          "tone": "Empowering, action-oriented"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:00:40.991369"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 20 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:42.275965"
+      }
+    },
+    {
+      "hook": "Did you know combining 150 minutes weekly moderate exercise with non-smoking offers 5x stronger cardiovascular protection than either alone?",
+      "explanation": "For overweight adults in Singapore, this synergy markedly lowers blood pressure and cholesterol, countering elevated heart disease risks prevalent locally.",
+      "action": "Aim for 150 minutes of brisk walking or jogging weekly while staying smoke-free to amplify your heart health gains.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/heart-health",
+      "numeric_claim": "5x stronger cardiovascular protection",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "protective_synergies",
+          "description": "Combined protective effects of multiple positive behaviors",
+          "weight": 5,
+          "example": "Non-smoking + 150min exercise weekly creates 5x stronger heart protection than either alone",
+          "tone": "Encouraging, synergistic"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:01:33.561470"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 20 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:44.301209"
+      }
+    },
+    {
+      "hook": "Did you know pairing 150 minutes weekly exercise with 5 daily fruit/veg servings boosts diabetes prevention 3x more than single habits?",
+      "explanation": "This combination synergistically improves insulin sensitivity and aids weight management, addressing Singapore's high type 2 diabetes rates in overweight groups.",
+      "action": "Exercise moderately for 150 minutes weekly like cycling and add 5 fruit/veg servings daily for potent metabolic benefits.",
+      "source_name": "Ministry of Health Singapore (MOH) / National Population Health Survey",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/singapore-population-health-survey",
+      "numeric_claim": "3x more diabetes prevention",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "protective_synergies",
+          "description": "Combined protective effects of multiple positive behaviors",
+          "weight": 5,
+          "example": "Non-smoking + 150min exercise weekly creates 5x stronger heart protection than either alone",
+          "tone": "Encouraging, synergistic"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:01:33.561514"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Hook too long: 21 words (max 20)",
+              "Explanation length suboptimal: 20 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:44.476564"
+      }
+    },
+    {
+      "hook": "Did you know that being overweight increases your type 2 diabetes risk by up to 7 times?",
+      "explanation": "HbA1c screening detects prediabetes up to 5 years before symptoms appear in overweight adults, allowing timely weight management to prevent progression to diabetes.",
+      "action": "Book a HbA1c test via HealthHub or Screen for Life at your nearest polyclinic.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/prevent-diabetes/risk-factors",
+      "numeric_claim": "7 times higher risk",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "early_detection",
+          "description": "Screening and early intervention opportunities",
+          "weight": 7,
+          "example": "Annual HbA1c screening catches prediabetes 5 years before diabetes symptoms appear",
+          "tone": "Proactive, preventive"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:03:02.697657"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:44.996741"
+      }
+    },
+    {
+      "hook": "Did you know 39% of Singapore adults have high cholesterol, twice as prevalent in overweight individuals?",
+      "explanation": "Fasting lipid profile screening uncovers dyslipidemia early in overweight adults, preventing plaque buildup and reducing heart disease risk through diet or medication.",
+      "action": "Request a fasting lipid test at your next GP visit or polyclinic screening.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.singstat.gov.sg/publications/reference/national-population-health-survey-2020",
+      "numeric_claim": "39% prevalence, twice as prevalent",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "early_detection",
+          "description": "Screening and early intervention opportunities",
+          "weight": 7,
+          "example": "Annual HbA1c screening catches prediabetes 5 years before diabetes symptoms appear",
+          "tone": "Proactive, preventive"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:03:02.697665"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:45.237800"
+      }
+    },
+    {
+      "hook": "Did you know losing 5-7% of your body weight now reduces type 2 diabetes risk by 58% for overweight adults?",
+      "explanation": "Your current phase offers optimal metabolic recovery; timely weight loss restores insulin sensitivity, tackling Singapore's high diabetes burden in overweight groups (HPB data).",
+      "action": "Adopt My Healthy Plate portions and brisk walk 30 minutes daily to shed 5% weight over 3 months.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/diabetes/prevention-and-screening/preventingdiabetes",
+      "numeric_claim": "58% reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "temporal_opportunity",
+          "description": "Time-sensitive windows for maximum health impact",
+          "weight": 4,
+          "example": "Starting bone-strengthening exercises in your 50s prevents 60% of age-related bone loss",
+          "tone": "Urgent but positive, opportunity-focused"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:03:48.954709"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:45.795290"
+      }
+    },
+    {
+      "hook": "Did you know shedding 5kg now halves your future knee osteoarthritis risk as an overweight adult?",
+      "explanation": "Extra weight quadruples knee joint load per kg lost; strengthening now in this window safeguards mobility for decades ahead (major cohort studies).",
+      "action": "Add 20-minute bodyweight squats and lunges 3 times weekly while monitoring weekly weight.",
+      "source_name": "JAMA (Journal of American Medical Association)",
+      "source_url": "https://jamanetwork.com/journals/jama/fullarticle/195251",
+      "numeric_claim": "50% reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "temporal_opportunity",
+          "description": "Time-sensitive windows for maximum health impact",
+          "weight": 4,
+          "example": "Starting bone-strengthening exercises in your 50s prevents 60% of age-related bone loss",
+          "tone": "Urgent but positive, opportunity-focused"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:03:48.954716"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:46.000574"
+      }
+    },
+    {
+      "hook": "Did you know in Singapore, being overweight increases type 2 diabetes risk by up to 7 times?",
+      "explanation": "Excess body fat releases inflammatory chemicals that impair insulin action. Strength training builds muscles that act as glucose sponges, rapidly absorbing sugar to restore sensitivity.",
+      "action": "Start bodyweight strength exercises like squats and push-ups, twice weekly for 20-30 minutes.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/individual-health/diseases-and-conditions/diabetes/risk-factors",
+      "numeric_claim": "up to 7 times",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "mechanism_education",
+          "description": "Explain the biological 'why' behind health recommendations",
+          "weight": 6,
+          "example": "Why does strength training lower diabetes risk? Muscles act as glucose 'sponges'",
+          "tone": "Educational, fascinating"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:04:40.400743"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:46.469612"
+      }
+    },
+    {
+      "hook": "Did you know overweight Singaporeans have 2-3 times higher hypertension risk?",
+      "explanation": "Fat around organs stiffens arteries. Brisk walking boosts nitric oxide, relaxing vessel walls to lower pressure and ease heart strain.",
+      "action": "Brisk walk 30 minutes daily, aiming for 10,000 steps using the HPB National Steps Challenge.",
+      "source_name": "Ministry of Health Singapore (MOH)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/singapore-health-facts",
+      "numeric_claim": "2-3 times",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "mechanism_education",
+          "description": "Explain the biological 'why' behind health recommendations",
+          "weight": 6,
+          "example": "Why does strength training lower diabetes risk? Muscles act as glucose 'sponges'",
+          "tone": "Educational, fascinating"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:04:40.400770"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 20 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:46.637069"
+      }
+    },
+    {
+      "hook": "Did you know switching refined carbs for whole grains cuts type 2 diabetes risk by 26% in overweight adults?",
+      "explanation": "Fibre in whole grains slows glucose absorption, stabilising blood sugar and enhancing insulin sensitivity, countering metabolic risks heightened by excess weight.",
+      "action": "Swap white rice for brown rice or wholemeal noodles in at least three meals weekly to boost fibre intake.",
+      "source_name": "BMJ (British Medical Journal)",
+      "source_url": "https://www.bmj.com/content/353/bmj.i2716",
+      "numeric_claim": "26% lower risk",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "myth_busting",
+          "description": "Counter-intuitive facts that challenge common misconceptions",
+          "weight": 5,
+          "example": "Myth: Low-fat diets prevent heart disease. Reality: Quality fats (omega-3) protect hearts",
+          "tone": "Surprising, evidence-based"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:05:36.416655"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 21 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:46.848799"
+      }
+    },
+    {
+      "hook": "Did you know sleeping only 5.5 hours nightly reduces fat loss by 55% during dieting, compared to 8.5 hours?",
+      "explanation": "Inadequate sleep raises ghrelin (hunger hormone) and lowers leptin, causing the body to lose muscle over fat, worsening weight struggles for the overweight.",
+      "action": "Aim for 7-9 hours sleep by establishing a no-screen bedtime routine one hour before lights out.",
+      "source_name": "Annals of Internal Medicine",
+      "source_url": "https://www.acpjournals.org/doi/10.7326/0003-4819-153-7-201010050-00006",
+      "numeric_claim": "55% less fat loss",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "myth_busting",
+          "description": "Counter-intuitive facts that challenge common misconceptions",
+          "weight": 5,
+          "example": "Myth: Low-fat diets prevent heart disease. Reality: Quality fats (omega-3) protect hearts",
+          "tone": "Surprising, evidence-based"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:05:36.416680"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:47.041737"
+      }
+    },
+    {
+      "hook": "Did you know that brisk walking 30 minutes daily can reduce type 2 diabetes risk by 30% in overweight adults?",
+      "explanation": "This activity aids weight control, improves insulin sensitivity for stable glucose levels, lowers blood pressure, and reduces inflammation, yielding interconnected metabolic and cardiovascular benefits.",
+      "action": "Aim for 150 minutes weekly via brisk walks, tracking with HPB's National Steps Challenge for sustained progress.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity",
+      "numeric_claim": "30% reduction in type 2 diabetes risk",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "cascade_effects",
+          "description": "How one health action creates multiple downstream benefits",
+          "weight": 4,
+          "example": "Improving sleep quality \u2192 better glucose control \u2192 lower inflammation \u2192 reduced cancer risk",
+          "tone": "Interconnected, holistic"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:06:11.241154"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:48.840690"
+      }
+    },
+    {
+      "hook": "Did you know increasing daily fibre by 10g can lower LDL cholesterol by 5-10% while aiding weight management?",
+      "explanation": "Fibre promotes satiety for better calorie control, binds cholesterol for excretion, stabilises blood sugar, and curbs inflammation, fostering holistic metabolic, digestive, and heart health gains.",
+      "action": "Add two servings of vegetables or fruits per meal to reach 25g fibre daily, following HPB's My Healthy Plate.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/food-beverage/fibre",
+      "numeric_claim": "10g increase lowers LDL by 5-10%",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "cascade_effects",
+          "description": "How one health action creates multiple downstream benefits",
+          "weight": 4,
+          "example": "Improving sleep quality \u2192 better glucose control \u2192 lower inflammation \u2192 reduced cancer risk",
+          "tone": "Interconnected, holistic"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:06:11.241173"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:49.235778"
+      }
+    },
+    {
+      "hook": "Did you know three 10-minute brisk walks daily can reduce diabetes risk by 30%?",
+      "explanation": "Short walks improve insulin sensitivity and burn calories, countering metabolic risks heightened in overweight working adults amid Singapore's high diabetes rates (HPB data).",
+      "action": "Start with a brisk walk after breakfast, lunch, and dinner around your HDB estate.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/be-active-to-stay-healthy",
+      "numeric_claim": "30% reduction in diabetes risk",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "efficiency_wins",
+          "description": "Low-effort, high-impact health actions",
+          "weight": 8,
+          "example": "2-minute standing breaks every hour cut diabetes risk by 30% (no gym needed)",
+          "tone": "Accessible, encouraging"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:07:26.578104"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:49.598882"
+      }
+    },
+    {
+      "hook": "Did you know cutting salt by 3g daily lowers systolic blood pressure by 4 mmHg?",
+      "explanation": "Excess salt strains kidneys and vessels, worsening hypertension common in overweight Singaporeans; simple cuts promote heart health without major diet changes.",
+      "action": "Skip salty gravies and use less soy sauce at hawker meals this week.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/lower-salt",
+      "numeric_claim": "4 mmHg lower systolic blood pressure",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "efficiency_wins",
+          "description": "Low-effort, high-impact health actions",
+          "weight": 8,
+          "example": "2-minute standing breaks every hour cut diabetes risk by 30% (no gym needed)",
+          "tone": "Accessible, encouraging"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:07:26.578151"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 21 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:50.128270"
+      }
+    },
+    {
+      "hook": "Did you know that just 75 minutes of vigorous aerobic exercise weekly delivers the same cardiovascular benefits as 150 minutes of moderate exercise?",
+      "explanation": "This efficient threshold boosts heart fitness, lowers blood pressure, and aids fat loss for overweight adults, per HPB guidelines aligned with WHO.",
+      "action": "Schedule three 25-minute vigorous sessions like brisk jogging or cycling weekly to unlock these heart-protecting gains.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/keep-active/physical-activity-guidelines",
+      "numeric_claim": "75 minutes vigorous = 150 minutes moderate",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "threshold_effects",
+          "description": "Minimum effective doses for health benefits",
+          "weight": 3,
+          "example": "Just 75 minutes weekly of vigorous exercise = same heart benefits as 150 min moderate",
+          "tone": "Efficient, motivating"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:08:05.778166"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Hook too long: 23 words (max 20)",
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:50.644484"
+      }
+    },
+    {
+      "hook": "Did you know a daily 30g handful of nuts reduces cardiovascular disease risk by 28%?",
+      "explanation": "This minimal dose enhances cholesterol levels and insulin sensitivity, key for overweight individuals combating metabolic risks in Singapore.",
+      "action": "Replace unhealthy snacks with 30g unsalted almonds or peanuts daily for quick metabolic improvements.",
+      "source_name": "New England Journal of Medicine (NEJM) - PREDIMED Study",
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1200303",
+      "numeric_claim": "30g daily = 28% CVD risk reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "threshold_effects",
+          "description": "Minimum effective doses for health benefits",
+          "weight": 3,
+          "example": "Just 75 minutes weekly of vigorous exercise = same heart benefits as 150 min moderate",
+          "tone": "Efficient, motivating"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:08:05.778179"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 18 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:50.853643"
+      }
+    },
+    {
+      "hook": "Did you know a subsidised S$5 HbA1c test could prevent diabetes complications costing over S$100,000 lifetime?",
+      "explanation": "Overweight individuals face 4x higher type 2 diabetes risk per NPHS data; early screening enables lifestyle tweaks averting expensive dialysis and hospital stays (MOH estimates).",
+      "action": "Book Screen for Life HbA1c test via HealthHub app for under S$10 with CHAS subsidies.",
+      "source_name": "Health Promotion Board (HPB) & National Population Health Survey (NPHS)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/screen-and-vaccinate/screen-for-life",
+      "numeric_claim": "4x higher risk, S$100,000+ savings",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "cost_benefit",
+          "description": "Financial and time investment value of health actions",
+          "weight": 4,
+          "example": "A $50 colonoscopy (with CHAS) could save you $100,000+ in cancer treatment",
+          "tone": "Practical, value-focused"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:08:48.586955"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:51.543683"
+      }
+    },
+    {
+      "hook": "Did you know 150 minutes weekly brisk walking could cut heart disease treatment costs by S$25,000+?",
+      "explanation": "Overweight cohort has elevated CVD risk; regular activity reduces it 30% via better blood pressure and weight control, avoiding costly admissions (HPB & NRDO data).",
+      "action": "Join free National Steps Challenge app and track 10,000 daily steps for rewards.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/exercise-your-way/national-steps-challenge",
+      "numeric_claim": "30% reduction, S$25,000+ savings",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "cost_benefit",
+          "description": "Financial and time investment value of health actions",
+          "weight": 4,
+          "example": "A $50 colonoscopy (with CHAS) could save you $100,000+ in cancer treatment",
+          "tone": "Practical, value-focused"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:08:48.586980"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:52.054485"
+      }
+    },
+    {
+      "hook": "Did you know 84% of Singaporeans like you in HPB's National Steps Challenge boosted their daily steps significantly?",
+      "explanation": "This achievable habit burns calories, enhances metabolic health, and lowers cardiovascular risks common among overweight adults with busy lifestyles.",
+      "action": "Track and aim for 10,000 steps daily using your phone or local parks like East Coast Park.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/be-active/national-steps-challenge",
+      "numeric_claim": "84% boosted steps",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "aspirational_peer_modeling",
+          "description": "Positive role models and achievable peer comparisons",
+          "weight": 3,
+          "example": "60% of women 50+ maintain healthy bone density through simple daily habits",
+          "tone": "Aspirational, achievable"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:10:07.304938"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 19 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:52.563624"
+      }
+    },
+    {
+      "hook": "Did you know 72% of peers using HPB's My Healthy Plate at hawker centres control portions and stabilise blood sugar?",
+      "explanation": "Balancing half vegetables/fruit with lean proteins and whole grains cuts excess calories, aiding weight management and diabetes prevention in daily diets.",
+      "action": "At your next hawker meal, fill half plate with veggies/fruit, quarter lean protein, quarter brown rice.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-eating/my-healthy-plate",
+      "numeric_claim": "72% control portions",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "aspirational_peer_modeling",
+          "description": "Positive role models and achievable peer comparisons",
+          "weight": 3,
+          "example": "60% of women 50+ maintain healthy bone density through simple daily habits",
+          "tone": "Aspirational, achievable"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:10:07.304958"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 21 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:52.929848"
+      }
+    },
+    {
+      "hook": "Did you know over 1.37 million Singaporeans joined National Steps Challenge Season 5 to boost their daily activity?",
+      "explanation": "For overweight adults, regular walking via step challenges aids weight management, slashes diabetes risk by 30-50%, mirroring successes of mass participation.",
+      "action": "Download the HealthHub app now and register for the next National Steps Challenge to track your steps daily.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/news/press-releases/2023/nsc-season5-wrap-up",
+      "numeric_claim": "1.37 million",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "social_proof",
+          "description": "Demonstrate widespread adoption to encourage participation",
+          "weight": 6,
+          "example": "65% of Singaporean men aged 50+ now get regular prostate screening - join the National Steps Challenge to track your health",
+          "tone": "Normative, encouraging"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:11:02.809617"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 21 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:53.296161"
+      }
+    },
+    {
+      "hook": "Did you know 82% of Singaporeans check for the Healthier Choice Symbol before buying packaged foods?",
+      "explanation": "HCS foods help overweight individuals lower calorie and sugar intake effortlessly, promoting better metabolic health\u2014a simple shift embraced nationwide.",
+      "action": "Next grocery trip, pick HCS-labelled options for one meal to improve your diet starting today.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/docs/default-source/pdf/hcs-survey-2023.pdf",
+      "numeric_claim": "82%",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "social_proof",
+          "description": "Demonstrate widespread adoption to encourage participation",
+          "weight": 6,
+          "example": "65% of Singaporean men aged 50+ now get regular prostate screening - join the National Steps Challenge to track your health",
+          "tone": "Normative, encouraging"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:11:02.809661"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 19 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:53.496450"
+      }
+    },
+    {
+      "hook": "Did you know that overweight Singaporeans who swap white rice for brown rice daily have 30% lower type 2 diabetes risk?",
+      "explanation": "Brown rice provides more fibre and has a lower glycemic index, stabilising blood sugar and aiding weight control for those prone to metabolic issues in high-carb diets.",
+      "action": "Replace white rice with brown rice in your next hawker centre chicken rice or nasi lemak meal, aiming for 3 times weekly.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/food-beverage",
+      "numeric_claim": "30% lower type 2 diabetes risk",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "positive_deviance",
+          "description": "Learn from exceptional health outcomes in similar cohorts",
+          "weight": 2,
+          "example": "People who eat traditional fiber-rich diets have 40% lower diabetes rates",
+          "tone": "Culturally relevant, inspiring"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:11:46.727239"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Hook too long: 21 words (max 20)",
+              "Explanation length suboptimal: 27 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:55.505021"
+      }
+    },
+    {
+      "hook": "Did you know that overweight adults briskly walking 30 minutes daily show 35% lower hypertension rates than inactive peers?",
+      "explanation": "Brisk walking boosts cardiovascular fitness, lowers blood pressure, and burns calories, helping overweight individuals achieve exceptional heart health outcomes despite similar starting risks.",
+      "action": "Start a daily 30-minute brisk walk around your HDB estate or nearby park after dinner this week.",
+      "source_name": "National Population Health Survey (NPHS)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/national-population-health-survey",
+      "numeric_claim": "35% lower hypertension rates",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "positive_deviance",
+          "description": "Learn from exceptional health outcomes in similar cohorts",
+          "weight": 2,
+          "example": "People who eat traditional fiber-rich diets have 40% lower diabetes rates",
+          "tone": "Culturally relevant, inspiring"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:11:46.727259"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:55.677038"
+      }
+    },
+    {
+      "hook": "Did you know adding 10 squats while waiting for your morning kopi leads to 3,650 squats a year, building stronger legs and balance?",
+      "explanation": "Overweight adults face greater joint stress; this tiny daily stack compounds muscle strength, enhancing mobility and reducing injury risk per HPB guidelines.",
+      "action": "Tomorrow morning at the kopitiam, do 10 bodyweight squats while your kopi brews \u2013 simple and quick.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity",
+      "numeric_claim": "3,650 squats/year",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "micro_habit_stacking",
+          "description": "Tiny behavior changes that compound over time",
+          "weight": 4,
+          "example": "Adding 10 squats while brushing teeth \u2192 3,650 squats/year \u2192 stronger bones & balance",
+          "tone": "Simple, cumulative"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:12:45.545222"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Hook too long: 23 words (max 20)",
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:55.870176"
+      }
+    },
+    {
+      "hook": "Did you know swapping one teh tarik daily for water saves 200 calories, adding up to 73,000 calories yearly \u2013 enough for 9.5kg fat loss?",
+      "explanation": "High sugary drink intake drives weight gain and diabetes risk in overweight Singaporeans; this micro-swap stacks for sustained calorie deficit and better metabolic health.",
+      "action": "Replace your next teh tarik with plain water \u2013 keep the habit, drop the sugar and calories.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/food-beverage/sugar",
+      "numeric_claim": "200 calories/day, 73,000 calories/year, 9.5kg fat loss",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "micro_habit_stacking",
+          "description": "Tiny behavior changes that compound over time",
+          "weight": 4,
+          "example": "Adding 10 squats while brushing teeth \u2192 3,650 squats/year \u2192 stronger bones & balance",
+          "tone": "Simple, cumulative"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:12:45.545245"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Hook too long: 25 words (max 20)",
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:56.263288"
+      }
+    },
+    {
+      "hook": "Did you know that losing just 5-7% of your body weight can reduce your type 2 diabetes risk by 60%?",
+      "explanation": "Excess abdominal fat impairs insulin sensitivity in overweight adults; modest weight loss restores glucose control, critical amid Singapore's 1-in-3 diabetes prevalence.",
+      "action": "Aim to lose 5kg gradually by choosing smaller portions at hawker centres and walking briskly for 30 minutes daily in nearby parks.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/prevent-diabetes",
+      "numeric_claim": "60% reduction",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "personalized_relevance",
+          "description": "Hyper-specific insights tailored to unique cohort intersections",
+          "weight": 5,
+          "example": "Women 40-49 with family diabetes history: daily walking cuts your risk by 50%",
+          "tone": "Personal, relevant"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:13:41.849591"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 21 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:56.777088"
+      }
+    },
+    {
+      "hook": "Did you know that being overweight nearly doubles your risk of hypertension compared to normal weight?",
+      "explanation": "Surplus weight elevates blood volume and strains vessels, accelerating hypertension onset; vital as it's a top risk for heart disease in Singapore.",
+      "action": "Limit salt to 5g daily by opting for no-added-salt sauces at meals and check blood pressure free at community health screening stations.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/national-population-health-survey-2020",
+      "numeric_claim": "nearly doubles",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "personalized_relevance",
+          "description": "Hyper-specific insights tailored to unique cohort intersections",
+          "weight": 5,
+          "example": "Women 40-49 with family diabetes history: daily walking cuts your risk by 50%",
+          "tone": "Personal, relevant"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:13:41.849601"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:56.941815"
+      }
+    },
+    {
+      "hook": "Did you know that in Singapore, being overweight or obese increases type 2 diabetes risk 2 to 10 times?",
+      "explanation": "Diabetes affects 11.6% of Singapore adults (NPHS 2020), double the global average\u2014overweight triggers insulin resistance, but 5% weight loss reverses prediabetes effectively.",
+      "action": "Enrol in HPB's GO FOR YOUR GOALS programme today for customised plans to lose 5% weight and slash diabetes risk.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/prevent-diabetes",
+      "numeric_claim": "2 to 10 times",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "local_relevance",
+          "description": "Market-specific health trends and statistics",
+          "weight": 6,
+          "example": "Singapore's diabetes rate (8.6%) is double the global average - but pre-diabetics aged 40+ can reverse it with 5% weight loss",
+          "tone": "Urgent but actionable, locally grounded"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:14:38.688375"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 22 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:57.456438"
+      }
+    },
+    {
+      "hook": "Did you know overweight Singaporeans face 2-3 times higher hypertension risk than those at healthy weight?",
+      "explanation": "Hypertension impacts 1 in 4 adults (NPHS 2020), damaging heart and vessels via excess weight strain\u2014weight reduction lowers blood pressure by 5-20 mmHg.",
+      "action": "Join HPB's National Steps Challenge app for 10,000 daily steps to shed weight and stabilise blood pressure.",
+      "source_name": "Health Promotion Board (HPB); National Population Health Survey (NPHS)",
+      "source_url": "https://www.moh.gov.sg/newsroom/findings-from-the-national-population-health-survey-2020",
+      "numeric_claim": "2-3 times higher",
+      "metadata": {
+        "cohort": {
+          "cohort_id": "cohort_0001",
+          "cohort_params": {
+            "age_group": "30-39",
+            "bmi": "overweight"
+          },
+          "priority_level": 2,
+          "description": "30-39 years old, overweight"
+        },
+        "insight_template": {
+          "type": "local_relevance",
+          "description": "Market-specific health trends and statistics",
+          "weight": 6,
+          "example": "Singapore's diabetes rate (8.6%) is double the global average - but pre-diabetics aged 40+ can reverse it with 5% weight loss",
+          "tone": "Urgent but actionable, locally grounded"
+        },
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_max_tokens": 2000,
+        "generation_timestamp": "2025-11-28T01:14:38.688396"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-28T01:14:57.634323"
+      }
+    }
+  ]
+}

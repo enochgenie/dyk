@@ -1,0 +1,23 @@
+================================================================================
+DYK INSIGHTS - EXECUTIVE SUMMARY
+================================================================================
+
+Total Insights Generated: 80
+Validated Insights: 0 (0.0%)
+Average Quality Score: 88.07/10
+
+--------------------------------------------------------------------------------
+TOP 5 INSIGHT TEMPLATES
+--------------------------------------------------------------------------------
+  quantified_action_benefit                   5 (  6.2%)
+  comparative_effectiveness                   5 (  6.2%)
+  risk_reversal                               5 (  6.2%)
+  mechanism_reveal                            5 (  6.2%)
+  hidden_consequence                          5 (  6.2%)
+
+--------------------------------------------------------------------------------
+TOP 5 COHORTS
+--------------------------------------------------------------------------------
+  cohort_0001 - Sedentary office workers at risk of metabolic diseases
+    Insights: 80 (100.0%)
+

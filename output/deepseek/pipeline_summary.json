@@ -1,0 +1,33 @@
+{
+  "pipeline_config": {
+    "market": "singapore",
+    "generation_model": "deepseek/deepseek-chat-v3.1",
+    "evaluation_model": "google/gemini-2.5-flash",
+    "generation_temperature": 0.7,
+    "generation_max_tokens": 2000,
+    "max_cohorts": 5,
+    "insights_per_call": 5,
+    "region": "singapore",
+    "skip_validation": true,
+    "skip_evaluation": false
+  },
+  "statistics": {
+    "total_cohorts": 5,
+    "total_combinations": 85,
+    "total_insights_generated": 410,
+    "total_insights_validated": 0,
+    "total_insights_evaluated": 409,
+    "validation_pass_rate": 0.0,
+    "average_evaluation_score": 73.46699266503667,
+    "start_time": "2025-11-28T17:34:24.452016",
+    "end_time": "2025-11-28T18:50:39.802275",
+    "duration_seconds": 4575.350240468979
+  },
+  "output_files": {
+    "cohorts": "output\\cohorts.json",
+    "raw_insights": "output\\insights_raw.json",
+    "insights_post_validation": null,
+    "validated_insights": null,
+    "final_insights": "output\\insights_final.json"
+  }
+}

@@ -1,0 +1,18 @@
+# DYK Insight Generation System Requirements
+
+# Core dependencies
+pyyaml>=6.0
+requests>=2.31.0
+
+# Data processing
+pandas>=2.0.0
+
+# Optional: For enhanced functionality
+python-dotenv>=1.0.0  # For environment variable management
+
+# Development dependencies (optional)
+pytest>=7.4.0  # For testing
+black>=23.0.0  # For code formatting
+
+# Async HTTP client for high-performance API calls
+aiohttp>=3.9.0

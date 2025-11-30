@@ -1,0 +1,2394 @@
+{
+  "generated_at": "2025-11-27T19:01:17.228430",
+  "total_insights": 54,
+  "passed": 10,
+  "failed": 44,
+  "insights": [
+    {
+      "hook": "Did you know 82% of Singaporean adults engage in physical activity at least once a week?",
+      "explanation": "For overweight 30-39 year olds, this common practice reduces joint strain, boosts mobility and lowers back/knee pain risk by managing weight and strengthening support muscles around joints.",
+      "action": "Join the National Steps Challenge app today, aim for 10,000 daily steps like your peers to enhance mobility.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/docs/default-source/pdf/nphs-2020_synopsis-(web).pdf",
+      "numeric_claim": "82%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:33:33.092429"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 27 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:45.634812"
+      }
+    },
+    {
+      "hook": "Did you know 52% of Singaporean adults do muscle-strengthening activities weekly?",
+      "explanation": "Overweight individuals aged 30-39 benefit greatly as regular strengthening builds muscle mass, improves posture and protects joints from pain and injury amid extra body weight.",
+      "action": "Start HPB's free online strength workouts twice weekly, like squats and resistance bands, to build muscle with others.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/docs/default-source/pdf/nphs-2020_synopsis-(web).pdf",
+      "numeric_claim": "52%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:33:33.092467"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:45.838069"
+      }
+    },
+    {
+      "hook": "Did you know over 1.4 million Singaporeans have joined HPB's National Steps Challenge for heart health?",
+      "explanation": "Overweight adults aged 30-39 face higher cardiovascular risks like high blood pressure; regular walking, as done by these peers, aids weight control, improves circulation, and strengthens heart health per HPB guidelines.",
+      "action": "Download the HPB National Steps Challenge app, aim for 10,000 steps daily, and track progress with friends for motivation.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/healthy-360/national-steps-challenge",
+      "numeric_claim": "over 1.4 million",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:34:24.083244"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:47.872096"
+      }
+    },
+    {
+      "hook": "Did you know over 60% of overweight Singaporeans actively try to lose weight for better cardiovascular health?",
+      "explanation": "For 30-39 year olds with excess weight, this effort lowers cholesterol and blood pressure risks; following this norm supports heart-healthy living as shown in national surveys.",
+      "action": "Register for HPB's free Live Healthy! weight management sessions on HealthHub.sg and start sustainable changes today.",
+      "source_name": "Ministry of Health Singapore (MOH)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/singapore-population-health-survey/national-population-health-survey-2020",
+      "numeric_claim": "over 60%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:34:24.083271"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:48.073070"
+      }
+    },
+    {
+      "hook": "Did you know over 1.4 million Singaporeans joined HPB's National Steps Challenge?",
+      "explanation": "Overweight adults aged 30-39 like you participate widely to manage weight via outdoor walks, protecting skin from Singapore's intense UV rays that cause premature aging and raise skin cancer risk. Join the movement for healthier skin and body.",
+      "action": "Download HealthHub app, register for National Steps Challenge, and apply SPF30+ sunscreen with hat before stepping out.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.healthhub.sg/programmes/steps",
+      "numeric_claim": "over 1.4 million",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:35:59.716043"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:48.652331"
+      }
+    },
+    {
+      "hook": "Did you know 41% of overweight Singaporean adults actively manage their weight?",
+      "explanation": "For 30-39 year olds who are overweight, excess fat accelerates skin aging via inflammation and oxidative stress. Peers succeeding through lifestyle tweaks report better skin elasticity and reduced wrinkles\u2014proven benefits for your cohort.",
+      "action": "Log into HealthHub.sg, use HPB weight management tools to track BMI, diet, and activity for improved skin health.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/national-population-health-survey-2020",
+      "numeric_claim": "41%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:35:59.716079"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:48.837989"
+      }
+    },
+    {
+      "hook": "Did you know losing 1kg eases 4kg of pressure on your knees?",
+      "explanation": "Overweight Singaporeans aged 30-39 face higher joint stress; peers achieving this via HPB programs report better knee comfort, mobility, and lower pain risk with sustainable habits.",
+      "action": "Lose 1kg this month: swap one sugary drink for water daily and track 30-min brisk walks with HPB's Healthy 365 app.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/weight-management/every-kg-counts-towards-healthier-knees",
+      "numeric_claim": "4kg less pressure per 1kg lost",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:37:25.622963"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:50.620115"
+      }
+    },
+    {
+      "hook": "Did you know 2 weekly strength sessions boost muscle strength by 30%?",
+      "explanation": "For overweight 30-39 year olds in Singapore, peers using simple exercises build muscle to protect joints, improve balance, and maintain mobility amid busy lifestyles.",
+      "action": "Perform 20 mins of squats, lunges, planks twice weekly; attend free ActiveSG strength classes at community centres.",
+      "source_name": "National Institutes of Health (NIH)",
+      "source_url": "general medical knowledge",
+      "numeric_claim": "30% increase in muscle strength",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:37:25.623000"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": [
+              "No specific source URL provided"
+            ]
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:50.621304"
+      }
+    },
+    {
+      "hook": "Did you know over 90% of Singaporeans aged 30-39 maintain healthy blood pressure?",
+      "explanation": "Overweight peers in this group achieve similar heart-healthy levels through achievable habits like brisk walking and reducing salt at hawker centres, lowering future cardiovascular risks.",
+      "action": "Walk briskly for 30 minutes daily, e.g., to MRT, and cut salt by skipping gravy\u2014track via Healthy 365 app.",
+      "source_name": "National Population Health Survey (NPHS) 2020",
+      "source_url": "https://www.singstat.gov.sg/find-data/search-by-theme/population/national-population-health-survey-2020/latest-data",
+      "numeric_claim": "over 90%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:38:28.151802"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 25 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:50.871634"
+      }
+    },
+    {
+      "hook": "Did you know over 80% of Singaporeans aged 30-39 keep healthy cholesterol levels?",
+      "explanation": "Overweight individuals match these peers' cardiovascular edge with simple diet tweaks like more steamed fish and veggies, supporting better heart health and circulation.",
+      "action": "Use My Healthy Plate: fill half with fruits/veggies, quarter with fish/chicken, quarter rice\u2014less oil at meals.",
+      "source_name": "National Population Health Survey (NPHS) 2020",
+      "source_url": "https://www.singstat.gov.sg/find-data/search-by-theme/population/national-population-health-survey-2020/latest-data",
+      "numeric_claim": "over 80%",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:38:28.151823"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 23 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:51.145138"
+      }
+    },
+    {
+      "hook": "Did you know daily SPF15+ sunscreen reduced photoaging by 24% in study peers over 40s?",
+      "explanation": "Singapore's intense UV accelerates skin aging for 30-39 year olds. Overweight peers benefit greatly, achieving firmer, smoother skin like trial participants through this achievable daily habit amid tropical humidity.",
+      "action": "Apply broad-spectrum, water-resistant SPF50+ sunscreen daily to face, neck and arms; reapply every 2 hours outdoors or after sweating.",
+      "source_name": "Annals of Internal Medicine",
+      "source_url": "https://www.acpjournals.org/doi/10.7326/0003-4819-158-11-201306040-00002",
+      "numeric_claim": "24% reduction",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:39:43.283089"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:51.345938"
+      }
+    },
+    {
+      "hook": "Did you know regular sunscreen halved melanoma rates among peers in long-term trials?",
+      "explanation": "Skin cancer is rising among young Singaporeans 30-39. Overweight adults can emulate successful peers, slashing risk with consistent protection in our high-UV environment and humid climate.",
+      "action": "Seek shade or use umbrellas/long-sleeved clothing between 10am-4pm, common in Singapore, alongside daily SPF50+ application.",
+      "source_name": "Journal of Clinical Oncology",
+      "source_url": "https://ascopubs.org/doi/10.1200/JCO.2010.28.7078",
+      "numeric_claim": "50% reduction",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:39:43.283116"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:51.538166"
+      }
+    },
+    {
+      "hook": "Did you know just 2 muscle-strengthening sessions weekly ease joint load for overweight adults?",
+      "explanation": "In 30-39 year olds who are overweight, excess weight strains knees and back; HPB's minimum dose of 2 sessions/week targeting major muscles builds strength, improves mobility, and cuts pain risk effectively.",
+      "action": "Try 20-30 min bodyweight exercises like squats, push-ups, planks 2 non-consecutive days weekly, using HDB void deck space.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity",
+      "numeric_claim": "2 sessions weekly",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:40:25.101846"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:53.116785"
+      }
+    },
+    {
+      "hook": "Did you know 30 min brisk walking 5x weekly matches minimum for better joint mobility?",
+      "explanation": "Overweight Singaporeans aged 30-39 face higher musculoskeletal pain; HPB guidelines show 150 min moderate aerobic weekly strengthens joint support muscles, enhances mobility, and aids weight control without overload.",
+      "action": "Walk briskly for 30 minutes 5 days/week in nearby parks or via National Steps Challenge app to track progress.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity",
+      "numeric_claim": "30 min 5x weekly",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:40:25.101871"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 28 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:55.072378"
+      }
+    },
+    {
+      "hook": "Did you know? Just 75 mins vigorous exercise weekly = same heart benefits as 150 mins moderate",
+      "explanation": "Overweight 30-39-year-olds in Singapore face elevated CVD risks from desk jobs (NPHS data). This efficient WHO-aligned dose improves heart health, lowers BP and cholesterol with minimal time.",
+      "action": "Schedule 25-min vigorous sessions like HIIT, jogging or ActiveSG court sports 3x weekly; track via HealthHub app.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.healthhub.sg/live-healthy/physicalactivity/physical-activity-guidelines-for-adults",
+      "numeric_claim": "75 mins vigorous = 150 mins moderate",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:41:05.910306"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 27 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:55.751795"
+      }
+    },
+    {
+      "hook": "Did you know? Cutting salt by just 5g daily lowers systolic BP by ~5 mmHg",
+      "explanation": "Overweight Singaporeans aged 30-39 have higher hypertension risks from salty hawker foods (MOH data). This simple threshold mimics medication effects, safeguarding cardiovascular health efficiently.",
+      "action": "Request less soy sauce/gravy at kopitiams, opt for steamed dishes; use HPB salt tracker to stay under 5g daily.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/be-healthy/reduce-salt",
+      "numeric_claim": "5g salt reduction lowers SBP by 5 mmHg",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:41:05.910334"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:56.265735"
+      }
+    },
+    {
+      "hook": "Did you know just SPF30 sunscreen blocks 97% of UVB rays?",
+      "explanation": "Singapore's tropical UV accelerates skin aging and cancer risk for 30-39 year olds. Overweight adults gain efficient protection with this minimal daily step, preventing photoaging equivalent to extended shade time. Proven in long-term trials.",
+      "action": "Apply \u00bd teaspoon broad-spectrum SPF30+ to face, neck, arms every morning; reapply every 2 hours outdoors.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/healthy-skin/sun-protection",
+      "numeric_claim": "97% UVB blocked",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:42:33.296888"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:56.821353"
+      }
+    },
+    {
+      "hook": "Did you know just UPF50+ clothing blocks 98% of UV rays?",
+      "explanation": "For active 30-39 year olds in humid Singapore managing weight via outdoor exercise, lightweight UPF50+ clothes deliver maximum sun protection, slashing skin cancer and aging risks with minimal effort.",
+      "action": "Wear loose long-sleeve UPF50+ shirt and pants for peak hours (10am-4pm) walks, cycling, or errands.",
+      "source_name": "US Centers for Disease Control (CDC)",
+      "source_url": "https://www.cdc.gov/cancer/skin/basic_info/sun-safety.htm",
+      "numeric_claim": "98% UV blocked",
+      "metadata": {
+        "cohort_id": "cohort_0001",
+        "cohort_description": "30-39 years old, overweight",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:42:33.296913"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:57.177064"
+      }
+    },
+    {
+      "hook": "Did you know over 530,000 Singaporeans joined HPB's National Steps Challenge last season?",
+      "explanation": "Obese adults aged 30-39 face higher joint stress; the Challenge's walking promotes muscle strengthening, reduces knee/back pain, improves mobility. Many in your cohort participate for better musculoskeletal health.",
+      "action": "Download the HPB National Steps Challenge app, register, and track 10,000 daily steps to build joint-supporting muscles and boost mobility.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/healthy-360/national-steps-challenge",
+      "numeric_claim": "over 530,000",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:43:40.534877"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 28 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:57.693832"
+      }
+    },
+    {
+      "hook": "Did you know over 70% of Singaporean adults aged 25-64 walk regularly for health?",
+      "explanation": "For obese 30-39 year olds, walking enhances muscle endurance around weight-bearing joints, aids pain management, and supports mobility without high impact, aligning with local norms for active living.",
+      "action": "Add a 30-minute brisk walk daily in nearby parks or HDB estates to strengthen muscles and maintain joint health effortlessly.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.hpb.gov.sg/resources-and-evidence-hub/national-population-health-survey-and-population-outcomes",
+      "numeric_claim": "over 70%",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:43:40.534905"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 28 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:58.097654"
+      }
+    },
+    {
+      "hook": "Did you know over 1.4 million Singaporeans have joined HPB's National Steps Challenge?",
+      "explanation": "Obese adults aged 30-39 face elevated cardiovascular risks like high blood pressure and cholesterol, per NPHS data. Thousands of your peers are walking regularly to lower these risks and improve heart health.",
+      "action": "Download the HPB Tracker app and register for the National Steps Challenge to track 10,000 daily steps for better cardiovascular fitness.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/get-active/national-steps-challenge",
+      "numeric_claim": "over 1.4 million",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:44:32.857677"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:00:58.644305"
+      }
+    },
+    {
+      "hook": "Did you know more than 2.5 million Singaporeans have participated in Screen for Life screenings?",
+      "explanation": "Early detection of high cholesterol and blood pressure is crucial for obese 30-39 year olds at higher CV risk, as shown in NPHS. Many in this age group are proactively screening to stay heart-healthy.",
+      "action": "Book a Screen for Life package via polyclinic or participating GP to check your cholesterol and blood pressure levels today.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.screenforlife.sg/",
+      "numeric_claim": "more than 2.5 million",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:44:32.857701"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Error accessing source URL: HTTPSConnectionPool(host='www.screenforlife.sg', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002043CD32350>, 'Connection to www.screenforlife.sg timed out. (connect timeout=5)'))"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:03.665874"
+      }
+    },
+    {
+      "hook": "Did you know 64% of Singaporeans use hats, umbrellas or protective clothing against UV rays?",
+      "explanation": "Singapore's tropical sun accelerates skin cancer and aging risks, heightened for obese 30-39 year olds due to inflammation-linked higher melanoma odds. Most peers adopt physical barriers during outdoor walks for weight management.",
+      "action": "Carry a UV umbrella or wear a wide-brim hat on your next outdoor exercise session to stay protected like most Singaporeans.",
+      "source_name": "Photodermatology, Photoimmunology & Photomedicine (PubMed)",
+      "source_url": "PubMed/MEDLINE",
+      "numeric_claim": "64%",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:46:01.552776"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Invalid URL format: PubMed/MEDLINE"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:03.667093"
+      }
+    },
+    {
+      "hook": "Did you know 58% of Singaporeans habitually seek shade during peak sun hours?",
+      "explanation": "For obese adults aged 30-39 exercising outdoors to lose weight, shade reduces UV exposure preventing skin cancer and photoaging\u2014obesity raises skin vulnerability, but most locals prioritise this simple habit.",
+      "action": "Plan walks in shaded parks or under trees during 10am-4pm, reapplying SPF50+ sunscreen, joining the majority protecting their skin.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/sun-safety",
+      "numeric_claim": "58%",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:46:01.552806"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.200752"
+      }
+    },
+    {
+      "hook": "Did you know every 1kg weight lost reduces knee joint load by 4kg?",
+      "explanation": "For obese Singaporeans aged 30-39, this means less strain on joints during daily activities like climbing stairs, helping peers maintain pain-free mobility similar to normal-weight adults.",
+      "action": "Follow HPB guidelines: walk briskly 30 minutes daily, 5 days a week, aiming for 0.5-1kg loss monthly with balanced meals.",
+      "source_name": "Health Promotion Board (HPB); BMJ",
+      "source_url": "general medical knowledge",
+      "numeric_claim": "4kg reduction per 1kg lost",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:47:15.710874"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": [
+              "No specific source URL provided"
+            ]
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.201495"
+      }
+    },
+    {
+      "hook": "Did you know twice-weekly strength training boosts muscle strength by 20-30% in 8-12 weeks?",
+      "explanation": "Obese adults aged 30-39 in Singapore build muscle mass and improve posture like active peers, enhancing overall musculoskeletal health and metabolism via simple routines.",
+      "action": "Do bodyweight squats, lunges and push-ups (2-3 sets of 10 reps) at home or free ActiveSG gyms, twice weekly.",
+      "source_name": "JAMA (Journal of American Medical Association)",
+      "source_url": "https://jamanetwork.com/journals/jama/fullarticle/185470",
+      "numeric_claim": "20-30% strength increase",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:47:15.710882"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.399218"
+      }
+    },
+    {
+      "hook": "Did you know 89% of Singaporeans aged 30-39 maintain healthy blood pressure?",
+      "explanation": "Obese adults in your age group face higher hypertension risk, increasing heart disease odds, but like nearly 90% of peers, you can achieve normal levels through achievable daily physical activity and habits.",
+      "action": "Commit to 30 minutes of brisk walking daily \u2013 join HPB's National Steps Challenge app for easy tracking and peer motivation.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/national-population-health-survey-2020",
+      "numeric_claim": "89%",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:48:18.813212"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.563090"
+      }
+    },
+    {
+      "hook": "Did you know 86% of Singaporeans aged 30-39 maintain healthy cholesterol levels?",
+      "explanation": "Obesity elevates cholesterol and cardiovascular risks for those in their 30s, yet most peers keep levels optimal with simple dietary choices, proving it's realistic and sustainable for you too.",
+      "action": "Replace one fried meal daily with grilled or steamed options and limit saturated fats, following HPB's healthier hawker meal guides.",
+      "source_name": "Singapore NPHS (National Population Health Survey)",
+      "source_url": "https://www.moh.gov.sg/resources-statistics/national-population-health-survey-2020",
+      "numeric_claim": "86%",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:48:18.813233"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.719542"
+      }
+    },
+    {
+      "hook": "Did you know many 30-39yo peers reduce melanoma risk by 50% with daily sunscreen?",
+      "explanation": "In Singapore's high-UV climate, obese adults aged 30-39 face elevated skin cancer risks compounded by inflammation-linked obesity effects; peers achieve protection through this proven, simple habit boosting long-term skin health.",
+      "action": "Apply broad-spectrum SPF30+ water-resistant sunscreen daily to exposed skin, reapplying every 2 hours outdoors or after sweating.",
+      "source_name": "New England Journal of Medicine (NEJM)",
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1104059",
+      "numeric_claim": "50% reduction",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:49:32.459237"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:04.944776"
+      }
+    },
+    {
+      "hook": "Did you know peers using umbrellas or wide hats block 50%+ of UV rays for younger-looking skin?",
+      "explanation": "UV causes 90% of visible skin aging, worsened by obesity-related oxidative stress in 30-39yo Singaporeans; culturally common habits like umbrellas help peers maintain firm, even-toned skin effortlessly.",
+      "action": "Use a UV-blocking umbrella or wide-brim hat during peak sun hours (10am-4pm), especially useful if sweating profusely.",
+      "source_name": "Centers for Disease Control and Prevention (CDC)",
+      "source_url": "https://www.cdc.gov/skin-cancer/sun-safety/index.html",
+      "numeric_claim": "50%+ reduction",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:49:32.459263"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 27 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:05.873979"
+      }
+    },
+    {
+      "hook": "Did you know just 2 strength sessions weekly build muscle to shield joints from obesity stress?",
+      "explanation": "Obese 30-39-year-olds in Singapore face higher knee and back strain; HPB's minimum dose of 2 days/week major muscle training strengthens support, cuts pain risk, boosts mobility for active lifestyles.",
+      "action": "Do 20-30 min bodyweight squats, push-ups, planks 2x/week at home or park, progressing as you gain confidence.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity/recommended-physical-activity",
+      "numeric_claim": "2 days per week",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:50:04.108221"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:06.405605"
+      }
+    },
+    {
+      "hook": "Did you know 150 min weekly moderate walking equals big mobility gains for obese joints?",
+      "explanation": "For 30-39yo obese Singaporeans, excess weight hampers joint health; HPB recommends this minimum aerobic dose to improve cartilage, reduce pain, enhance daily movement without needing gyms.",
+      "action": "Brisk walk 20-30 min daily around HDB estates or via National Steps Challenge app to hit 150 min weekly.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity/recommended-physical-activity",
+      "numeric_claim": "150 minutes per week",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:50:04.108249"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:06.934215"
+      }
+    },
+    {
+      "hook": "Did you know just 75 minutes weekly vigorous exercise equals heart benefits of 150 min moderate?",
+      "explanation": "Obese 30-39-year-olds in Singapore face rising CVD risks from sedentary lifestyles; this HPB-recommended minimum dose cuts cardiovascular mortality by 20-30%, ideal for busy professionals.",
+      "action": "Do 25-min HIIT or brisk jogging 3x/week \u2013 track progress with free HPB HealthHub app.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/physical-activity/get-active/recommended-level-of-physical-activity",
+      "numeric_claim": "75 minutes weekly",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:50:42.885557"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 24 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:07.401724"
+      }
+    },
+    {
+      "hook": "Did you know losing just 5% body weight lowers blood pressure like major lifestyle shifts?",
+      "explanation": "For obese Singaporeans aged 30-39, with high cholesterol and hypertension prevalence, MOH notes this threshold improves CV markers, reducing heart disease risk efficiently without extreme diets.",
+      "action": "Target 3-5kg loss via portion control at hawker centres and daily 30-min walks \u2013 use HPB BMI calculator.",
+      "source_name": "Ministry of Health Singapore (MOH)",
+      "source_url": "https://www.moh.gov.sg/health-hub/article/take-control-of-your-weight",
+      "numeric_claim": "5% body weight",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:50:42.885565"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:07.567113"
+      }
+    },
+    {
+      "hook": "Did you know just SPF 30+ daily blocks 97% of harmful UVB rays?",
+      "explanation": "Singapore's intense tropical UV accelerates photoaging and skin cancer risk for 30-39yo obese adults, worsened by obesity-linked inflammation. This minimal dose preserves collagen, preventing wrinkles and damage efficiently.",
+      "action": "Apply broad-spectrum SPF 30+ generously to face, neck, arms every morning; reapply every 2 hours outdoors or after sweating.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/healthy-behaviours/be-sunsafe",
+      "numeric_claim": "97% UVB block",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:51:32.916519"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 28 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:08.088695"
+      }
+    },
+    {
+      "hook": "Did you know just 40g tomato paste daily cuts UV skin damage by 40%?",
+      "explanation": "Equatorial sun drives premature aging in 30-39yo obese Singaporeans; excess body fat boosts oxidative stress, amplifying UV harm. This lycopene dose provides internal protection, motivating easy dietary wins for glowing skin.",
+      "action": "Add 40g (2 tbsp) tomato paste to daily hawker curry, sambal, or pasta for potent, low-calorie skin defence.",
+      "source_name": "PubMed/MEDLINE",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/11340107/",
+      "numeric_claim": "40g daily = 40% reduction",
+      "metadata": {
+        "cohort_id": "cohort_0002",
+        "cohort_description": "30-39 years old, obese",
+        "cohort_params": {
+          "age_group": "30-39",
+          "bmi": "obese"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:51:32.916553"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:09.622301"
+      }
+    },
+    {
+      "hook": "Did you know over 430,000 Singaporeans joined HPB's latest National Steps Challenge?",
+      "explanation": "Overweight adults aged 40-49 face elevated joint strain and mobility issues from excess weight. Walking, as shown by massive Challenge participation, reduces BMI, eases knee pain, and strengthens supporting muscles per HPB guidelines (30-60 words: 42)",
+      "action": "Download HealthHub app, join National Steps Challenge, and track 7,000-10,000 daily steps for better joint health.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.healthhub.sg/programmes/national-steps-challenge",
+      "numeric_claim": "over 430,000",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:52:36.971364"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:10.155890"
+      }
+    },
+    {
+      "hook": "Did you know over 1 million Singaporeans are ActiveSG members using free strength classes?",
+      "explanation": "For overweight 40-49 year olds, muscle loss risks rise with age and weight, worsening pain and mobility. Widespread ActiveSG adoption builds strength, boosts metabolism, and protects joints, aligning with HPB's 2x weekly training advice (47 words)",
+      "action": "Sign up for free ActiveSG membership at myactivesg.com and attend a weekly circuit class for muscle health.",
+      "source_name": "Sport Singapore",
+      "source_url": "https://www.myactivesg.com/aboutus",
+      "numeric_claim": "over 1 million",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:52:36.971390"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:10.833952"
+      }
+    },
+    {
+      "hook": "Did you know over 1 million Singaporeans have joined the National Steps Challenge for better heart health?",
+      "explanation": "Overweight adults aged 40-49 in Singapore face elevated cardiovascular risks like high blood pressure and poor circulation. Like many peers, participating boosts daily activity, aiding weight management and reducing heart disease risk through consistent walking.",
+      "action": "Download the HealthHub app, sign up for National Steps Challenge, and aim for 10,000 steps daily to join fellow Singaporeans.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.healthhub.sg/programmes/national-steps-challenge",
+      "numeric_claim": "over 1 million",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:53:24.383361"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:11.482885"
+      }
+    },
+    {
+      "hook": "Did you know over 1 million Singaporeans aged 40+ have screened for cardiovascular risks via Screen for Life?",
+      "explanation": "For overweight 40-49 year olds, excess weight heightens cholesterol and blood pressure issues, key heart risks. Many in your cohort use this HPB programme for early detection, enabling timely lifestyle changes to protect heart health.",
+      "action": "Book a Screen for Life cardiovascular screening package via HealthHub at a polyclinic or GP for subsidized checks.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.healthhub.sg/a-z/screening/screen-for-life",
+      "numeric_claim": "over 1 million",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:53:24.383399"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 404"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:12.091746"
+      }
+    },
+    {
+      "hook": "Did you know over 50% of Singaporeans use umbrellas or seek shade for sun protection?",
+      "explanation": "Singapore's intense UV rays raise skin cancer and premature aging risks, crucial for 40-49 year old overweight adults active outdoors to manage weight. This common habit shields skin effectively.",
+      "action": "Carry a UV-protective umbrella or hat outdoors from 10am-4pm to stay sun-safe like them.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/healthy-ageing/heartier-younger-skin/sun-protection",
+      "numeric_claim": "over 50%",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:54:38.388288"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:12.629915"
+      }
+    },
+    {
+      "hook": "Did you know over 1.4 million Singaporeans aged 30+ joined National Steps Challenge?",
+      "explanation": "For overweight 40-49 year olds, walking reduces BMI-linked inflammation that worsens aging skin and conditions like acanthosis nigricans, improving overall skin health as many participants experience.",
+      "action": "Download the National Steps Challenge app, sign up, and start tracking steps with sunscreen on.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://go.gov.sg/nationalstepschallenge",
+      "numeric_claim": "over 1.4 million",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "social_proof",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:54:38.388317"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:13.300029"
+      }
+    },
+    {
+      "hook": "Did you know losing 1kg body weight cuts knee joint stress by 4kg per step for overweight adults?",
+      "explanation": "Overweight Singaporeans aged 40-49 experience extra joint load leading to knee pain and reduced mobility. Peers achieving small weight loss via HPB-recommended habits report less pain and sustained activity levels, preserving long-term joint health.",
+      "action": "Lose 4-5kg over 2 months by swapping sugary teh tarik for water and walking 10,000 steps daily via HPB app.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/weight-management",
+      "numeric_claim": "4kg reduction per 1kg lost",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:55:56.453945"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:13.794070"
+      }
+    },
+    {
+      "hook": "Did you know twice-weekly strength exercises boost muscle strength 25-40% in 8-12 weeks for 40s?",
+      "explanation": "Overweight adults 40-49 in Singapore risk early muscle loss affecting daily tasks. Active peers following NHG/HPB routines gain strength affordably, enhancing mobility, balance and weight control without gym fees.",
+      "action": "Do 20-min bodyweight routine (squats, wall push-ups) 2x/week at home or free ActiveSG gyms.",
+      "source_name": "National Healthcare Group (NHG)",
+      "source_url": "https://www.nh.com.sg/health-resources/health-wellness/adults-exercise",
+      "numeric_claim": "25-40% strength increase",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:55:56.453972"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Error accessing source URL: HTTPSConnectionPool(host='www.nh.com.sg', port=443): Max retries exceeded with url: /health-resources/health-wellness/adults-exercise (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.nh.com.sg'. (_ssl.c:1028)\")))"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:13.970395"
+      }
+    },
+    {
+      "hook": "Did you know 60% of Singaporeans aged 40-49 maintain healthy LDL cholesterol levels?",
+      "explanation": "Overweight individuals aged 40-49 in Singapore have elevated cardiovascular risks from high cholesterol. Like many peers, simple habits like healthier eating and activity help achieve healthy levels, reducing heart disease risk significantly.",
+      "action": "Opt for 'less oil, less salt' at hawker centres and track 10,000 steps daily via the HPB National Steps Challenge app.",
+      "source_name": "Health Promotion Board (HPB) - National Population Health Survey 2020",
+      "source_url": "https://www.hpb.gov.sg/docs/default-source/pdf/nphs-2020-report_(hq).pdf",
+      "numeric_claim": "60%",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:56:58.111776"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:14.155912"
+      }
+    },
+    {
+      "hook": "Did you know 77% of Singaporeans aged 40-49 enjoy healthy blood pressure levels?",
+      "explanation": "Overweight adults in this age group face higher hypertension risks, impacting heart health. Peers maintain healthy blood pressure through regular exercise and screenings, an achievable path to lower cardiovascular disease odds.",
+      "action": "Do 150 minutes of brisk walking or swimming weekly and monitor BP free at HPB HealthStation kiosks or polyclinics.",
+      "source_name": "Health Promotion Board (HPB) - National Population Health Survey 2020",
+      "source_url": "https://www.hpb.gov.sg/docs/default-source/pdf/nphs-2020-report_(hq).pdf",
+      "numeric_claim": "77%",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:56:58.111796"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:14.335816"
+      }
+    },
+    {
+      "hook": "Did you know daily sunscreen users aged 25-55 showed 24% less skin aging than peers?",
+      "explanation": "Singapore's tropical sun accelerates photoaging in 40-49 year olds. Overweight adults, prone to skin changes, can achieve smoother, firmer skin like study peers by blocking UV rays daily.",
+      "action": "Apply broad-spectrum water-resistant SPF30+ sunscreen to face and body every morning, reapplying every 2 hours outdoors as per HPB guidelines.",
+      "source_name": "Annals of Internal Medicine",
+      "source_url": "https://www.acpjournals.org/doi/10.7326/0003-4819-158-11-201306040-00002",
+      "numeric_claim": "24% less skin aging",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:58:12.742280"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 28 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:14.546544"
+      }
+    },
+    {
+      "hook": "Did you know daily sunscreen cut squamous cell skin cancer risk by 40% in adult peers?",
+      "explanation": "In sunny Singapore, overweight 40-49 year olds have elevated skin cancer risks from UV and weight factors. Peers succeeding with daily SPF prevent most cases effectively.",
+      "action": "Use broad-spectrum SPF30+ sunscreen daily, seek shade 10am-4pm, and wear protective clothing during outdoor activities.",
+      "source_name": "The Lancet",
+      "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(98)12168-2/fulltext",
+      "numeric_claim": "40% reduction in squamous cell carcinoma",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "aspirational_peer_modeling",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:58:12.742304"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 2,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 26 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:14.752569"
+      }
+    },
+    {
+      "hook": "Did you know? Just 2 days/week strength training = major muscle & joint health gains!",
+      "explanation": "Overweight Singaporeans aged 40-49 often experience early muscle loss and joint strain from desk jobs and urban living. HPB guidelines confirm this minimum dose builds strength, supports mobility, and reduces pain risk efficiently.",
+      "action": "Do 20-30 min bodyweight squats, lunges, planks at home or HDB void decks, twice weekly.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/keep-active/physical-activity-guidelines",
+      "numeric_claim": "2 days/week",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:58:56.767189"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:15.281437"
+      }
+    },
+    {
+      "hook": "Did you know 75 min/week vigorous walking = same joint protection as 150 min moderate?",
+      "explanation": "Busy 40-49 year-old overweight adults in Singapore benefit from this threshold to ease knee/back pain, improve mobility amid rising obesity (NPHS data), and lighten joint load without long workouts.",
+      "action": "Brisk walk 25 minutes thrice weekly in nearby parks or during lunch breaks for quick wins.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/keep-active/physical-activity-guidelines",
+      "numeric_claim": "75 min/week = 150 min moderate",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "musculoskeletal",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:58:56.767213"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:15.783359"
+      }
+    },
+    {
+      "hook": "Did you know just 75 minutes weekly of vigorous exercise equals heart benefits of 150 minutes moderate?",
+      "explanation": "Overweight 40-49 year olds in Singapore face higher cardiovascular risks like hypertension per NPHS data. This minimum threshold efficiently lowers blood pressure, improves cholesterol, and enhances circulation, aligning with local guidelines for busy lifestyles.",
+      "action": "Schedule three 25-minute vigorous sessions weekly: try fast cycling, swimming, or HIIT during cooler mornings or evenings.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/keep-active/physical-activity-guidelines",
+      "numeric_claim": "75 minutes weekly vigorous = 150 min moderate",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:59:46.998299"
+      },
+      "validation": {
+        "validated": true,
+        "number_failed": 0,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:16.329152"
+      }
+    },
+    {
+      "hook": "Did you know 2 resistance training sessions weekly can lower blood pressure by 4-8 mmHg?",
+      "explanation": "For overweight Singaporeans aged 40-49, with elevated CVD risks from excess weight, this achievable minimum strengthens muscles, reduces hypertension, and supports cholesterol management, complementing aerobic activity per HPB recommendations.",
+      "action": "Do 2x30-minute sessions weekly of bodyweight exercises like squats, lunges, and push-ups at home or parks.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/keep-active/physical-activity-guidelines",
+      "numeric_claim": "2 sessions weekly",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "cardiovascular",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T18:59:46.998325"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": false,
+            "issues": [
+              "Explanation length suboptimal: 29 words (target 40-60)"
+            ]
+          },
+          "source_verification": {
+            "passed": true,
+            "issues": [],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:16.838587"
+      }
+    },
+    {
+      "hook": "Did you know just daily SPF15 sunscreen = 24% less skin aging after 4.5 years?",
+      "explanation": "For 40-49yo overweight Singaporeans in intense tropical UV, midlife skin repairs slower; regular sunscreen slows photoaging wrinkles & spots, preserving youthful skin amid busy lifestyles & high sun exposure risks (Green et al., tropical-adapted).",
+      "action": "Apply broad-spectrum SPF50+ (HPB-recommended) to face, neck & arms every morning \u2013 takes 60 seconds for lasting protection.",
+      "source_name": "Annals of Internal Medicine",
+      "source_url": "https://www.acpjournals.org/doi/10.7326/0003-4819-158-11-201306040-00002",
+      "numeric_claim": "24% less skin aging",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T19:00:44.441880"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:17.040073"
+      }
+    },
+    {
+      "hook": "Did you know just daily SPF15 sunscreen halves melanoma risk over 15 years?",
+      "explanation": "Overweight 40-49yo in Singapore face rising skin cancer rates from year-round high UV; simple daily application cuts melanoma incidence by 50%, vital for this age group's increasing vulnerability & preventing progression to advanced disease.",
+      "action": "Reapply SPF50+ every 2 hours if outdoors \u2013 pair with hat for hawker visits or errands, shielding family-protecting skin.",
+      "source_name": "Journal of Clinical Oncology",
+      "source_url": "https://ascopubs.org/doi/10.1200/JCO.2010.28.7078",
+      "numeric_claim": "50% lower melanoma risk",
+      "metadata": {
+        "cohort_id": "cohort_0003",
+        "cohort_description": "40-49 years old, overweight",
+        "cohort_params": {
+          "age_group": "40-49",
+          "bmi": "overweight"
+        },
+        "template_type": "threshold_effects",
+        "health_domain": "skin-health",
+        "region": "singapore",
+        "generation_model": "x-ai/grok-4.1-fast",
+        "generation_temperature": 0.7,
+        "generation_timestamp": "2025-11-27T19:00:44.441909"
+      },
+      "validation": {
+        "validated": false,
+        "number_failed": 1,
+        "checks": {
+          "json_validity": {
+            "passed": true,
+            "issues": []
+          },
+          "schema_conformity": {
+            "passed": true,
+            "issues": []
+          },
+          "source_verification": {
+            "passed": false,
+            "issues": [
+              "Source URL not accessible, status code: 403"
+            ],
+            "warnings": []
+          }
+        },
+        "validation_timestamp": "2025-11-27T19:01:17.227837"
+      }
+    }
+  ]
+}

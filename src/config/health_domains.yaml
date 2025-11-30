@@ -1,0 +1,209 @@
+health_domains:
+
+  cardiovascular:
+    name: "cardiovascular"
+    subcategories:
+      - "heart-health"
+      - "blood-pressure"
+      - "cholesterol"
+      - "circulation"
+
+  metabolic:
+    name: "metabolic"
+    subcategories:
+      - "diabetes"
+      - "weight-management"
+      - "thyroid"
+      - "fatty-liver"
+
+  respiratory:
+    name: "respiratory"
+    subcategories:
+      - "lung-health"
+      - "asthma"
+      - "copd"
+      - "air-quality"
+
+  sleep:
+    name: "sleep"
+    subcategories:
+      - "sleep-quality"
+      - "sleep-duration"
+      - "sleep-disorders"
+
+  musculoskeletal:
+    name: "musculoskeletal"
+    subcategories:
+      - "joint-health"
+      - "muscle-health"
+      - "mobility"
+      - "pain-management"
+
+  bone_health:
+    name: "bone-health"
+    subcategories:
+      - "osteoporosis"
+      - "bone-density"
+      - "fracture-prevention"
+      - "calcium-vitamin-d"
+
+  mental_health:
+    name: "mental-health"
+    subcategories:
+      - "stress-management"
+      - "depression"
+      - "anxiety"
+      - "emotional-wellbeing"
+
+  cognitive_health:
+    name: "cognitive-health"
+    subcategories:
+      - "brain-health"
+      - "memory"
+      - "dementia-prevention"
+      - "mental-sharpness"
+
+  nutrition:
+    name: "nutrition"
+    subcategories:
+      - "healthy-eating"
+      - "dietary-patterns"
+      - "hydration"
+      - "supplements"
+
+  physical_activity:
+    name: "physical-activity"
+    subcategories:
+      - "exercise"
+      - "strength-training"
+      - "flexibility"
+      - "daily-movement"
+
+  preventive_care:
+    name: "preventive-care"
+    subcategories:
+      - "vaccinations"
+      - "health-checks"
+      - "dental-health"
+      - "eye-health"
+
+  cancer_prevention:
+    name: "cancer-prevention"
+    subcategories:
+      - "screening"
+      - "risk-reduction"
+      - "early-detection"
+      - "lifestyle-factors"
+
+  screening:
+    name: "screening"
+    subcategories:
+      - "age-appropriate-screening"
+      - "disease-surveillance"
+      - "health-monitoring"
+
+  digestive_health:
+    name: "digestive-health"
+    subcategories:
+      - "gut-health"
+      - "digestive-disorders"
+      - "nutrition-absorption"
+
+  kidney_health:
+    name: "kidney-health"
+    subcategories:
+      - "kidney-function"
+      - "chronic-kidney-disease"
+      - "dialysis-prevention"
+
+  sexual_reproductive_health:
+    name: "sexual-reproductive-health"
+    subcategories:
+      - "reproductive-health"
+      - "menopause"
+      - "prostate-health"
+      - "sexual-wellness"
+
+  skin_health:
+    name: "skin-health"
+    subcategories:
+      - "skin-cancer-prevention"
+      - "sun-protection"
+      - "aging-skin"
+
+  oral_health:
+    name: "oral-health"
+    subcategories:
+      - "dental-care"
+      - "gum-disease"
+      - "oral-systemic-connection"
+
+  sensory_health:
+    name: "sensory-health"
+    subcategories:
+      - "vision"
+      - "hearing"
+      - "balance"
+
+  immune_health:
+    name: "immune-health"
+    subcategories:
+      - "immunity"
+      - "infection-prevention"
+      - "inflammation"
+
+
+# health_domains:
+#   # Cardiovascular & Metabolic
+#   - name: "cardiovascular"
+#     subcategories: ["heart-health", "blood-pressure", "cholesterol", "circulation"]
+#   - name: "metabolic"
+#     subcategories: ["diabetes", "weight-management", "thyroid", "fatty-liver"]
+
+#   # Respiratory & Sleep
+#   - name: "respiratory"
+#     subcategories: ["lung-health", "asthma", "copd", "air-quality"]
+#   - name: "sleep"
+#     subcategories: ["sleep-quality", "sleep-duration", "sleep-disorders"]
+
+#   # Musculoskeletal & Bone
+#   - name: "musculoskeletal"
+#     subcategories: ["joint-health", "muscle-health", "mobility", "pain-management"]
+#   - name: "bone-health"
+#     subcategories: ["osteoporosis", "bone-density", "fracture-prevention", "calcium-vitamin-d"]
+
+#   # Mental & Cognitive
+#   - name: "mental-health"
+#     subcategories: ["stress-management", "depression", "anxiety", "emotional-wellbeing"]
+#   - name: "cognitive-health"
+#     subcategories: ["brain-health", "memory", "dementia-prevention", "mental-sharpness"]
+
+#   # Lifestyle & Prevention
+#   - name: "nutrition"
+#     subcategories: ["healthy-eating", "dietary-patterns", "hydration", "supplements"]
+#   - name: "physical-activity"
+#     subcategories: ["exercise", "strength-training", "flexibility", "daily-movement"]
+#   - name: "preventive-care"
+#     subcategories: ["vaccinations", "health-checks", "dental-health", "eye-health"]
+
+#   # Disease Prevention & Screening
+#   - name: "cancer-prevention"
+#     subcategories: ["screening", "risk-reduction", "early-detection", "lifestyle-factors"]
+#   - name: "screening"
+#     subcategories: ["age-appropriate-screening", "disease-surveillance", "health-monitoring"]
+
+#   # Specialized Health Areas
+#   - name: "digestive-health"
+#     subcategories: ["gut-health", "digestive-disorders", "nutrition-absorption"]
+#   - name: "kidney-health"
+#     subcategories: ["kidney-function", "chronic-kidney-disease", "dialysis-prevention"]
+#   - name: "sexual-reproductive-health"
+#     subcategories: ["reproductive-health", "menopause", "prostate-health", "sexual-wellness"]
+#   - name: "skin-health"
+#     subcategories: ["skin-cancer-prevention", "sun-protection", "aging-skin"]
+#   - name: "oral-health"
+#     subcategories: ["dental-care", "gum-disease", "oral-systemic-connection"]
+#   - name: "sensory-health"
+#     subcategories: ["vision", "hearing", "balance"]
+#   - name: "immune-health"
+#     subcategories: ["immunity", "infection-prevention", "inflammation"]

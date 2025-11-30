@@ -1,0 +1,150 @@
+# Singapore-specific Cohort Definitions
+# Uses Singapore demographics, Asian BMI classifications, and local prevalence data
+
+cohort_definitions:
+  # Demographic dimensions
+  age_group:
+    - name: "0-17"
+      min: 0
+      max: 17
+      priority: 2
+      description: "Children"
+    - name: "18-29"
+      min: 18
+      max: 29
+      priority: 1
+      description: "Young adults"
+    - name: "30-39"
+      min: 30
+      max: 39
+      priority: 1
+      description: "Early middle age"
+    - name: "40-49"
+      min: 40
+      max: 49
+      priority: 1
+      description: "Middle age"
+    - name: "50-59"
+      min: 50
+      max: 59
+      priority: 1
+      description: "Late middle age"
+    - name: "60-69"
+      min: 60
+      max: 69
+      priority: 1
+      description: "Early senior"
+    - name: "70+"
+      min: 70
+      max: 120
+      priority: 2
+      description: "Senior"
+
+  gender:
+    - name: "male"
+      priority: 1
+    - name: "female"
+      priority: 1
+
+  race:
+    - name: "chinese"
+      priority: 1
+    - name: "malay"
+      priority: 1
+    - name: "indian"
+      priority: 1
+    - name: "other"
+      priority: 3
+
+  # Lifestyle factors
+  smoking_status:
+    - name: "smoker"
+      priority: 1
+      description: "Currently smoking"
+    - name: "former-smoker"
+      priority: 2
+      description: "Quit smoking"
+    - name: "non-smoker"
+      priority: 2
+      description: "Never smoked"
+
+  physical_activity:
+    - name: "sedentary"
+      priority: 1
+      description: "Less than 30 minutes of moderate activity per week"
+      threshold: "<30 min/week"
+    - name: "insufficiently-active"
+      priority: 1
+      description: "30-149 minutes per week"
+      threshold: "30-149 min/week"
+    - name: "moderately-active"
+      priority: 2
+      description: "150-300 minutes per week (meets guidelines)"
+      threshold: "150-300 min/week"
+    - name: "highly-active"
+      priority: 2
+      description: "More than 300 minutes per week"
+      threshold: ">300 min/week"
+
+  bmi:
+    - name: "underweight"
+      priority: 2
+      range: [0, 18.5]
+    - name: "normal"
+      priority: 3
+      range: [18.5, 22.9]
+    - name: "overweight"
+      priority: 1
+      range: [23.0, 27.4]
+    - name: "obese"
+      priority: 1
+      range: [27.5, 100]
+
+  # Health conditions with Singapore prevalence data
+  # ICD codes are AI-generated
+  health_conditions:
+      - name: "diabetes"
+        priority: 1
+        prevalence_sg: 0.149  # 14.9% in Singapore (NPHS 2024)
+        icd10: "E11"
+      - name: "prediabetes"
+        priority: 1
+        prevalence_sg: 0.25
+      - name: "hypertension"
+        priority: 1
+        prevalence_sg: 0.324  # 32.4% in Singapore (NPHS 2024)
+        icd10: "I10"
+      - name: "high-cholesterol"
+        priority: 1
+        prevalence_sg: 0.398  # 39.8% in Singapore (NPHS 2024)
+        icd10: "E78"
+      - name: "heart-disease"
+        priority: 1
+        icd10: "I25"
+      - name: "stroke"
+        priority: 2
+        icd10: "I64"
+      - name: "asthma"
+        priority: 2
+        icd10: "J45"
+      - name: "copd"
+        priority: 3
+        icd10: "J44"
+      - name: "chronic-kidney-disease"
+        priority: 1
+        icd10: "N18"
+      - name: "fatty-liver"
+        priority: 1
+        prevalence_sg: 0.30  # ~30% in Singapore
+      - name: "gout"
+        priority: 3
+        icd10: "M10"
+      - name: "osteoporosis"
+        priority: 1
+        icd10: "M81"
+      - name: "cancer-history"
+        priority: 1
+        icd10: "C"
+      - name: "mental-health-condition"
+        priority: 1
+        includes: ["depression", "anxiety", "stress"]

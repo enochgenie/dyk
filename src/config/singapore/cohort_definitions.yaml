@@ -1,0 +1,102 @@
+# Singapore-specific Cohort Definitions
+# Uses Singapore demographics, Asian BMI classifications, and local prevalence data
+
+cohort_definitions:
+  # Demographic dimensions
+  age_group:
+    - name: "0-17"
+      min: 0
+      max: 17
+      priority: 3
+      description: "Children"
+    - name: "18-29"
+      min: 18
+      max: 29
+      priority: 1
+      description: "Young adults"
+    - name: "30-44"
+      min: 30
+      max: 44
+      priority: 1
+      description: "Adults"
+    - name: "45-59"
+      min: 45
+      max: 59
+      priority: 1
+      description: "Middle-age"
+    - name: "60+"
+      min: 60
+      max: 120
+      priority: 1
+      description: "Seniors"
+
+  gender:
+    - name: "male"
+      priority: 1
+    - name: "female"
+      priority: 1
+
+  race:
+    - name: "chinese"
+      priority: 1
+    - name: "malay"
+      priority: 1
+    - name: "indian"
+      priority: 1
+    - name: "other"
+      priority: 3
+
+  # Lifestyle factors
+  smoking_status:
+    - name: "smoker"
+      priority: 1
+      description: "Currently smoking"
+    - name: "former-smoker"
+      priority: 3
+      description: "Quit smoking"
+    - name: "non-smoker"
+      priority: 2
+      description: "Never smoked"
+
+  physical_activity:
+    - name: "sedentary"
+      priority: 1
+      description: "Less than 30 minutes of moderate activity per week"
+      threshold: "<30 min/week"
+    - name: "insufficiently-active"
+      priority: 1
+      description: "30-149 minutes per week"
+      threshold: "30-149 min/week"
+    - name: "moderately-active"
+      priority: 2
+      description: "150-300 minutes per week (meets guidelines)"
+      threshold: "150-300 min/week"
+    - name: "highly-active"
+      priority: 2
+      description: "More than 300 minutes per week"
+      threshold: ">300 min/week"
+
+  bmi:
+    - name: "underweight"
+      priority: 2
+      range: [0, 18.5]
+    - name: "normal"
+      priority: 3
+      range: [18.5, 22.9]
+    - name: "overweight"
+      priority: 1
+      range: [23.0, 27.4]
+    - name: "obese"
+      priority: 1
+      range: [27.5, 100]
+
+  # Health conditions with Singapore prevalence data
+  health_conditions:
+      - name: "diabetes"
+        priority: 1
+      - name: "hypertension"
+        priority: 1
+      - name: "high-cholesterol"
+        priority: 1
+      - name: "fatty-liver"
+        priority: 1
