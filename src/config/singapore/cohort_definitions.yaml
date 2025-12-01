@@ -1,29 +1,33 @@
-# Singapore-specific Cohort Definitions
-# Uses Singapore demographics, Asian BMI classifications, and local prevalence data
-
 cohort_definitions:
-  # Demographic dimensions
+
+  # -------------------------
+  # Demographics
+  # -------------------------
   age_group:
     - name: "0-17"
       min: 0
       max: 17
       priority: 3
       description: "Children"
+
     - name: "18-29"
       min: 18
       max: 29
       priority: 1
       description: "Young adults"
+
     - name: "30-44"
       min: 30
       max: 44
       priority: 1
       description: "Adults"
+
     - name: "45-59"
       min: 45
       max: 59
       priority: 1
-      description: "Middle-age"
+      description: "Middle-age adults"
+
     - name: "60+"
       min: 60
       max: 120
@@ -46,57 +50,152 @@ cohort_definitions:
     - name: "other"
       priority: 3
 
-  # Lifestyle factors
+  # Optional: Profession (non-sensitive categories)
+  profession:
+    - name: "office-worker"
+      description: "Primarily sedentary job"
+      priority: 2
+
+    - name: "manual-labor"
+      description: "Physically intensive roles"
+      priority: 2
+
+    - name: "healthcare-worker"
+      description: "Nurses, doctors, allied health"
+      priority: 2
+
+    - name: "driver-delivery"
+      description: "Ride-hailing, logistics"
+      priority: 3
+
+    - name: "student"
+      description: "Primary, secondary, tertiary"
+      priority: 3
+
+    - name: "unknown"
+      description: "Profession not provided"
+      priority: 3
+
+  # -------------------------
+  # Lifestyle Factors
+  # -------------------------
   smoking_status:
     - name: "smoker"
       priority: 1
-      description: "Currently smoking"
+      description: "Currently smokes"
+
     - name: "former-smoker"
-      priority: 3
-      description: "Quit smoking"
-    - name: "non-smoker"
       priority: 2
+      description: "Previously smoked"
+
+    - name: "non-smoker"
+      priority: 3
       description: "Never smoked"
 
+  # -------------------------
+  # Sleep (AASM / SRI Standards)
+  # -------------------------
+  sleep_duration:
+    standard: "AASM/NHLBI"
+    values:
+      - name: "short"
+        priority: 1
+        range: [0, 7]
+
+      - name: "adequate"
+        priority: 1
+        range: [7, 9]
+
+      - name: "long"
+        priority: 2
+        range: [9, 100]
+
+  sleep_regularity:
+    standard: "SRI (Sleep Regularity Index)"
+    values:
+      - name: "irregular"
+        criteria: 
+          - "SRI < 70"
+          - "bedtime_variance > 90"
+
+      - name: "moderately-regular"
+        criteria:
+          - "SRI >= 70 and SRI <= 85"
+          - "30 <= bedtime_variance <= 90"
+
+      - name: "regular"
+        criteria:
+          - "SRI > 85"
+          - "bedtime_variance < 30"
+
+  # -------------------------
+  # Physical Activity
+  # -------------------------
   physical_activity:
-    - name: "sedentary"
-      priority: 1
-      description: "Less than 30 minutes of moderate activity per week"
-      threshold: "<30 min/week"
-    - name: "insufficiently-active"
-      priority: 1
-      description: "30-149 minutes per week"
-      threshold: "30-149 min/week"
-    - name: "moderately-active"
-      priority: 2
-      description: "150-300 minutes per week (meets guidelines)"
-      threshold: "150-300 min/week"
-    - name: "highly-active"
-      priority: 2
-      description: "More than 300 minutes per week"
-      threshold: ">300 min/week"
 
+    minutes_mvpa:
+      standard: "WHO"
+      values:
+        - name: "low"
+          range: [0, 149]
+
+        - name: "moderate"
+          range: [150, 300]
+
+        - name: "high"
+          range: [301, 10000]
+
+    steps_per_day:
+      standard: "Tudor-Locke"
+      values:
+        - name: "sedentary"
+          range: [0, 4999]
+
+        - name: "low-active"
+          range: [5000, 7499]
+
+        - name: "moderately-active"
+          range: [7500, 9999]
+
+        - name: "active"
+          range: [10000, 12499]
+
+        - name: "highly-active"
+          range: [12500, 50000]
+
+  # -------------------------
+  # BMI (Asian Classification)
+  # -------------------------
   bmi:
-    - name: "underweight"
-      priority: 2
-      range: [0, 18.5]
-    - name: "normal"
-      priority: 3
-      range: [18.5, 22.9]
-    - name: "overweight"
-      priority: 1
-      range: [23.0, 27.4]
-    - name: "obese"
-      priority: 1
-      range: [27.5, 100]
+    values:
+      - name: "underweight"
+        priority: 2
+        range: [0, 18.5]
 
-  # Health conditions with Singapore prevalence data
+      - name: "normal"
+        priority: 3
+        range: [18.5, 22.9]
+
+      - name: "overweight"
+        priority: 1
+        range: [23.0, 27.4]
+
+      - name: "obese"
+        priority: 1
+        range: [27.5, 100]
+
+  # -------------------------
+  # Chronic Health Conditions
+  # -------------------------
   health_conditions:
-      - name: "diabetes"
-        priority: 1
-      - name: "hypertension"
-        priority: 1
-      - name: "high-cholesterol"
-        priority: 1
-      - name: "fatty-liver"
-        priority: 1
+    - name: "diabetes"
+      priority: 1
+
+    - name: "hypertension"
+      priority: 1
+
+    - name: "high-cholesterol"
+      priority: 1
+
+    - name: "fatty-liver"
+      priority: 1
