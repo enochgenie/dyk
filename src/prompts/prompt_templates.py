@@ -6,62 +6,49 @@ Supports multiple generation strategies and sources.
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 import sys
+from textwrap import dedent
+
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from src.core.cohort_generator import CohortGenerator
 from src.utils.config_loader import ConfigLoader
 
 
 class PromptTemplates:
     """Collection of prompt templates for different generation modes."""
 
-    def pure_llm_generation(
+    def generation_prompt(
         self,
         cohort: dict,
         insight_template: dict,
         health_domains: dict,
         sources: dict,
-        region: str = "singapore",
+        market: str = "singapore",
         num_insights: int = 20,
     ) -> str:
         """
         Generate prompt for pure LLM-based insight generation (no external tools).
         Uses LLM's pre-trained knowledge only.
         """
-
-        tier_to_names = {
-            tier: [src["name"] for src in info["sources"]]
-            for tier, info in sources.items()
-        }
-
-        optional_block = ""
-        if "insight_angles" in cohort and cohort["insight_angles"]:
-            optional_block = f"Possible insight angles: {cohort['insight_angles']}\n"
-
-        prompt = f"""
+        prompt = dedent(f"""
+        
         You are a medical and public health expert generating evidence-based health insights for a health application.
 
-        REGION:
-        - {region}
+        REGION: {market.title()}
 
-        TARGET COHORT:
-        {cohort["description"]}
-
-        Cohort Parameters: {cohort["cohort_params"]}
+        TARGET COHORT: {cohort["description"]}
+        Cohort Parameters: {cohort["dimensions"]}
 
         INSIGHT TEMPLATE SELECTED:
         - Type: {insight_template["type"]}
         - Description: {insight_template["description"]}
         - Required Tone: "{insight_template["tone"]}"
         - Example Pattern: "{insight_template["example"]}"
-        {optional_block}
 
         EXAMPLE HEALTH DOMAINS: {list(health_domains.keys())}
         Note: You may select different health domains if more relevant
 
-        AUTHORITATIVE SOURCES FOR {region.upper()}: {tier_to_names}
+        AUTHORITATIVE SOURCES FOR {market.upper()}: {sources}
 
         TASK:
         Generate {num_insights} distinct "Did You Know" health insights tailored to this cohort profile.
@@ -72,42 +59,48 @@ class PromptTemplates:
         3. Call-to-Action (15-25 words): Clear, specific action they can take
         
         CONTENT REQUIREMENTS:
-        - Evidence-based with specific percentages/numbers
-        - Relevant to the cohort's demographic, lifestyle and health risks
-        - Scientifically accurate - cite reputable sources
-        - Culturally appropriate for {region}
+        - Evidence-based with specific percentages/numbers when available
+        - Relevant to the cohort's demographic, goals, lifestyle and health risks
+        - Scientifically accurate - all statistics must be verifiable
+        - Culturally appropriate for {market}
         - Each insight must be UNIQUE (different facts, statistics, actions, health domains)
-        - Follow the conceptual intent of the selected template (“{insight_template["description"]}”)
+        - Follow the conceptual intent of the selected template ("{insight_template["description"]}")
         - Ensure the action is practical, achievable, region-appropriate and cohort-specific
         
-
+        CRITICAL REQUIREMENTS:
+        - All statistics MUST be accurate and verifiable from reputable sources
+        - If uncertain about a specific number, do not include it
+        - Do not extrapolate or combine statistics in misleading ways
+        - Sources must be real organizations or publications
+        - Refer to the cohort naturally without explicitly stating age ranges
+        
         OUTPUT FORMAT (JSON):
         {{
         "insights": [
             {{
-            "hook": "A compelling, attention-grabbing fact that starts with 'Did you know...' (max 25 words)",
-            "explanation": "A brief, evidence-based explanation of why this matters for this specific cohort (20-40 words)",
+            "hook": "A compelling, attention-grabbing fact that starts with 'Did you know...' (15-25 words)",
+            "explanation": "Evidence-based explanation of why this matters for this cohort (20-40 words))",
             "action": "A specific, actionable step the user can take (15-25 words)",
             "source_name": "Name of the authoritative source (e.g., WHO, CDC, HPB, peer-reviewed journal)",
-            "source_url": "URL if available, or 'general medical knowledge'",
-            "numeric_claim": "Any specific numeric claim made (e.g., '3x higher risk', '30% reduction'), or empty string if none"
+            "source_url": "URL to the specific source page if available, or null for well-established medical consensus",
+            "numeric_claim": "The exact numeric claim from hook/explanation (e.g., '30%', '3x higher'), or null if no specific number"
             }}
             // ... repeat for all {num_insights} insights
         ]
         }}
 
         AVOID:
-        - Excessive program mentions
+        - Excessive program mentions or promotional language
         - Repeating the same insight with minor variations
         - Multiple CTAs in one insight (focus on ONE clear action)
         - Generic "talk to your doctor" endings without specifics
-        - Explicitly stating age ranges (e.g., "40-49 year olds")
         - Heavy-handed booking/registration CTAs in every insight
-        - Made-up statistics or claims
+        - Made-up or unverifiable statistics
         - Fear-mongering language
+        - Overly explicit age range references (say "young adults" instead of "18-29 year olds")
 
-        Return ONLY valid JSON, no additional text.
-        """
+        Return ONLY valid JSON, no additional text, markdown, or code blocks.
+        """).strip()
 
         return prompt
 
@@ -116,289 +109,209 @@ class PromptTemplates:
         insight: Dict[str, Any],
         cohort: Dict[str, Any],
         insight_template: Dict[str, Any],
-        region: str,
+        market: str,
     ) -> str:
         """
         Prompt for secondary LLM to validate insight accuracy and faithfulness.
         """
 
-        prompt = f"""You are a medical fact-checker validating a health insight.
+        insight_text = " ".join(
+            [insight["hook"], insight["explanation"], insight["action"]]
+        )
 
-        INSIGHT TO VALIDATE:
-        {insight}
+        # Build evidence section from source information
+        evidence_section = ""
+        if "source_name" in insight and insight["source_name"]:
+            evidence_section = f"Source: {insight['source_name']}"
+            if "source_url" in insight and insight["source_url"]:
+                evidence_section += f"\nURL: {insight['source_url']}"
+        else:
+            evidence_section = "No specific source provided - evaluate based on general knowledge and plausibility."
 
-        TARGET COHORT:
-        {cohort["cohort_params"]} - {cohort["description"]}
-        
-        INSIGHT TEMPLATE:
-        - Type: {insight_template["type"]}
-        - Description: {insight_template["description"]}
-        
-        REGION:
-        - {region}
+        prompt = dedent(f"""
+            You are an expert evaluator for "Did You Know" (DYK) insights. 
+            Evaluate the following insight across multiple dimensions.
 
-        VALIDATION TASKS:
-        Evaluate this insight on the following criteria:
+            INSIGHT TO VALIDATE:
+            {insight_text}
+            
+            SUPPORTING EVIDENCE:
+            {evidence_section}
+            
+            CONTEXT:
+            - Target Cohort: {cohort["description"]}
+            - Cohort dimensions: {cohort["dimensions"]}
+            - Market/Region: {market}
+            - Insight Template: {insight_template["type"]} - {insight_template["description"]}
+            
+            Evaluate the insight on the following criteria. For each criterion, provide:
+            1. A score from 1 to 10 (integers only)
+            2. A brief justification (1-3 sentences)
+            3. A list of issues (empty list if none)
+            
+            EVALUATION CRITERIA:
 
-        1. FACTUAL ACCURACY
-        - Are the claims medically accurate?
-        - Are numeric claims plausible and properly contextualized?
-        - Is the source credible?
-        
-        2. SAFETY & APPROPRIATENESS
-        - Does it avoid medical diagnosis/treatment claims?
-        - Is the language motivating without fear-mongering?
-        - Is the advice safe and appropriate?
-        
-        3. FAITHFULNESS TO EVIDENCE (if source provided)
-        - Does the insight accurately represent the source?
-        - Are numeric claims preserved correctly?
-        - Is attribution appropriate?
-        
-        4. RELEVANCE
-        - Is this insight specifically relevant to the target cohort?
-        - Would this cohort benefit from this information?
-        - Are demographic factors properly considered?
-        - Does it align with the intent of the selected insight template?
+            1. FACTUAL ACCURACY (1-10)
+            - Are all claims factually correct?
+            - Are statistics, numbers, and data points accurate?
+            - Are there any misleading or false statements?
 
-        5. ACTIONABILITY
-        - Is the action step specific and achievable?
-        - Is the action appropriate for this demographic?
-        - Does the action seem like an advertisement or promotional content?
-        
-        6. CULTURAL APPROPRIATENESS
-        - Is the language and advice culturally appropriate for the target region?
-    
-        PROVIDE A DETAILED EVALUATION AND AN OVERALL RECOMMENDATION:
-        - Overall Score (0-100)
-        - Specific scores (0-100) and issues for each criterion
-        - Final Recommendation: "approve", "revise", or "reject"
-        - If "revise" or "reject", provide specific revision suggestions.
+            2. SAFETY (1-10)
+            - Is the content free from harmful, offensive, or inappropriate material?
+            - Does it avoid promoting dangerous behaviors or misinformation?
+            - Is it appropriate for the target audience?
+            
+            3. FAITHFULNESS TO EVIDENCE (1-10)
+            - If source material is provided: Does the insight accurately reflect it?
+            - If only citation is provided: Is the insight plausible given the source type?
+            - Are there unsupported claims or unreasonable extrapolations?
+            - Is the interpretation appropriate given available information?
 
-        OUTPUT FORMAT (JSON):
-        {{
-        "overall_score": 0-100,
-        "factual_accuracy": {{"score": 0-100, "issues": ["list any problems"]}},
-        "safety": {{"score": 0-100, "issues": []}},
-        "source_faithfulness": {{"score": 0-100, "issues": []}},
-        "relevance": {{"score": 0-100, "issues": []}},
-        "actionability": {{"score": 0-100, "issues": []}},
-        "cultural_appropriateness": {{"score": 0-100, "issues": []}},
-        "recommendation": "approve/revise/reject",
-        "revision_suggestions": ["specific suggestions if revise/reject"]
-        }}
+            4. COHORT RELEVANCE (1-10)
+            - Is this insight relevant and valuable to the target cohort?
+            - Does it address their specific needs, interests, or pain points?
+            - Would this cohort find it actionable or useful?
 
-        Return ONLY valid JSON, no additional text.
-        """
+            5. ACTIONABILITY (1-10)
+            - Does the insight provide clear, practical takeaways?
+            - Can the audience act on this information?
+            - Are next steps or implications clear?
+
+            6. LOCALIZATION (1-10)
+            - Is the content appropriately adapted for the target market/region?
+            - Are cultural nuances, local regulations, and regional differences considered?
+            - Is the language, tone, and examples appropriate for the locale?
+
+            Respond in JSON format with the following structure:
+            {{
+                "criteria": {{
+                    "factual_accuracy": {{"score": 0, "justification": "", "issues": []}},
+                    "safety": {{"score": 0, "justification": "", "issues": []}},
+                    "faithfulness": {{"score": 0, "justification": "", "issues": []}},
+                    "cohort_relevance": {{"score": 0, "justification": "", "issues": []}},
+                    "actionability": {{"score": 0, "justification": "", "issues": []}},
+                    "localization": {{"score": 0, "justification": "", "issues": []}}
+                }},
+                "pass": false,
+                "strengths": [],
+                "critical_issues": [],
+                "recommendations": []
+            }}
+            
+            Return ONLY valid JSON, no additional text, markdown, or code blocks.
+        """).strip()
 
         return prompt
 
-    # def pure_llm_generation(
-    #     self,
-    #     cohort: dict,
-    #     insight_template: dict,
-    #     health_domain: dict,
-    #     sources: dict,
-    #     region: str = "singapore",
-    #     n: int = 1,
-    # ) -> str:
-    #     """
-    #     Generate prompt for pure LLM-based insight generation (no external tools).
-    #     Uses LLM's pre-trained knowledge only.
-    #     """
+    def creative_rewriting_prompt(
+        self,
+        insight: Dict[str, Any],
+        cohort: Dict[str, Any],
+        market: str,
+        num_variations: int = 3,
+    ) -> str:
+        """
+        Prompt for creative rewriting to generate diverse variations of an insight.
+        This layer adds linguistic diversity while preserving factual accuracy.
+        """
 
-    #     tier_to_names = {
-    #         tier: [src["name"] for src in info["sources"]]
-    #         for tier, info in sources.items()
-    #     }
+        prompt = dedent(f"""
+        You are rewriting health insights for genie — a data-driven health platform that speaks as "The Smart Ally".
 
-    #     prompt = f"""
-    #     You are a medical and public health expert generating evidence-based health insights for a health application.
+        TONE: Sharp, action-oriented, respectful of intelligence. No emojis, no fear-mongering, no vague wellness-speak.
 
-    #     REGION:
-    #     - {region}
+        ORIGINAL INSIGHT:
+        Hook: {insight.get("hook", "")}
+        Explanation: {insight.get("explanation", "")}
+        Action: {insight.get("action", "")}
+        Source: {insight.get("source_name", "")}
+        Numeric Claim: {insight.get("numeric_claim", "")}
 
-    #     TARGET COHORT:
-    #     {cohort["description"]}
+        TARGET COHORT:
+        - Cohort name: {cohort.get("name", "")}
+        - Cohort description: {cohort.get("description", "")}
+        - Cohort dimensions: {cohort.get("dimensions", "")}
+        REGION: {market.title()}
 
-    #     Cohort Parameters: {cohort["cohort_params"]}
+        TASK: Create {num_variations} distinct variation(s) using Genie's "Smart Ally" voice.
 
-    #     INSIGHT TEMPLATE SELECTED:
-    #     - Type: {insight_template["type"]}
-    #     - Description: {insight_template["description"]}
-    #     - Required Tone: "{insight_template["tone"]}"
-    #     - Example Pattern: "{insight_template["example"]}"
+        SMART ALLY PRINCIPLES:
+        1. Clear, not chatty — precise language, no fluff
+        2. Data-aware — anchor in specifics ("18% down" not "improved")
+        3. Action-oriented — prompt next move, don't leave in reflection
+        4. Confident, not cocky — assured but backed by data
 
-    #     HEALTH DOMAIN:
-    #     - Domain: {health_domain["name"]}
-    #     - Example conditions: {health_domain["subcategories"]}
+        CRITICAL FOCUS AREAS:
 
-    #     AUTHORITATIVE SOURCES FOR {region.upper()}: {tier_to_names}
+        1. COHORT RELEVANCE (VERY IMPORTANT)
+        - Tailor language, examples, and actions to the specific cohort: {cohort.get("description", "")}
+        - Reference their lifestyle, goals, and health concerns naturally
+        - Make the insight feel personally relevant without being overly explicit
+        - Example: For "young professionals", mention "after work" or "desk job"; for "retirees", mention "in your daily routine"
 
-    #     TASK:
-    #     Generate {n} distinct "Did You Know" (DYK) health insight specifically tailored to this cohort. Each insight should be:
-    #     1. Evidence-based and scientifically accurate
-    #     2. Highly relevant to this specific demographic and health domain
-    #     3. Actionable and motivating
-    #     4. Culturally appropriate for {region}
-    #     5. Following the conceptual intent of the selected template (“{insight_template["description"]}”)
-    #     6. UNIQUE from the other insights (cover different facts, statistics, conditions, or actions)
+        2. LOCALIZATION FOR {market.upper()} (VERY IMPORTANT)
+        - Use {market}-specific contexts, terminology, or cultural references where natural
+        - Suggest actions accessible in {market} without assuming user's exact location
+        - Keep measurements and terminology appropriate for the region
+        - Example for Singapore: "hawker centre", "near your MRT station", "park connector", "void deck", "hokkien mee"
 
-    #     OUTPUT FORMAT (JSON):
-    #     {{
-    #     "insights": [
-    #         {{
-    #         "hook": "A compelling, attention-grabbing fact that starts with 'Did you know...' (max 20 words)",
-    #         "explanation": "A brief, evidence-based explanation of why this matters for this specific cohort (30-60 words)",
-    #         "action": "A specific, actionable step the user can take (20-30 words)",
-    #         "source_name": "Name of the authoritative source (e.g., WHO, CDC, HPB, peer-reviewed journal)",
-    #         "source_url": "URL if available, or 'general medical knowledge'",
-    #         "numeric_claim": "Any specific numeric claim made (e.g., '3x higher risk', '30% reduction'), or empty string if none"
-    #         }}
-    #         // ... repeat for all {n} insights
-    #     ]
-    #     }}
+        REWRITING RULES:
+        ✓ Keep ALL numbers, percentages, statistics EXACTLY as stated
+        ✓ Vary sentence structure, word choice, and emphasis
+        ✓ Use active voice and crisp phrasing
+        ✓ Lead with the insight, follow with context, end with action
+        ✓ Use em dashes (—) for emphasis when natural
+        ✓ Make each variation feel tailored to the cohort AND localized to {market}
 
-    #     IMPORTANT REQUIREMENTS:
-    #     - Be specific to the cohort's characteristics (age, gender, lifestyle, conditions)
-    #     - Use actual statistics when possible (but be accurate - don't make up numbers)
-    #     - Cite reputable sources
-    #     - Keep language clear and motivating
-    #     - Ensure the action is practical, achievable, region-appropriate and cohort-specific
+        ✗ NO emojis, exclamation marks, or vague language
+        ✗ NO fear-based framing ("Be careful!" "You're at risk!")
+        ✗ NO oversimplification ("Magic tip: drink water!")
+        ✗ NO changes to source attribution or numeric claims
+        ✗ NO generic advice that could apply to anyone anywhere
 
-    #     DO NOT:
-    #     - Make up statistics or data
-    #     - Use vague or generic insights that could apply to anyone
-    #     - Include medical advice that requires professional diagnosis
-    #     - Use fear-mongering language
-    #     - Repeat the same insight with minor variations
+        EXAMPLES (preserve numbers, vary structure, add cohort relevance + localization):
 
-    #     Return ONLY valid JSON, no additional text.
-    #     """
+        Original insight: "Did you know walking 30 minutes daily reduces heart disease risk by 25%?"
+        Cohort: Young professionals (25-35, sedentary office jobs)
+        Market: Singapore
 
-    #     return prompt
+        Variation 1 (cohort-focused): "30 minutes of daily walking cuts heart disease risk by 25% — even with a desk job, one lunchtime walk makes that shift."
+        Variation 2 (localized): "Walking half an hour each day lowers heart disease risk by a quarter — try a park connector near your MRT station during lunch breaks."
+        Variation 3 (both): "Daily 30-minute walks reduce heart disease risk by 25% — for desk-bound professionals, an evening walk at a nearby park such as East Coast Park after work adds up."
 
-    # def validation_prompt(
-    #     self,
-    #     insight: Dict[str, Any],
-    #     cohort: Dict[str, Any],
-    #     insight_template: Dict[str, Any],
-    #     health_domain: Dict[str, Any],
-    #     region: str,
-    # ) -> str:
-    #     """
-    #     Prompt for secondary LLM to validate insight accuracy and faithfulness.
-    #     """
+        Note: All preserve "30 minutes", "daily", "25%" but add cohort-specific ("desk job", "lunchtime") and Singapore-localized ("park connector", "MRT station", "nearby park") context without assuming exact location.
 
-    #     prompt = f"""You are a medical fact-checker validating a health insight.
+        OUTPUT FORMAT (JSON):
+        {{
+            "variations": [
+                {{
+                    "hook": "Sharp, data-driven hook (15-25 words)",
+                    "explanation": "Clear context showing why this matters (20-40 words)",
+                    "action": "Specific, actionable next step (15-25 words)",
+                    "source_name": "{insight.get("source_name", "")}",
+                    "source_url": "{insight.get("source_url", "")}",
+                    "numeric_claim": "{insight.get("numeric_claim", "")}",
+                    "variation_id": 1
+                }}, 
+                // ... repeat for all {num_variations} variation(s)
+            ]
+        }}
 
-    #     INSIGHT TO VALIDATE:
-    #     {insight}
+        Return ONLY valid JSON, no markdown or extra text.
+        """).strip()
 
-    #     TARGET COHORT:
-    #     {cohort["cohort_params"]} - {cohort["description"]}
-
-    #     INSIGHT TEMPLATE:
-    #     - Type: {insight_template["type"]}
-    #     - Description: {insight_template["description"]}
-
-    #     HEALTH DOMAIN:
-    #     - Domain: {health_domain["name"]}
-
-    #     REGION:
-    #     - {region}
-
-    #     VALIDATION TASKS:
-    #     Evaluate this insight on the following criteria:
-
-    #     1. FACTUAL ACCURACY
-    #     - Are the claims medically accurate?
-    #     - Are numeric claims plausible and properly contextualized?
-    #     - Is the source credible?
-
-    #     2. SAFETY & APPROPRIATENESS
-    #     - Does it avoid medical diagnosis/treatment claims?
-    #     - Is the language motivating without fear-mongering?
-    #     - Is the advice safe and appropriate?
-
-    #     3. FAITHFULNESS TO EVIDENCE (if source provided)
-    #     - Does the insight accurately represent the source?
-    #     - Are numeric claims preserved correctly?
-    #     - Is attribution appropriate?
-
-    #     4. RELEVANCE
-    #     - Is this insight specifically relevant to the target cohort?
-    #     - Would this cohort benefit from this information?
-    #     - Are demographic factors properly considered?
-    #     - Is it pertinent to the specified health domain?
-    #     - Does it align with the intent of the selected insight template?
-
-    #     5. ACTIONABILITY
-    #     - Is the action step specific and achievable?
-    #     - Is the action appropriate for this demographic?
-
-    #     6. CULTURAL APPROPRIATENESS
-    #     - Is the language and advice culturally appropriate for the target region?
-
-    #     PROVIDE A DETAILED EVALUATION AND AN OVERALL RECOMMENDATION:
-    #     - Overall Score (0-100)
-    #     - Specific scores (0-100) and issues for each criterion
-    #     - Final Recommendation: "approve", "revise", or "reject"
-    #     - If "revise" or "reject", provide specific revision suggestions.
-
-    #     OUTPUT FORMAT (JSON):
-    #     {{
-    #     "overall_score": 0-100,
-    #     "factual_accuracy": {{"score": 0-100, "issues": ["list any problems"]}},
-    #     "safety": {{"score": 0-100, "issues": []}},
-    #     "source_faithfulness": {{"score": 0-100, "issues": []}},
-    #     "relevance": {{"score": 0-100, "issues": []}},
-    #     "actionability": {{"score": 0-100, "issues": []}},
-    #     "cultural_appropriateness": {{"score": 0-100, "issues": []}},
-    #     "recommendation": "approve/revise/reject",
-    #     "revision_suggestions": ["specific suggestions if revise/reject"]
-    #     }}
-
-    #     Return ONLY valid JSON, no additional text.
-    #     """
-
-    #     return prompt
+        return prompt
 
 
 if __name__ == "__main__":
     # Example usage
     prompt_template = PromptTemplates()
-
-    # example insight template
-    insight_template = {
-        "type": "protective_synergies",
-        "description": "Combined protective effects of multiple positive behaviors",
-        "weight": 5,
-        "example": "Non-smoking + 150min exercise weekly creates 5x stronger heart protection than either alone",
-        "tone": "Encouraging, synergistic",
-    }
-
-    # example region
-    region = "singapore"
-
-    # example health domain
-    config_loader = ConfigLoader(market="singapore")
-    health_domains = config_loader.health_domains
-    sources = config_loader.sources
-
-    cohort_generator = CohortGenerator(market="singapore")
-    cohort = cohort_generator.generate_priority_cohorts()[0]
-
-    pure_llm_prompt = prompt_template.pure_llm_generation(
-        cohort=cohort,
-        insight_template=insight_template,
-        health_domains=health_domains,
-        sources=sources,
-        region=region,
-        num_insights=20,
-    )
-
-    print(pure_llm_prompt)
+    market = "singapore"
+    loader = ConfigLoader(market=market)
+    cohort = loader.priority_cohorts[0]
+    insight_template = loader.insight_templates["hidden_consequence"]
+    health_domains = loader.health_domains
+    sources = loader.source_names
 
     insight = {
         "hook": "Did you know that regular exercise can reduce your risk of depression by up to 30%?",
@@ -409,12 +322,28 @@ if __name__ == "__main__":
         "numeric_claim": "reduce your risk of depression by up to 30%",
     }
 
+    gen_prompt = prompt_template.generation_prompt(
+        cohort=cohort,
+        insight_template=insight_template,
+        health_domains=health_domains,
+        sources=sources,
+        market=market,
+        num_insights=20,
+    )
+    print("Generation prompt:")
+    print(gen_prompt)
+
     validation_prompt = prompt_template.validation_prompt(
         insight,
         cohort=cohort,
         insight_template=insight_template,
-        region=region,
+        market=market,
     )
 
     print("Validation prompt:")
     print(validation_prompt)
+
+    creative_prompt = prompt_template.creative_rewriting_prompt(
+        insight, cohort, market, num_variations=3
+    )
+    print(creative_prompt)

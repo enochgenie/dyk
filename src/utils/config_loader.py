@@ -2,7 +2,6 @@
 
 import yaml
 from pathlib import Path
-import random
 from typing import Dict, Any, Optional
 
 
@@ -37,6 +36,13 @@ class ConfigLoader:
         return self.load_yaml(self.market_path / "sources.yaml")["evidence_sources"]
 
     @property
+    def source_names(self):
+        return {
+            tier: [src["name"] for src in info["sources"]]
+            for tier, info in self.sources.items()
+        }
+
+    @property
     def cohort_definitions(self):
         return self.load_yaml(self.market_path / "cohort_definitions.yaml")[
             "cohort_definitions"
@@ -60,37 +66,6 @@ class ConfigLoader:
             "insight_templates"
         ]
 
-    def sample_insight_templates(self, n: int = 1):
-        """
-
-        Args:
-            n (int): number of templates to sample
-        """
-        templates = self.insight_templates
-
-        keys = list(templates.keys())
-        n = min(n, len(keys))
-        weights = [templates[k]["weight"] for k in keys]
-
-        sampled_keys = random.choices(keys, weights=weights, k=n)
-
-        return [templates[key] for key in sampled_keys]
-
-    def sample_health_domains(self, n: int = 1):
-        """
-        Randomly sample N health domains (uniform probability) with replacement.
-
-        Args:
-            n (int): number of health domains to sample
-        """
-        domains = self.health_domains
-        keys = list(domains.keys())
-        n = min(n, len(keys))
-
-        sampled_keys = random.sample(keys, n)
-
-        return [domains[key] for key in sampled_keys]
-
 
 if __name__ == "__main__":
     # test code
@@ -98,6 +73,9 @@ if __name__ == "__main__":
 
     print("Sources:")
     print(loader.sources)
+
+    print("Source names:")
+    print(loader.source_names)
 
     print("\nCohort Definitions:")
     print(loader.cohort_definitions)
@@ -110,9 +88,3 @@ if __name__ == "__main__":
 
     print("\nInsight Templates:")
     print(loader.insight_templates)
-
-    print("\nSampled insight templates:")
-    print(loader.sample_insight_templates(3))
-
-    print("\nSampled health domains:")
-    print(loader.sample_health_domains(3))

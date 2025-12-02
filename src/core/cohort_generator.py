@@ -27,7 +27,6 @@ class CohortGenerator:
             market: Market identifier (e.g., 'singapore', 'australia')
         """
         loader = ConfigLoader(market=market)
-        self.cohort_definitions = loader.cohort_definitions
         self.priority_cohorts = loader.priority_cohorts
 
     def generate_priority_cohorts(self) -> List[Dict[str, Any]]:

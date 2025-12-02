@@ -1,0 +1,152 @@
+# Singapore-specific Priority Cohorts
+version: 1.0.0
+updated: 2025-12-01
+
+priority_cohorts:
+  # === METABOLIC HEALTH FOCUS ===
+  - name: "office_workers_metabolic_risk"
+    dimensions:
+      age_group: ["30-44", "45-59"]
+      bmi: ["overweight", "obese"]
+      physical_activity: ["sedentary"]
+      occupation_context: ["desk_job"]
+    priority: 1
+    description: "Sedentary office workers at risk of metabolic diseases"
+    rationale: "Singapore's 8.6% diabetes rate driven by sedentary work culture + weight. Sitting 8+ hrs daily compounds metabolic risk. High prevention potential through workplace interventions."
+    insight_angles:
+      - "Desk-based micro-movements (standing breaks, walking meetings)"
+      - "Hawker center meal optimization for busy workers"
+      - "Post-lunch walks to manage blood sugar spikes"
+      - "Weekend activity catch-up strategies"
+
+
+  - name: "shift_workers_metabolic_risk"
+    dimensions:
+      age_group: ["30-44", "45-59"]
+      occupation_context: ["shift_work"]
+      health_conditions: ["prediabetes", "hypertension"]
+    priority: 1
+    description: "Shift workers with disrupted circadian rhythms"
+    rationale: "Night shift work increases metabolic syndrome by 36%, diabetes by 40%. Large Singapore workforce (healthcare, transport, F&B). Circadian disruption is modifiable."
+    insight_angles:
+      - "Eating windows optimization for night shifts"
+      - "Sleep hygiene for shift workers"
+      - "Light exposure management"
+      - "Meal timing strategies"
+
+  # === CARDIOVASCULAR HEALTH FOCUS ===
+  - name: "stressed_midlife_professionals"
+    dimensions:
+      age_group: ["30-44", "45-59"]
+      occupation_context: ["high_stress_job"]
+      health_conditions: ["hypertension", "high-cholesterol"]
+      lifestyle: ["insufficient_sleep"]
+    priority: 1
+    description: "High-stress professionals"
+    rationale: "Work stress increases CVD by 23%. Singapore's long work hours (45+ hrs/week) + multiple CVD risks create perfect storm. Stress management is underutilized intervention."
+    insight_angles:
+      - "Stress-reduction techniques during workday"
+      - "Sleep optimization for busy professionals"
+      - "Mediterranean diet adaptations for local context"
+      - "Efficient exercise for time-poor adults"
+
+  - name: "ethnic_high_risk_cvd"
+    dimensions:
+      race: ["malay", "indian"]
+      age_group: ["30-44", "45-59"]
+      health_conditions: ["diabetes", "hypertension", "high-cholesterol"]
+    priority: 1
+    description: "Malay/Indian adults"
+    rationale: "Indians develop CVD 10 years earlier with 3-4x higher risk. Cultural dietary patterns (ghee, coconut milk, refined carbs) are modifiable. Ethnicity-aware interventions needed."
+    insight_angles:
+      - "Traditional recipe modifications (reduce santan, swap oils)"
+      - "Ethnic-specific genetic considerations"
+      - "Culturally-appropriate exercise options"
+      - "Family-based intervention strategies"
+
+  # === WOMEN'S HEALTH FOCUS ===
+  - name: "perimenopausal_women"
+    dimensions:
+      age_group: ["45-59"]
+      gender: ["female"]
+      life_stage: ["perimenopause"]
+    priority: 1
+    description: "Women navigating perimenopausal transition"
+    rationale: "Women lose 20% bone density post-menopause, CVD risk doubles. Critical prevention window. Asian women experience menopause 2 years earlier (avg age 48-49)."
+    insight_angles:
+      - "Bone density preservation strategies"
+      - "Hot flash management (non-hormonal)"
+      - "Weight management during hormonal shifts"
+      - "Strength training for bone/muscle health"
+
+  - name: "postpartum_weight_management"
+    dimensions:
+      age_group: ["18-29", "30-44"]
+      gender: ["female"]
+      life_stage: ["postpartum"]
+    priority: 2
+    description: "New mothers managing postpartum weight"
+    rationale: "Postpartum weight retention increases long-term obesity risk. Singapore's high C-section rate (30%) and cultural confinement practices impact recovery. Targeted support can improve maternal health."
+    insight_angles:
+      - "Culturally-sensitive postpartum nutrition"
+      - "Safe exercise routines post-C-section"
+      - "Mental health support for new mothers"
+      - "Time-efficient workouts for busy moms"
+
+  - name: "student_mental_health"
+    dimensions:
+      age_group: ["18-29"]
+      occupation_context: ["student"]
+      health_conditions: ["stress", "anxiety", "poor_sleep"]
+    priority: 2
+    description: "Students under academic pressure"
+    rationale: "1 in 7 students experience depression. Exam stress, social media comparison, sleep deprivation compound. Mental health intervention in youth prevents lifelong issues."
+    insight_angles:
+      - "Stress management during exam periods"
+      - "Social media reduction strategies"
+      - "Sleep hygiene for students"
+      - "Exercise as antidepressant"
+
+  # === SENIOR HEALTH FOCUS ===
+  - name: "active_aging_seniors"
+    dimensions:
+      age_group: ["60+"]
+      physical_activity: ["sedentary", "insufficiently-active"]
+      health_concerns: ["fall_risk", "sarcopenia", "cognitive_decline"]
+    priority: 1
+    description: "Seniors at risk of functional decline"
+    rationale: "1 in 3 seniors fall annually. Sarcopenia accelerates disability. Exercise reduces dementia by 35%. Singapore's aging population (19% over 65 by 2030) needs intervention."
+    insight_angles:
+      - "Fall prevention exercises (balance, strength)"
+      - "Sarcopenia prevention (protein + resistance training)"
+      - "Cognitive stimulation activities"
+      - "Social engagement for brain health"
+
+  - name: "senior_chronic_disease_managers"
+    dimensions:
+      age_group: ["60+"]
+      health_conditions: ["diabetes", "hypertension", "high-cholesterol"]
+      medication_adherence: ["suboptimal"]
+    priority: 1
+    description: "Seniors managing multiple chronic conditions"
+    rationale: "70% of seniors have 2+ chronic diseases. Medication non-adherence increases stroke risk by 30%. Polypharmacy complications. Need medication adherence + lifestyle support."
+    insight_angles:
+      - "Medication adherence strategies"
+      - "Drug-nutrient interactions awareness"
+      - "Disease-specific diet modifications"
+      - "Exercise safety with chronic conditions"
+
+  # === GENERAL POPULATION (Lower Priority) ===
+  - name: "health_conscious_millennials"
+    dimensions:
+      age_group: ["30-44"]
+      health_engagement: ["high"]
+      physical_activity: ["moderately-active", "highly-active"]
+    priority: 3
+    description: "Health-engaged adults seeking optimization"
+    rationale: "Already motivated but may lack evidence-based guidance. Willing to adopt advanced strategies. Focus on optimization vs. basic prevention."
+    insight_angles:
+      - "Performance nutrition"
+      - "Advanced training strategies"
+      - "Biohacking (sleep, fasting, etc.)"
+      - "Preventive screening timelines"

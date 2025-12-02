@@ -1,0 +1,507 @@
+{
+  "generated_at": "2025-12-02T16:04:30.499544",
+  "total_insights": 27,
+  "metadata": {
+    "market": "singapore",
+    "model": "google/gemini-2.5-flash",
+    "template_type": "hidden_consequence",
+    "template_description": "Reveal non-obvious or underestimated consequences of common behaviors",
+    "num_cohorts": 9,
+    "insights_per_cohort": 3,
+    "max_concurrent": 5,
+    "generation_duration_seconds": 8.76,
+    "api_stats": {
+      "total_requests": 9,
+      "successful_requests": 9,
+      "failed_requests": 0
+    }
+  },
+  "insights": [
+    {
+      "hook": "Did you know that skipping breakfast regularly increases your risk of developing type 2 diabetes by 21%?",
+      "explanation": "This common habit can disrupt blood sugar regulation and insulin sensitivity over time, even for otherwise healthy young adults.",
+      "action": "Start your day with a balanced meal like oats or whole-wheat toast to stabilise blood sugar levels.",
+      "source_name": "Health Promotion Board (HPB) Singapore",
+      "source_url": "https://www.moh.gov.sg/docs/librariesprovider5/diseases-updates/hpb-diabetes-fact-sheet-2016.pdf",
+      "numeric_claim": "21%",
+      "cohort": {
+        "name": "Young Adults",
+        "dimensions": {
+          "age_group": [
+            "18-29"
+          ]
+        },
+        "description": "Young adults aged 18 to 29"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know using your smartphone for 2+ hours before bed reduces deep sleep by up to 27%?",
+      "explanation": "The blue light emitted suppresses melatonin production, making it harder to fall asleep and reducing sleep quality crucial for cognitive function.",
+      "action": "Switch off all screens at least one hour before sleep and unwind with a book or calming music.",
+      "source_name": "National University of Singapore",
+      "source_url": null,
+      "numeric_claim": "27%",
+      "cohort": {
+        "name": "Young Adults",
+        "dimensions": {
+          "age_group": [
+            "18-29"
+          ]
+        },
+        "description": "Young adults aged 18 to 29"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that prolonged sitting (over 6 hours daily) increases your risk of anxiety by 30%?",
+      "explanation": "This sedentary lifestyle can negatively impact mental well-being by reducing blood flow and limiting opportunities for stress relief.",
+      "action": "Incorporate short breaks every hour to stand, stretch, or walk for a few minutes to boost mood and circulation.",
+      "source_name": "Ministry of Health Singapore (MOH)",
+      "source_url": "https://www.moh.gov.sg/docs/librariesprovider5/resources-for-public/nphs-2020-full-report.pdf",
+      "numeric_claim": "30%",
+      "cohort": {
+        "name": "Young Adults",
+        "dimensions": {
+          "age_group": [
+            "18-29"
+          ]
+        },
+        "description": "Young adults aged 18 to 29"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know prolonged daily screen time (over 6 hours) increases risk of myopia progression by 30% for young adults?",
+      "explanation": "Constant near-focus strains your eyes, leading to visual fatigue and potentially worsening shortsightedness. Protect your precious vision.",
+      "action": "Implement the '20-20-20 rule': Every 20 minutes, look at something 20 feet away for 20 seconds.",
+      "source_name": "National Eye Centre Singapore (SNEC)",
+      "source_url": null,
+      "numeric_claim": "30%",
+      "cohort": {
+        "name": "Adults",
+        "dimensions": {
+          "age_group": [
+            "30-44"
+          ]
+        },
+        "description": "Adults aged 30 to 44"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know skipping breakfast regularly increases your risk of developing Type 2 Diabetes by 21%?",
+      "explanation": "Irregular eating patterns can disrupt blood sugar regulation and insulin sensitivity, impacting your metabolic health long-term.",
+      "action": "Prioritise a balanced breakfast daily, even if it's a small, quick option like overnight oats or fruit.",
+      "source_name": "National University Health System (NUHS)",
+      "source_url": null,
+      "numeric_claim": "21%",
+      "cohort": {
+        "name": "Adults",
+        "dimensions": {
+          "age_group": [
+            "30-44"
+          ]
+        },
+        "description": "Adults aged 30 to 44"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that chronic sleep deprivation (less than 7 hours) can reduce your immunity by up to 70%?",
+      "explanation": "Insufficient sleep impairs your body's ability to produce infection-fighting cells, making you more susceptible to illnesses.",
+      "action": "Aim for 7-9 hours of quality sleep nightly; establish a consistent bedtime routine even on weekends.",
+      "source_name": "SingHealth",
+      "source_url": null,
+      "numeric_claim": "70%",
+      "cohort": {
+        "name": "Adults",
+        "dimensions": {
+          "age_group": [
+            "30-44"
+          ]
+        },
+        "description": "Adults aged 30 to 44"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that skipping breakfast regularly increases your risk of developing Type 2 Diabetes by 21%?",
+      "explanation": "This habit disrupts insulin sensitivity and metabolic regulation, especially for middle-aged adults, making blood sugar control harder.",
+      "action": "Prioritise a balanced breakfast daily, even a small one, to stabilise blood sugar and support metabolic health.",
+      "source_name": "National University of Singapore",
+      "source_url": null,
+      "numeric_claim": "21%",
+      "cohort": {
+        "name": "Middle-age",
+        "dimensions": {
+          "age_group": [
+            "45-59"
+          ]
+        },
+        "description": "Middle-age adults between 45 and 59"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that prolonged sitting (over 6 hours daily) elevates your risk of early mortality by 15%?",
+      "explanation": "Sedentary lifestyles, common in Singapore's workforce, slow metabolism and increase cardiovascular disease risk, even with exercise.",
+      "action": "Stand up and move for 5-10 minutes every hour; consider a standing desk or walking during calls.",
+      "source_name": "World Health Organization (WHO)",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "numeric_claim": "15%",
+      "cohort": {
+        "name": "Middle-age",
+        "dimensions": {
+          "age_group": [
+            "45-59"
+          ]
+        },
+        "description": "Middle-age adults between 45 and 59"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that poor sleep quality, not just quantity, can shrink your brain volume by 2% annually?",
+      "explanation": "Consistent sleep disruption in middle age hinders brain waste removal, impacting cognitive function and increasing dementia risk.",
+      "action": "Establish a consistent sleep schedule, create a dark, quiet bedroom, and avoid screens an hour before bed.",
+      "source_name": "National University Health Group (NUHS)",
+      "source_url": null,
+      "numeric_claim": "2%",
+      "cohort": {
+        "name": "Middle-age",
+        "dimensions": {
+          "age_group": [
+            "45-59"
+          ]
+        },
+        "description": "Middle-age adults between 45 and 59"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that prolonged sitting, even with regular exercise, can increase your risk of heart disease by up to 147%?",
+      "explanation": "Sedentary behaviour slows metabolism and affects blood sugar regulation, significantly impacting cardiovascular health for seniors. Your body needs consistent movement.",
+      "action": "Break up sitting every 30 minutes with a 5-minute walk or light stretches to keep blood flowing.",
+      "source_name": "Health Promotion Board (HPB) Singapore",
+      "source_url": "https://www.healthhub.sg/live-healthy/1844/move-more-sit-less",
+      "numeric_claim": "147%",
+      "cohort": {
+        "name": "Seniors",
+        "dimensions": {
+          "age_group": [
+            "60+"
+          ]
+        },
+        "description": "Seniors aged 60 and above"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that consistently sleeping less than 6 hours can reduce cognitive function, making your brain up to 5 years 'older'?",
+      "explanation": "Insufficient sleep impairs memory consolidation and brain waste clearance, accelerating cognitive decline. Quality sleep is crucial for mental sharpness.",
+      "action": "Establish a consistent sleep schedule, aiming for 7-8 hours nightly, even on weekends, for better brain health.",
+      "source_name": "National University Health Group (NUHS)",
+      "source_url": "https://www.nuhs.edu.sg/News/Pages/NUH-Study-Reveals-Sleep-Deprivation-Can-Lead-to-Brain-Shrinkage.aspx",
+      "numeric_claim": "5 years",
+      "cohort": {
+        "name": "Seniors",
+        "dimensions": {
+          "age_group": [
+            "60+"
+          ]
+        },
+        "description": "Seniors aged 60 and above"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that neglecting social connections can increase your risk of dementia by 40% and depression by 50%?",
+      "explanation": "Social isolation reduces cognitive stimulation and increases stress hormones, negatively impacting mental and cognitive health for seniors. Stay connected.",
+      "action": "Join a local interest group or volunteer weekly to foster new connections and stimulate your mind.",
+      "source_name": "Agency for Integrated Care (AIC) Singapore",
+      "source_url": "https://www.aic.sg/care-services/active-ageing-programmes",
+      "numeric_claim": "40%",
+      "cohort": {
+        "name": "Seniors",
+        "dimensions": {
+          "age_group": [
+            "60+"
+          ]
+        },
+        "description": "Seniors aged 60 and above"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that Chinese Singaporeans have a 20% higher risk of developing Type 2 Diabetes compared to other ethnic groups?",
+      "explanation": "Genetic predispositions and traditional dietary patterns, often high in refined carbohydrates, interact to elevate this risk. Early intervention is key.",
+      "action": "Opt for whole grains like brown rice and wholemeal bread, and limit sugary drinks to manage your blood sugar.",
+      "source_name": "Health Promotion Board (HPB)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/diseases-and-conditions/diabetes",
+      "numeric_claim": "20% higher",
+      "cohort": {
+        "name": "Chinese",
+        "dimensions": {
+          "race": [
+            "chinese"
+          ]
+        },
+        "description": "Chinese ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that prolonged sitting, common in office jobs, increases your risk of cardiovascular disease by up to 14%?",
+      "explanation": "Sitting for hours slows metabolism and impacts blood flow, contributing to heart disease even if you exercise. Your body needs movement.",
+      "action": "Stand up and walk for 5 minutes every hour. Incorporate short stretching breaks into your workday.",
+      "source_name": "Ministry of Health Singapore (MOH)",
+      "source_url": "https://www.moh.gov.sg/diseases-updates/cardiovascular-disease",
+      "numeric_claim": "14%",
+      "cohort": {
+        "name": "Chinese",
+        "dimensions": {
+          "race": [
+            "chinese"
+          ]
+        },
+        "description": "Chinese ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that insufficient sleep (less than 7 hours) increases your risk of catching a common cold by nearly 300%?",
+      "explanation": "Sleep deprivation weakens your immune system, making you significantly more vulnerable to infections. Prioritise rest for robust health.",
+      "action": "Aim for 7-9 hours of quality sleep nightly. Establish a consistent bedtime routine, even on weekends.",
+      "source_name": "National University Health System (NUHS)",
+      "source_url": "https://www.nuhs.edu.sg/News/Pages/Sleep-deprivation-can-cause-serious-health-issues.aspx",
+      "numeric_claim": "300%",
+      "cohort": {
+        "name": "Chinese",
+        "dimensions": {
+          "race": [
+            "chinese"
+          ]
+        },
+        "description": "Chinese ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that regularly skipping breakfast, common among some, can increase the risk of Type 2 Diabetes by 21% for Malay individuals?",
+      "explanation": "Skipping breakfast disrupts blood sugar control and insulin sensitivity, making your body less efficient at managing glucose throughout the day. This higher risk is particularly noted in our community.",
+      "action": "Start your day with a balanced breakfast like wholemeal bread with eggs or overnight oats to stabilise blood sugar.",
+      "source_name": "Health Promotion Board (HPB) Singapore, National Population Health Survey (NPHS)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/diet-and-nutrition/sugary-drinks-and-diabetes",
+      "numeric_claim": "21%",
+      "cohort": {
+        "name": "Malay",
+        "dimensions": {
+          "race": [
+            "malay"
+          ]
+        },
+        "description": "Malay ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that consistently getting less than 6 hours of sleep nightly can increase your risk of heart disease by up to 48%?",
+      "explanation": "Insufficient sleep elevates blood pressure and inflammation, directly impacting cardiovascular health. For our community, where heart disease is a concern, this is critical.",
+      "action": "Prioritise 7-9 hours of quality sleep; establish a consistent bedtime routine even on weekends for better heart health.",
+      "source_name": "National Heart Centre Singapore (NHCS), American Heart Association",
+      "source_url": "https://www.nhcs.com.sg/health-wellness/health-conditions/heart-attack",
+      "numeric_claim": "48%",
+      "cohort": {
+        "name": "Malay",
+        "dimensions": {
+          "race": [
+            "malay"
+          ]
+        },
+        "description": "Malay ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that consuming sweet drinks daily can increase your risk of developing fatty liver disease by 30%?",
+      "explanation": "High sugar intake, prevalent in many traditional drinks, overloads your liver, converting excess sugar into fat. This is a growing concern for liver health.",
+      "action": "Opt for plain water, unsweetened tea, or 'kopi-o kosong' instead of sugary beverages to protect your liver.",
+      "source_name": "National University Health System (NUHS), Singapore Medical Journal",
+      "source_url": "https://www.nuhs.edu.sg/News/Pages/Fatty-Liver-Disease-is-on-the-rise.aspx",
+      "numeric_claim": "30%",
+      "cohort": {
+        "name": "Malay",
+        "dimensions": {
+          "race": [
+            "malay"
+          ]
+        },
+        "description": "Malay ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that despite being a significant health risk, 1 in 3 Indian adults in Singapore are unaware they have pre-diabetes?",
+      "explanation": "This silent condition often progresses to Type 2 Diabetes, which is 2.5 times more prevalent in the Indian community. Early detection is crucial for prevention.",
+      "action": "Prioritise biennial health screenings, especially HbA1c tests, to catch pre-diabetes early and manage it effectively.",
+      "source_name": "Health Promotion Board (HPB), National Population Health Survey (NPHS)",
+      "source_url": "https://www.hpb.gov.sg/healthy-living/diet-and-nutrition/sugary-drinks/diabetes-and-you",
+      "numeric_claim": "1 in 3",
+      "cohort": {
+        "name": "Indian",
+        "dimensions": {
+          "race": [
+            "indian"
+          ]
+        },
+        "description": "Indian ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that high-sodium diets, common in many traditional Indian cuisines, can increase your risk of high blood pressure by 30%?",
+      "explanation": "Excess sodium leads to fluid retention, straining your heart and arteries, significantly raising cardiovascular disease risk, which is elevated in the Indian population.",
+      "action": "Reduce processed foods and limit salt in cooking; explore herbs and spices for flavour instead of relying on added sodium.",
+      "source_name": "Ministry of Health Singapore (MOH), National University of Singapore",
+      "source_url": "https://www.moh.gov.sg/diseases-updates/high-blood-pressure",
+      "numeric_claim": "30%",
+      "cohort": {
+        "name": "Indian",
+        "dimensions": {
+          "race": [
+            "indian"
+          ]
+        },
+        "description": "Indian ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that regular consumption of sweetened beverages, a common habit, can increase your risk of fatty liver disease by up to 60%?",
+      "explanation": "These drinks overload your liver with fructose, leading to fat accumulation, independent of alcohol intake. This is a growing concern in Singapore.",
+      "action": "Switch to water, unsweetened tea, or milk over sugary drinks to protect your liver health and reduce metabolic strain.",
+      "source_name": "National University Health Group (NUHS), The Lancet",
+      "source_url": "https://www.nuhs.edu.sg/News/Pages/Obesity-and-non-alcoholic-fatty-liver-disease-.aspx",
+      "numeric_claim": "60%",
+      "cohort": {
+        "name": "Indian",
+        "dimensions": {
+          "race": [
+            "indian"
+          ]
+        },
+        "description": "Indian ethnicity"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know prolonged sitting, common in many Singaporean workplaces, increases cardiovascular disease risk by up to 147% for women?",
+      "explanation": "Even with regular exercise, long periods of inactivity slow metabolism and impair blood vessel function, contributing to heart problems.",
+      "action": "Set a timer to stand and move for 5-10 minutes every hour, breaking up continuous sitting time throughout your day.",
+      "source_name": "American Heart Association",
+      "source_url": "https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.112.000655",
+      "numeric_claim": "147%",
+      "cohort": {
+        "name": "female",
+        "dimensions": {
+          "gender": [
+            "female"
+          ]
+        },
+        "description": "Female sex"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know inadequate sleep (less than 7 hours) can increase your risk of developing type 2 diabetes by 28%?",
+      "explanation": "Insufficient sleep disrupts hormone regulation, particularly insulin sensitivity, making your body less effective at managing blood sugar.",
+      "action": "Prioritise a consistent sleep schedule, aiming for 7-9 hours nightly, and create a calm, dark bedroom environment.",
+      "source_name": "National Sleep Foundation",
+      "source_url": null,
+      "numeric_claim": "28%",
+      "cohort": {
+        "name": "female",
+        "dimensions": {
+          "gender": [
+            "female"
+          ]
+        },
+        "description": "Female sex"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that chronic stress, prevalent in Singapore's fast-paced environment, can accelerate cellular aging by up to 10 years?",
+      "explanation": "Sustained high cortisol levels from stress damage DNA and shorten telomeres, impacting overall health and disease susceptibility.",
+      "action": "Incorporate 15-20 minutes of mindfulness or deep breathing exercises daily to mitigate stress and protect cellular health.",
+      "source_name": "Proceedings of the National Academy of Sciences (PNAS)",
+      "source_url": "https://www.pnas.org/doi/full/10.1073/pnas.0407150101",
+      "numeric_claim": "10 years",
+      "cohort": {
+        "name": "female",
+        "dimensions": {
+          "gender": [
+            "female"
+          ]
+        },
+        "description": "Female sex"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that men who regularly skip breakfast in Singapore have a 27% higher risk of heart disease?",
+      "explanation": "Skipping the first meal of the day often leads to poorer dietary choices later and can negatively impact blood sugar regulation and cholesterol levels.",
+      "action": "Prioritise a balanced breakfast daily, like whole-grain toast with eggs or oats, to support your cardiovascular health.",
+      "source_name": "National University of Singapore (NUS) research",
+      "source_url": null,
+      "numeric_claim": "27% higher risk",
+      "cohort": {
+        "name": "male",
+        "dimensions": {
+          "gender": [
+            "male"
+          ]
+        },
+        "description": "Male sex"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that prolonged sitting, common in many male-dominated professions, increases your risk of premature death by 10-20%?",
+      "explanation": "Sedentary behaviour slows metabolism and reduces muscle activity, elevating risks of obesity, diabetes, and certain cancers, even with regular exercise.",
+      "action": "Stand up and move for 5-10 minutes every hour during work or leisure to break up prolonged sitting.",
+      "source_name": "World Health Organization (WHO)",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "numeric_claim": "10-20%",
+      "cohort": {
+        "name": "male",
+        "dimensions": {
+          "gender": [
+            "male"
+          ]
+        },
+        "description": "Male sex"
+      },
+      "template_type": "hidden_consequence"
+    },
+    {
+      "hook": "Did you know that chronic sleep deprivation (less than 7 hours) can decrease your testosterone levels by up to 15%?",
+      "explanation": "Testosterone production primarily occurs during sleep. Insufficient rest significantly impairs this process, impacting energy, mood, and muscle mass.",
+      "action": "Aim for 7-9 hours of quality sleep nightly by establishing a consistent bedtime routine and limiting screen time before bed.",
+      "source_name": "JAMA (Journal of American Medical Association)",
+      "source_url": "https://jamanetwork.com/journals/jama/fullarticle/189729",
+      "numeric_claim": "15%",
+      "cohort": {
+        "name": "male",
+        "dimensions": {
+          "gender": [
+            "male"
+          ]
+        },
+        "description": "Male sex"
+      },
+      "template_type": "hidden_consequence"
+    }
+  ]
+}

@@ -1,13 +1,6 @@
-# Enhanced Insight Templates
-# Based on analysis of high-performing "Did You Know" insights
-#
-# STRUCTURE: All insights follow this pattern:
-# 1. Opening hook: "Did you know? [Surprising stat/fact]"
-# 2. Mechanism/context: Why this matters (biological, social, or practical reason)
-# 3. Actionable CTA: Specific, immediate action to take
-#
-# TONE: Punchy, direct, evidence-based, no fluff
-# LENGTH: 2-3 sentences max (50-80 words)
+# Universal Insight Templates - Applicable across all markets
+version: 1.1.0
+updated: 2025-12-02
 
 insight_templates:
 
@@ -280,49 +273,3 @@ insight_templates:
       - "Strong social relationships increase survival odds by 50%—comparable to quitting smoking. Loneliness is as deadly as smoking 15 cigarettes daily. Invest in 3-5 close relationships—call friends weekly."
       - "Seniors with strong social networks have 70% lower cognitive decline and dementia risk. Social interaction stimulates multiple brain regions. Join community activity or call friend weekly."
     tone: "Warm, connection-focused, evidence-based"
-
-
-# === FORMATTING RULES ===
-formatting_guidelines:
-  structure: |
-    All insights must follow this 3-part structure:
-    1. Opening hook (15-25 words): Surprising fact/statistic
-    2. Mechanism/context (10-20 words): Why this matters
-    3. Actionable CTA (10-15 words): Specific immediate action
-  
-  length: "50-80 words total (excluding 'Did you know?')"
-  
-  tone_requirements:
-    - Direct, conversational, punchy
-    - Lead with surprising numbers/statistics
-    - Avoid hedging language ("may," "might," "could")
-    - Use em-dashes for emphasis and flow
-    - Second-person ("you," "your") for relevance
-  
-  statistical_specificity:
-    - Always include specific percentages
-    - Use exact timeframes (e.g., "3x weekly," "20 minutes")
-    - Quantify outcomes precisely (e.g., "by 40%," "2-3 mmHg")
-  
-  cta_requirements:
-    intensity_distribution:
-      light: 40%  # "Try...", "Consider...", "Add..."
-      medium: 40%  # "Start...", "Replace...", "Schedule..."
-      strong: 20%  # "Never...", "Always...", "Quit..."
-    
-    specificity: "CTAs must be immediately actionable with clear next step"
-    examples:
-      - "Walk 10 minutes after dinner tonight"
-      - "Replace butter with olive oil in today's cooking"
-      - "Schedule screening via HealthHub this week"
-      - "Set phone alarm for hourly movement breaks"
-
-# === WHAT TO AVOID ===
-anti_patterns:
-  - "Long-winded explanations (keep under 80 words)"
-  - "Explicit mention of cohort characteristics (age/BMI)"
-  - "Weak CTAs like 'talk to your doctor' without specifics"
-  - "Multiple CTAs in one insight (focus on one clear action)"
-  - "Hedging language that reduces impact"
-  - "Generic advice without specific numbers"
-  - "Program names repeated excessively (HealthHub, National Steps Challenge)"
