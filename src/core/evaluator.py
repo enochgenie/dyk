@@ -82,7 +82,7 @@ class InsightEvaluator:
             return evaluation_results
 
     def _parse_json_response(self, response: str) -> Dict[str, Any]:
-        """Parse JSON from LLM response."""
+        """Parse JSON from LLM response with automatic repair for common issues."""
         response = response.strip()
 
         # Remove markdown code blocks (common LLM behavior)
@@ -95,9 +95,21 @@ class InsightEvaluator:
 
         response = response.strip()
 
+        # Try parsing original response
         try:
             return json.loads(response)
         except json.JSONDecodeError as e:
+            # Attempt automatic repairs for common LLM JSON errors
+            repaired = self._attempt_json_repair(response, e)
+
+            if repaired:
+                print(f"⚠️  Auto-repaired JSON (Evaluator): {e.msg} at position {e.pos}")
+                try:
+                    return json.loads(repaired)
+                except json.JSONDecodeError:
+                    pass  # Repair failed, fall through to error logging
+
+            # Repair failed or not attempted - log detailed error
             print("\n" + "=" * 80)
             print("❌ JSON PARSE ERROR (Evaluator)")
             print("=" * 80)
@@ -118,6 +130,77 @@ class InsightEvaluator:
 
             raise
 
+    def _attempt_json_repair(self, response: str, error: json.JSONDecodeError) -> str:
+        """
+        Attempt to repair common JSON formatting issues from LLM responses.
+
+        Common issues fixed:
+        1. Missing commas between object properties
+        2. Trailing commas before closing braces/brackets
+        3. Missing closing brackets/braces
+
+        Args:
+            response: The malformed JSON string
+            error: The JSONDecodeError with position information
+
+        Returns:
+            Repaired JSON string if repair was attempted, None otherwise
+        """
+
+        # Only attempt repair for specific, fixable errors
+        error_msg = error.msg.lower()
+
+        # Fix 1: Missing comma between properties
+        # Error: "Expecting ',' delimiter" or "Expecting property name"
+        if "expecting ',' delimiter" in error_msg or "expecting property name" in error_msg:
+            # Check if there's a missing comma before a quote
+            pos = error.pos
+            if pos < len(response) and response[pos] == '"':
+                # Look backward to find the end of previous value
+                # Common pattern: }"key" should be },"key"
+                if pos > 0 and response[pos-1] == '}':
+                    return response[:pos] + ',' + response[pos:]
+                # Pattern: ]"key" should be ],"key"
+                if pos > 0 and response[pos-1] == ']':
+                    return response[:pos] + ',' + response[pos:]
+
+        # Fix 2: Trailing comma before closing brace/bracket
+        # Error: "Expecting property name" right after comma
+        if "expecting property name" in error_msg:
+            pos = error.pos
+            # Look backward for comma followed by whitespace and closing brace
+            check_start = max(0, pos - 10)
+            snippet = response[check_start:pos+5]
+            if ',' in snippet and ('}' in snippet or ']' in snippet):
+                # Find the trailing comma
+                for i in range(pos-1, max(0, pos-20), -1):
+                    if response[i] == ',':
+                        # Check if only whitespace between comma and closing brace
+                        after_comma = response[i+1:pos+5].strip()
+                        if after_comma and after_comma[0] in ['}', ']']:
+                            return response[:i] + response[i+1:]
+
+        # Fix 3: Missing closing braces/brackets (simple heuristic)
+        if "expecting" in error_msg and error.pos >= len(response) - 5:
+            # Count opening and closing braces
+            open_braces = response.count('{')
+            close_braces = response.count('}')
+            open_brackets = response.count('[')
+            close_brackets = response.count(']')
+
+            # Add missing closing characters
+            missing = ''
+            if close_brackets < open_brackets:
+                missing += ']' * (open_brackets - close_brackets)
+            if close_braces < open_braces:
+                missing += '}' * (open_braces - close_braces)
+
+            if missing:
+                return response + missing
+
+        # No repair attempted
+        return None
+
 
 # Example usage
 if __name__ == "__main__":
@@ -133,14 +216,14 @@ if __name__ == "__main__":
         """Test evaluator."""
 
         # Sample insights to evaluate
-        with open("output/test_creative.json", "r", encoding="utf-8") as f:
+        with open("output/creative_insights.json", "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        insights = data["insights"][:3]  # take first 3 insights
+        insights = data["insights"]  # take first 3 insights
 
         # Sample cohort
         market = "singapore"
-        model = "arcee-ai/trinity-mini:free"
+        model = "amazon/nova-2-lite-v1:free"
         prompt_template = PromptTemplates()
 
         print("\n" + "=" * 80)
@@ -158,24 +241,21 @@ if __name__ == "__main__":
             # Evaluate batch in parallel
             print(f"Batch evaluation ({len(insights)} insights)...")
             start = time.time()
-            tasks = []
-
-            for insight in insights:
-                for variation in insight["variations"]:
-                    task = evaluator.evaluate(
-                        variation,
-                        insight["cohort"],
-                        insight["insight_template"],
-                        market,
-                        model,
-                    )
-
-                    tasks.append(task)
+            tasks = [
+                evaluator.evaluate(
+                    insight,
+                    insight["cohort"],
+                    insight["insight_template"],
+                    market,
+                    model,
+                    temperature=0.3,
+                    max_tokens=4000,
+                )
+                for insight in insights
+            ]
 
             results = await asyncio.gather(*tasks, return_exceptions=True)
             duration = time.time() - start
-
-            print(results)
 
             successes = 0
             failures = 0
@@ -183,69 +263,142 @@ if __name__ == "__main__":
             # Process generation results
             evaluated_insights = []
 
-            for insight in insights:
-                new_insight = insight.copy()
-                evaluated_variations = []
+            for insight, result in zip(insights, results):
+                if isinstance(result, Exception):
+                    failures += 1
+                    print(f"Evaluation failed: {str(result)}")
+                    insight["evaluation"] = {"status": "failed", "error": str(result)}
+                elif isinstance(result, dict) and "criteria" in result:
+                    successes += 1
+                    insight["evaluation"] = result
+                else:
+                    failures += 1
+                    insight["evaluation"] = {
+                        "status": "failed",
+                        "error": f"Unknown object: {type(result)}",
+                    }
 
-            #     for idx, variation in enumerate(insight["variations"]):
-            #         result = results.pop(0)
+                insight["evaluation_model"] = model
+                insight["evaluated_at"] = datetime.datetime.now().isoformat()
 
-            #         new_variation = variation.copy()
-            #         if isinstance(result, Exception):
-            #             failures += 1
-            #             new_variation["evaluation"] = {
-            #                 "error": True,
-            #                 "message": str(result),
-            #             }
-            #         elif isinstance(result, dict) and "criteria" in result:
-            #             successes += 1
-            #             new_variation["evaluation"] = result
-            #         else:
-            #             failures += 1
-            #             new_variation["evaluation"] = {
-            #                 "error": True,
-            #                 "message": f"Unknown object: {type(result)}",
-            #             }
+                evaluated_insights.append(insight)
 
-            #         evaluated_variations.append(new_variation)
+            print(f"✓ Completed {len(results)} evaluations in {duration:.2f}s")
+            print(f"✓ Success rate: {successes}/{len(tasks)}")
+            print(f"Average: {duration / len(results):.2f}s per insight\n")
 
-            #     new_insight["variations"] = evaluated_variations
-            #     evaluated_insights.append(new_insight)
+            output_data = {
+                "creative_metadata": data.get("creative_metadata", {}),
+                "generation_metadata": data.get("generation_metadata", {}),
+                "evaluation_metadata": {
+                    "market": market,
+                    "model": model,
+                    "temperature": 0.3,
+                    "max_tokens": 4000,
+                    "generated_at": datetime.datetime.now().isoformat(),
+                    "total_calls": len(tasks),
+                    "successful_calls": successes,
+                    "failed_calls": failures,
+                    "duration_seconds": round(duration, 2),
+                },
+                "insights": evaluated_insights,
+            }
 
-            # print(f"✓ Completed {len(results)} evaluations in {duration:.2f}s")
-            # print(f"✓ Success rate: {successes}/{len(tasks)}")
-            # print(f"Average: {duration / len(results):.2f}s per insight\n")
+            # Save to JSON
+            output_dir = Path("output")
+            output_dir.mkdir(parents=True, exist_ok=True)
 
-            # print(evaluated_insights)
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            json_file = output_dir / f"evaluated_{timestamp}.json"
 
-            # output_data = {
-            #     "creative_metadata": data["creative_metadata"],
-            #     "generation_metadata": data["generation_metadata"],
-            #     "evaluation_metadata": {
-            #         "market": market,
-            #         "model": model,
-            #         "temperature": 0.3,
-            #         "max_tokens": 4000,
-            #         "generated_at": datetime.datetime.now().isoformat(),
-            #         "total_calls": len(tasks),
-            #         "successful_calls": successes,
-            #         "failed_calls": failures,
-            #         "duration_seconds": round(duration, 2),
-            #     },
-            #     "insights": evaluated_insights,
-            # }
+            with open(json_file, "w", encoding="utf-8") as f:
+                json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-            # # Save to JSON with two-level metadata structure
-            # output_dir = Path("output")
-            # output_dir.mkdir(parents=True, exist_ok=True)
+            print(f"\n✓ Saved JSON to: {json_file}")
 
-            # timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            # output_file = output_dir / f"evaluated_{timestamp}.json"
+            # Save to CSV
+            import csv
 
-            # with open(output_file, "w", encoding="utf-8") as f:
-            #     json.dump(output_data, f, indent=2, ensure_ascii=False)
+            csv_file = output_dir / f"evaluated_{timestamp}.csv"
 
-            # print(f"\n✓ Saved to: {output_file}")
+            with open(csv_file, "w", encoding="utf-8", newline="") as f:
+                writer = csv.writer(f)
+
+                # Write header - management-focused format
+                header = [
+                    "variation_id",
+                    "hook",
+                    "explanation",
+                    "action",
+                    "insight_id",
+                    "original_hook",
+                    "original_explanation",
+                    "original_action",
+                    "source_name",
+                    "source_url",
+                    "numeric_claim",
+                    "cohort_name",
+                    "insight_template_type",
+                    "generation_model",
+                    "generated_at",
+                    "creative_model",
+                    "created_at",
+                    "evaluation_model",
+                    "evaluated_at",
+                    "factual_accuracy_score",
+                    "safety_score",
+                    "faithfulness_score",
+                    "cohort_relevance_score",
+                    "actionability_score",
+                    "localization_score",
+                    "overall_score",
+                    "pass",
+                    "strengths",
+                    "critical_issues",
+                    "recommendations",
+                ]
+                writer.writerow(header)
+
+                # Write data rows
+                for insight in evaluated_insights:
+                    evaluation = insight.get("evaluation", {})
+                    criteria = evaluation.get("criteria", {})
+
+                    row = [
+                        insight.get("variation_id", ""),
+                        insight.get("hook", ""),
+                        insight.get("explanation", ""),
+                        insight.get("action", ""),
+                        insight.get("insight_id", ""),
+                        insight.get("original_hook", ""),
+                        insight.get("original_explanation", ""),
+                        insight.get("original_action", ""),
+                        insight.get("source_name", ""),
+                        insight.get("source_url", ""),
+                        insight.get("numeric_claim", ""),
+                        insight.get("cohort", {}).get("name", ""),
+                        insight.get("insight_template", {}).get("type", ""),
+                        insight.get("generation_model", ""),
+                        insight.get("generated_at", ""),
+                        insight.get("creative_model", ""),
+                        insight.get("created_at", ""),
+                        insight.get("evaluation_model", ""),
+                        insight.get("evaluated_at", ""),
+                        criteria.get("factual_accuracy", {}).get("score", ""),
+                        criteria.get("safety", {}).get("score", ""),
+                        criteria.get("faithfulness", {}).get("score", ""),
+                        criteria.get("cohort_relevance", {}).get("score", ""),
+                        criteria.get("actionability", {}).get("score", ""),
+                        criteria.get("localization", {}).get("score", ""),
+                        evaluation.get("overall_score", ""),
+                        evaluation.get("pass", ""),
+                        evaluation.get("strengths", ""),
+                        evaluation.get("critical_issues", ""),
+                        evaluation.get("recommendations", ""),
+                    ]
+                    writer.writerow(row)
+
+            print(f"✓ Saved CSV to: {csv_file}")
 
     # Run test
     asyncio.run(main())

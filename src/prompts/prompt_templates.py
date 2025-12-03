@@ -112,7 +112,7 @@ class PromptTemplates:
         market: str,
     ) -> str:
         """
-        Prompt for secondary LLM to validate insight accuracy and faithfulness.
+        Prompt for secondary LLM to validate insight across 6 critical dimensions.
         """
 
         insight_text = " ".join(
@@ -126,79 +126,207 @@ class PromptTemplates:
             if "source_url" in insight and insight["source_url"]:
                 evidence_section += f"\nURL: {insight['source_url']}"
         else:
-            evidence_section = "No specific source provided - evaluate based on general knowledge and plausibility."
+            evidence_section = "No specific source provided - evaluate based on general medical/health knowledge."
 
         prompt = dedent(f"""
-            You are an expert evaluator for "Did You Know" (DYK) insights. 
-            Evaluate the following insight across multiple dimensions.
+            You are a rigorous evaluator for health insights. Your role is to catch errors, hallucinations, and quality issues before insights reach end users.
 
-            INSIGHT TO VALIDATE:
-            {insight_text}
+            INSIGHT TO EVALUATE:
+            "{insight_text}"
             
-            SUPPORTING EVIDENCE:
+            EVIDENCE PROVIDED:
             {evidence_section}
             
             CONTEXT:
-            - Target Cohort: {cohort["description"]}
-            - Cohort dimensions: {cohort["dimensions"]}
-            - Market/Region: {market}
-            - Insight Template: {insight_template["type"]} - {insight_template["description"]}
+            - Target Cohort: {cohort["name"]} - {cohort["description"]}
+            - Cohort Dimensions: {cohort["dimensions"]}
+            - Market: {market.title()}
+            - Template Type: {insight_template["type"]} - {insight_template["description"]}
             
-            Evaluate the insight on the following criteria. For each criterion, provide:
-            1. A score from 1 to 10 (integers only)
-            2. A brief justification (1-3 sentences)
-            3. A list of issues (empty list if none)
-            
-            EVALUATION CRITERIA:
+            EVALUATION TASK:
+            Rate the insight on 6 criteria using a 1-10 scale where:
+            - 1-3: Critical issues, should not be published
+            - 4-6: Significant problems, needs major revision
+            - 7-8: Minor issues, needs small improvements
+            - 9-10: Excellent, ready to publish
 
-            1. FACTUAL ACCURACY (1-10)
-            - Are all claims factually correct?
-            - Are statistics, numbers, and data points accurate?
-            - Are there any misleading or false statements?
+            For each criterion, provide:
+            1. Integer score (1-10)
+            2. Concise justification (2-3 sentences max)
+            3. Specific issues found (empty list if none)
 
-            2. SAFETY (1-10)
-            - Is the content free from harmful, offensive, or inappropriate material?
-            - Does it avoid promoting dangerous behaviors or misinformation?
-            - Is it appropriate for the target audience?
-            
-            3. FAITHFULNESS TO EVIDENCE (1-10)
-            - If source material is provided: Does the insight accurately reflect it?
-            - If only citation is provided: Is the insight plausible given the source type?
-            - Are there unsupported claims or unreasonable extrapolations?
-            - Is the interpretation appropriate given available information?
+            ---
 
-            4. COHORT RELEVANCE (1-10)
-            - Is this insight relevant and valuable to the target cohort?
-            - Does it address their specific needs, interests, or pain points?
-            - Would this cohort find it actionable or useful?
+            CRITERION 1: FACTUAL ACCURACY
+            Does this insight contain accurate, verifiable health information?
 
-            5. ACTIONABILITY (1-10)
-            - Does the insight provide clear, practical takeaways?
-            - Can the audience act on this information?
-            - Are next steps or implications clear?
+            ✓ PASS if:
+            - All statistics/numbers are plausible and verifiable
+            - Health claims align with mainstream medical consensus
+            - No exaggerated or misleading statements
+            - Percentages, timeframes, and quantities are reasonable
 
-            6. LOCALIZATION (1-10)
-            - Is the content appropriately adapted for the target market/region?
-            - Are cultural nuances, local regulations, and regional differences considered?
-            - Is the language, tone, and examples appropriate for the locale?
+            ✗ FAIL if:
+            - Contains obviously wrong numbers (e.g., "walking reduces heart disease by 200%")
+            - Makes implausible claims (e.g., "cures cancer in 3 days")
+            - Contradicts established medical knowledge
+            - Includes made-up statistics or sources
 
-            Respond in JSON format with the following structure:
+            SPECIFIC CHECKS:
+            - Are the numbers (percentages, durations, quantities) realistic?
+            - Can the claim be verified or is it plausible given the source?
+            - Does it avoid absolute claims like "always", "never", "guarantees"?
+
+            ---
+
+            CRITERION 2: SAFETY
+            Is this insight safe for end users without risk of harm?
+
+            ✓ PASS if:
+            - Appropriate for general audience
+            - No dangerous medical advice
+            - Doesn't encourage harmful behaviors
+            - Suitable for the target cohort (including vulnerable groups)
+
+            ✗ FAIL if:
+            - Recommends stopping prescribed medications
+            - Encourages dangerous activities without caveats
+            - Contains triggering content for health conditions
+            - Gives medical diagnoses or treatment advice
+            - Promotes extreme diets, over-exercise, or self-harm
+
+            SPECIFIC CHECKS:
+            - Could this advice harm someone if followed?
+            - Does it suggest consulting a doctor when appropriate?
+            - Is it appropriate for all members of the target cohort?
+
+            ---
+
+            CRITERION 3: FAITHFULNESS TO EVIDENCE
+            Does the insight accurately represent its source material?
+
+            ✓ PASS if:
+            - Claims are supported by the cited source (or are plausibly from such sources)
+            - No cherry-picking or misrepresentation
+            - Appropriate confidence level (doesn't overstate findings)
+            - Clearly distinguishes correlation from causation
+
+            ✗ FAIL if:
+            - Makes claims unsupported by source type (e.g., citing "Harvard study" for obvious falsehoods)
+            - Exaggerates findings (study shows "may help" → insight claims "proven to cure")
+            - Misattributes information to reputable sources
+            - Extrapolates beyond reasonable interpretation
+
+            SPECIFIC CHECKS:
+            - Given the source name/type, is this claim plausible?
+            - Does it avoid overstating certainty ("research shows" vs "one study suggests")?
+            - If no source provided, is it common health knowledge?
+
+            ---
+
+            CRITERION 4: COHORT RELEVANCE
+            Is this insight valuable and relatable for "{cohort["name"]}"?
+
+            ✓ PASS if:
+            - Addresses specific needs/challenges of this cohort
+            - Uses language and examples they relate to
+            - Timing/lifecycle stage matches (e.g., retirement tips for retirees, not students)
+            - Acknowledges their constraints (time, mobility, resources)
+
+            ✗ FAIL if:
+            - Generic advice that applies to everyone
+            - Ignores cohort's lifestyle or limitations (e.g., "exercise 2 hours daily" for busy parents)
+            - Assumes resources they may not have
+            - Uses tone/language mismatched to demographic
+
+            SPECIFIC CHECKS:
+            - Does it reference the cohort's lifestyle, goals, or pain points?
+            - Would this cohort think "this is for me" or "this is generic"?
+            - Are examples and context appropriate for their life stage?
+
+            COHORT DETAILS TO CONSIDER: {cohort["description"]}
+
+            ---
+
+            CRITERION 5: ACTIONABILITY
+            Is the suggested action clear, practical, and achievable for this cohort in {market.title()}?
+
+            ✓ PASS if:
+            - Action is specific and concrete (not "be healthier")
+            - Realistic for the cohort's lifestyle and constraints
+            - Measurable or observable (can tell if they did it)
+            - Accessible in the target market (no location-specific barriers)
+            - Free from commercial promotions or product placement
+
+            ✗ FAIL if:
+            - Vague advice ("improve your health", "try to be active")
+            - Unrealistic time/cost commitment for cohort
+            - Requires unavailable resources in target market
+            - Promotes specific brands or paid services
+            - Too many actions at once (overwhelming)
+
+            SPECIFIC CHECKS:
+            - Can someone do this tomorrow? This week?
+            - Is it clear what success looks like?
+            - Does it avoid promoting products/services/apps?
+            - Is it appropriate for {market.title()} (access, legality, culture)?
+
+            ---
+
+            CRITERION 6: LOCALIZATION
+            Is this insight grounded in {market.title()} culture, context, and lifestyle?
+
+            ✓ PASS if:
+            - Uses local terminology, food, places naturally (not forced)
+            - References culturally appropriate activities/contexts
+            - Considers local climate, urban design, work culture
+            - Measurements and units match regional standards
+            - Language feels native, not translated
+
+            ✗ FAIL if:
+            - Generic Western examples in non-Western market, eastern examples in western market
+            - References inaccessible locations (e.g., "local park" in dense urban area with no parks)
+            - Ignores cultural norms (e.g., gym culture where gyms are rare/expensive)
+            - Forced localization that feels unnatural
+
+            SPECIFIC CHECKS FOR {market.upper()}:
+            - Does it use local food, places, or cultural references where natural?
+            - Are suggestions accessible given local infrastructure?
+            - Does it respect local work culture and lifestyle patterns?
+            - Would a local resident find this relatable?
+
+            ---
+
+            FINAL SCORING:
+
+            Calculate overall_score as the average of all 6 criteria:
+            overall_score = (factual_accuracy + safety + faithfulness + cohort_relevance + actionability + localization) / 6
+
+            Set pass = true ONLY if ALL of these conditions are met:
+            - All 6 criteria scores ≥ 7
+            - factual_accuracy ≥ 8 (critical)
+            - safety ≥ 8 (critical)
+
+            Otherwise, set pass = false.
+
+            OUTPUT FORMAT (JSON only, no markdown):
             {{
                 "criteria": {{
-                    "factual_accuracy": {{"score": 0, "justification": "", "issues": []}},
-                    "safety": {{"score": 0, "justification": "", "issues": []}},
-                    "faithfulness": {{"score": 0, "justification": "", "issues": []}},
-                    "cohort_relevance": {{"score": 0, "justification": "", "issues": []}},
-                    "actionability": {{"score": 0, "justification": "", "issues": []}},
-                    "localization": {{"score": 0, "justification": "", "issues": []}}
+                    "factual_accuracy": {{"score": 8, "justification": "...", "issues": []}},
+                    "safety": {{"score": 9, "justification": "...", "issues": []}},
+                    "faithfulness": {{"score": 7, "justification": "...", "issues": []}},
+                    "cohort_relevance": {{"score": 8, "justification": "...", "issues": []}},
+                    "actionability": {{"score": 7, "justification": "...", "issues": []}},
+                    "localization": {{"score": 6, "justification": "...", "issues": ["..."]}},
                 }},
+                "overall_score": 7.5,
                 "pass": false,
-                "strengths": [],
-                "critical_issues": [],
-                "recommendations": []
+                "strengths": ["Strength 1", "Strength 2"],
+                "critical_issues": ["Critical issue that blocks publication"],
+                "recommendations": ["Specific recommendation 1", "Specific recommendation 2"]
             }}
-            
-            Return ONLY valid JSON, no additional text, markdown, or code blocks.
+
+            Return ONLY valid JSON. No markdown, no code blocks, no additional text.
         """).strip()
 
         return prompt
@@ -211,89 +339,115 @@ class PromptTemplates:
         num_variations: int = 3,
     ) -> str:
         """
-        Prompt for creative rewriting to generate diverse variations of an insight.
-        This layer adds linguistic diversity while preserving factual accuracy.
+        Prompt for creative variations that explore different narrative angles
+        while maintaining factual accuracy.
         """
 
         prompt = dedent(f"""
-        You are rewriting health insights for genie — a data-driven health platform that speaks as "The Smart Ally".
+        You are creating distinct narrative variations of health insights for genie's "Smart Ally" voice.
 
-        TONE: Sharp, action-oriented, respectful of intelligence. No emojis, no fear-mongering, no vague wellness-speak.
+        CORE DATA (IMMUTABLE):
+        - Numeric claim: {insight.get("numeric_claim", "")}
+        - Source: {insight.get("source_name", "")}
+        - Target: {cohort.get("name", "")} ({cohort.get("description", "")})
+        - Market: {market.title()}
 
-        ORIGINAL INSIGHT:
+        ORIGINAL FRAMING:
         Hook: {insight.get("hook", "")}
         Explanation: {insight.get("explanation", "")}
         Action: {insight.get("action", "")}
-        Source: {insight.get("source_name", "")}
-        Numeric Claim: {insight.get("numeric_claim", "")}
 
-        TARGET COHORT:
-        - Cohort name: {cohort.get("name", "")}
-        - Cohort description: {cohort.get("description", "")}
-        - Cohort dimensions: {cohort.get("dimensions", "")}
-        REGION: {market.title()}
+        YOUR TASK: Create {num_variations} CREATIVELY DISTINCT variations by exploring different narrative angles.
 
-        TASK: Create {num_variations} distinct variation(s) using Genie's "Smart Ally" voice.
+        WHAT MAKES A VARIATION "CREATIVE":
+        Each variation should take a fundamentally different approach:
 
-        SMART ALLY PRINCIPLES:
-        1. Clear, not chatty — precise language, no fluff
-        2. Data-aware — anchor in specifics ("18% down" not "improved")
-        3. Action-oriented — prompt next move, don't leave in reflection
-        4. Confident, not cocky — assured but backed by data
+        1. LEAD WITH DIFFERENT ELEMENTS
+        - Problem-first: Start with the pain point or challenge
+        - Solution-first: Start with the action, then justify
+        - Surprise-first: Lead with the counterintuitive data point
+        - Consequence-first: Start with what happens if they don't act
 
-        CRITICAL FOCUS AREAS:
+        2. VARY YOUR NARRATIVE STRUCTURE
+        - Direct command → data → reason
+        - Question → answer → application  
+        - Contrast → insight → next step
+        - Scenario → data → reframe
 
-        1. COHORT RELEVANCE (VERY IMPORTANT)
-        - Tailor language, examples, and actions to the specific cohort: {cohort.get("description", "")}
-        - Reference their lifestyle, goals, and health concerns naturally
-        - Make the insight feel personally relevant without being overly explicit
-        - Example: For "young professionals", mention "after work" or "desk job"; for "retirees", mention "in your daily routine"
+        3. SHIFT THE FRAMING LENS
+        - Efficiency angle ("faster, simpler")
+        - Prevention angle ("before it becomes a problem")
+        - Optimization angle ("you're close, here's the edge")
+        - Reframing angle ("it's not what you think")
 
-        2. LOCALIZATION FOR {market.upper()} (VERY IMPORTANT)
-        - Use {market}-specific contexts, terminology, or cultural references where natural
-        - Suggest actions accessible in {market} without assuming user's exact location
-        - Keep measurements and terminology appropriate for the region
-        - Example for Singapore: "hawker centre", "near your MRT station", "park connector", "void deck", "hokkien mee"
+        4. CHANGE THE TEMPORAL FOCUS
+        - Immediate payoff vs. long-term benefit
+        - Daily habit vs. cumulative effect
+        - Single action vs. pattern change
 
-        REWRITING RULES:
-        ✓ Keep ALL numbers, percentages, statistics EXACTLY as stated
-        ✓ Vary sentence structure, word choice, and emphasis
-        ✓ Use active voice and crisp phrasing
-        ✓ Lead with the insight, follow with context, end with action
-        ✓ Use em dashes (—) for emphasis when natural
-        ✓ Make each variation feel tailored to the cohort AND localized to {market}
+        MANDATORY ELEMENTS (in every variation):
+        ✓ Exact numeric claim: {insight.get("numeric_claim", "")}
+        ✓ Cohort-specific language and examples (use natural descriptors, not explicit age ranges)
+        ✓ {market}-localized context (terminology, places, cultural touchpoints)
+        ✓ Active, specific action step
+        ✓ "Smart Ally" voice: sharp, data-driven, no fluff
 
-        ✗ NO emojis, exclamation marks, or vague language
-        ✗ NO fear-based framing ("Be careful!" "You're at risk!")
-        ✗ NO oversimplification ("Magic tip: drink water!")
-        ✗ NO changes to source attribution or numeric claims
-        ✗ NO generic advice that could apply to anyone anywhere
+        FORBIDDEN ELEMENTS:
+        ✗ Emojis, exclamation marks, fear-mongering
+        ✗ Vague wellness-speak ("boost your health", "feel better")
+        ✗ Generic advice that ignores cohort or market
+        ✗ Changing any numbers, percentages, or source attribution
+        ✗ Explicit age ranges (say "young professionals" not "25-35 year olds", "midlife adults" not "40-50 year olds")
 
-        EXAMPLES (preserve numbers, vary structure, add cohort relevance + localization):
+        ANTI-PATTERNS TO AVOID:
+        ✗ Same opening word across variations ("Walking...", "Walking...", "Walking...")
+        ✗ Same sentence structure repeated ("X does Y by Z%")
+        ✗ Only swapping adjectives ("daily walking" → "regular walking")
+        ✗ Generic location references ("a nearby park" repeated in multiple variations)
 
-        Original insight: "Did you know walking 30 minutes daily reduces heart disease risk by 25%?"
-        Cohort: Young professionals (25-35, sedentary office jobs)
+        AIM FOR:
+        ✓ Different first words across all variations
+        ✓ Mix of short/long sentences  
+        ✓ Different statistical positioning (leading vs. supporting vs. concluding)
+        ✓ Specific, varied location examples
+
+        EXAMPLES OF TRUE VARIATION:
+
+        Core data: Walking 30 minutes daily reduces heart disease risk by 25%
+        Cohort: Young professionals (25-35, sedentary jobs)
         Market: Singapore
 
-        Variation 1 (cohort-focused): "30 minutes of daily walking cuts heart disease risk by 25% — even with a desk job, one lunchtime walk makes that shift."
-        Variation 2 (localized): "Walking half an hour each day lowers heart disease risk by a quarter — try a park connector near your MRT station during lunch breaks."
-        Variation 3 (both): "Daily 30-minute walks reduce heart disease risk by 25% — for desk-bound professionals, an evening walk at a nearby park such as East Coast Park after work adds up."
+        Variation 1 - Problem-first, prevention angle:
+        Hook: "Desk jobs increase heart disease risk — but 30 minutes of daily movement cuts that risk by 25%"
+        Explanation: "For professionals spending 8+ hours seated, cardiovascular strain compounds quietly. The data shows a quarter-reduction in risk with consistent, moderate activity."
+        Action: "Block 30 minutes at lunch or after work — try the Southern Ridges trail or a lap around Marina Bay."
 
-        Note: All preserve "30 minutes", "daily", "25%" but add cohort-specific ("desk job", "lunchtime") and Singapore-localized ("park connector", "MRT station", "nearby park") context without assuming exact location.
+        Variation 2 - Solution-first, efficiency angle:
+        Hook: "Walk for 30 minutes daily — your heart disease risk drops by a quarter"
+        Explanation: "No gym required, no special equipment. Half an hour of walking each day delivers a 25% reduction in cardiovascular risk, even with an otherwise sedentary routine."
+        Action: "Start with your morning commute: get off one MRT stop early and walk the rest."
+
+        Variation 3 - Surprise-first, reframing angle:
+        Hook: "Your lunch break is already long enough to cut heart disease risk by 25%"
+        Explanation: "Thirty minutes — that's all it takes to walk your way to measurably better heart health. For desk-bound professionals, this single daily habit makes the difference."
+        Action: "Tomorrow, skip the hawker centre nearest your office and walk to one 15 minutes away instead."
+
+        Notice how each:
+        - Opens differently (problem vs. solution vs. reframe)
+        - Uses different sentence rhythms and lengths
+        - Suggests distinct, market-specific actions
+        - Maintains the exact statistic but integrates it differently
 
         OUTPUT FORMAT (JSON):
         {{
             "variations": [
                 {{
-                    "hook": "Sharp, data-driven hook (15-25 words)",
-                    "explanation": "Clear context showing why this matters (20-40 words)",
-                    "action": "Specific, actionable next step (15-25 words)",
-                    "source_name": "{insight.get("source_name", "")}",
-                    "source_url": "{insight.get("source_url", "")}",
-                    "numeric_claim": "{insight.get("numeric_claim", "")}",
-                    "variation_id": 1
-                }}, 
-                // ... repeat for all {num_variations} variation(s)
+                    "hook": "Opening line (15-25 words)",
+                    "explanation": "Why this matters (20-40 words)",
+                    "action": "Specific next step (15-25 words)",
+                    "narrative_angle": "Brief label for the approach used (e.g., 'problem-first, prevention')"
+                }},
+                // ... {num_variations} total
             ]
         }}
 

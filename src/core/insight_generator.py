@@ -1,5 +1,5 @@
 """
-Insight Generator with async/parallel processing support.
+Insight Generator with async processing support.
 """
 
 import asyncio
@@ -66,7 +66,7 @@ class InsightGenerator:
             return self._parse_json_response(response)
 
     def _parse_json_response(self, response: str) -> Dict[str, Any]:
-        """Parse JSON from LLM response."""
+        """Parse JSON from LLM response with automatic repair for common issues."""
         response = response.strip()
 
         # Remove markdown code blocks (common LLM behavior)
@@ -79,11 +79,23 @@ class InsightGenerator:
 
         response = response.strip()
 
+        # Try parsing original response
         try:
             return json.loads(response)
         except json.JSONDecodeError as e:
+            # Attempt automatic repairs for common LLM JSON errors
+            repaired = self._attempt_json_repair(response, e)
+
+            if repaired:
+                print(f"⚠️  Auto-repaired JSON (Insight Generator): {e.msg} at position {e.pos}")
+                try:
+                    return json.loads(repaired)
+                except json.JSONDecodeError:
+                    pass  # Repair failed, fall through to error logging
+
+            # Repair failed or not attempted - log detailed error
             print("\n" + "=" * 80)
-            print("❌ JSON PARSE ERROR")
+            print("❌ JSON PARSE ERROR (Insight Generator)")
             print("=" * 80)
             print(f"Error: {e}")
             print(f"Position: Line {e.lineno}, Column {e.colno}")
@@ -102,6 +114,77 @@ class InsightGenerator:
 
             raise
 
+    def _attempt_json_repair(self, response: str, error: json.JSONDecodeError) -> str:
+        """
+        Attempt to repair common JSON formatting issues from LLM responses.
+
+        Common issues fixed:
+        1. Missing commas between object properties
+        2. Trailing commas before closing braces/brackets
+        3. Missing closing brackets/braces
+
+        Args:
+            response: The malformed JSON string
+            error: The JSONDecodeError with position information
+
+        Returns:
+            Repaired JSON string if repair was attempted, None otherwise
+        """
+
+        # Only attempt repair for specific, fixable errors
+        error_msg = error.msg.lower()
+
+        # Fix 1: Missing comma between properties
+        # Error: "Expecting ',' delimiter" or "Expecting property name"
+        if "expecting ',' delimiter" in error_msg or "expecting property name" in error_msg:
+            # Check if there's a missing comma before a quote
+            pos = error.pos
+            if pos < len(response) and response[pos] == '"':
+                # Look backward to find the end of previous value
+                # Common pattern: }"key" should be },"key"
+                if pos > 0 and response[pos-1] == '}':
+                    return response[:pos] + ',' + response[pos:]
+                # Pattern: ]"key" should be ],"key"
+                if pos > 0 and response[pos-1] == ']':
+                    return response[:pos] + ',' + response[pos:]
+
+        # Fix 2: Trailing comma before closing brace/bracket
+        # Error: "Expecting property name" right after comma
+        if "expecting property name" in error_msg:
+            pos = error.pos
+            # Look backward for comma followed by whitespace and closing brace
+            check_start = max(0, pos - 10)
+            snippet = response[check_start:pos+5]
+            if ',' in snippet and ('}' in snippet or ']' in snippet):
+                # Find the trailing comma
+                for i in range(pos-1, max(0, pos-20), -1):
+                    if response[i] == ',':
+                        # Check if only whitespace between comma and closing brace
+                        after_comma = response[i+1:pos+5].strip()
+                        if after_comma and after_comma[0] in ['}', ']']:
+                            return response[:i] + response[i+1:]
+
+        # Fix 3: Missing closing braces/brackets (simple heuristic)
+        if "expecting" in error_msg and error.pos >= len(response) - 5:
+            # Count opening and closing braces
+            open_braces = response.count('{')
+            close_braces = response.count('}')
+            open_brackets = response.count('[')
+            close_brackets = response.count(']')
+
+            # Add missing closing characters
+            missing = ''
+            if close_brackets < open_brackets:
+                missing += ']' * (open_brackets - close_brackets)
+            if close_braces < open_braces:
+                missing += '}' * (open_braces - close_braces)
+
+            if missing:
+                return response + missing
+
+        # No repair attempted
+        return None
+
 
 if __name__ == "__main__":
     from src.utils.config_loader import ConfigLoader
@@ -109,6 +192,7 @@ if __name__ == "__main__":
     import time
     import datetime
     from pathlib import Path
+    import uuid
 
     # Load environment variables
     load_dotenv(Path(__file__).parent.parent.parent / ".env")
@@ -134,7 +218,7 @@ if __name__ == "__main__":
             task_metadata = []  # Track which cohort+template each task corresponds to
 
             # Run all generations concurrently
-            for cohort in cohorts:
+            for cohort in cohorts[:2]:  # ONLY DO 2 COHORTS
                 for template in insight_templates.values():
                     task = generator.generate(
                         cohort=cohort,
@@ -178,9 +262,15 @@ if __name__ == "__main__":
 
                     # Attach only varying metadata to each insight
                     for insight in result["insights"]:
+                        insight["insight_id"] = str(uuid.uuid4())
                         insight["cohort"] = metadata["cohort"]
+                        insight["cohort_name"] = metadata["cohort"]["name"]
                         insight["insight_template"] = metadata["insight_template"]
+                        insight["insight_template_type"] = metadata["insight_template"][
+                            "type"
+                        ]
                         insight["generation_model"] = model
+                        insight["generated_at"] = datetime.datetime.now().isoformat()
                         all_insights.append(insight)
                 elif isinstance(result, list) and len(result) > 0:
                     # Handle case where LLM returns list directly instead of {"insights": [...]}

@@ -159,8 +159,10 @@ class InsightDeduplicator:
                 self._metadata.append(
                     {
                         "model": insight.get("generation_model", "unknown"),
-                        "cohort": insight.get("cohort", "unknown"),
-                        "template": insight.get("insight_template", "unknown"),
+                        "cohort": insight.get("cohort", {}).get("name", "unknown"),
+                        "template": insight.get("insight_template", {}).get(
+                            "type", "unknown"
+                        ),
                     }
                 )
         return self._metadata
@@ -353,6 +355,18 @@ class InsightDeduplicator:
                     }
                 )
 
+        # Handle empty results (e.g., when there's only 0 or 1 groups)
+        if not results:
+            return pd.DataFrame(
+                columns=[
+                    f"{group_by}_1",
+                    f"{group_by}_2",
+                    "overlap_count",
+                    "total_possible_pairs",
+                    "overlap_pct",
+                ]
+            )
+
         return pd.DataFrame(results).sort_values("overlap_pct", ascending=False)
 
     def _find_worst_insights(
@@ -536,17 +550,18 @@ class InsightDeduplicator:
 
 if __name__ == "__main__":
     src_dir = Path(__file__).parent.parent.parent
-    with open(src_dir / "output" / "insights_singapore_20251202_163904.json") as f:
-        insights = json.load(f)
+    with open(src_dir / "output/test_insights.json") as f:
+        data = json.load(f)
 
     dedup = InsightDeduplicator(
-        insights=insights["insights"],
+        insights=data["insights"],
         weights=None,
         threshold=0.85,
         model_name="all-MiniLM-L6-v2",
     )
 
     dedup.compute_embeddings(show_progress=True)
+
     dedup.analyze()
 
     serializable = {}
@@ -559,7 +574,7 @@ if __name__ == "__main__":
             else:
                 serializable[key] = value
 
-    insights["duplication_results"] = serializable
+    data["duplication_results"] = serializable
 
     with open(src_dir / "output/test_insights.json", "w") as f:
-        json.dump(insights, f, indent=2)
+        json.dump(data, f, indent=2)
