@@ -152,17 +152,20 @@ class InsightEvaluator:
 
         # Fix 1: Missing comma between properties
         # Error: "Expecting ',' delimiter" or "Expecting property name"
-        if "expecting ',' delimiter" in error_msg or "expecting property name" in error_msg:
+        if (
+            "expecting ',' delimiter" in error_msg
+            or "expecting property name" in error_msg
+        ):
             # Check if there's a missing comma before a quote
             pos = error.pos
             if pos < len(response) and response[pos] == '"':
                 # Look backward to find the end of previous value
                 # Common pattern: }"key" should be },"key"
-                if pos > 0 and response[pos-1] == '}':
-                    return response[:pos] + ',' + response[pos:]
+                if pos > 0 and response[pos - 1] == "}":
+                    return response[:pos] + "," + response[pos:]
                 # Pattern: ]"key" should be ],"key"
-                if pos > 0 and response[pos-1] == ']':
-                    return response[:pos] + ',' + response[pos:]
+                if pos > 0 and response[pos - 1] == "]":
+                    return response[:pos] + "," + response[pos:]
 
         # Fix 2: Trailing comma before closing brace/bracket
         # Error: "Expecting property name" right after comma
@@ -170,30 +173,30 @@ class InsightEvaluator:
             pos = error.pos
             # Look backward for comma followed by whitespace and closing brace
             check_start = max(0, pos - 10)
-            snippet = response[check_start:pos+5]
-            if ',' in snippet and ('}' in snippet or ']' in snippet):
+            snippet = response[check_start : pos + 5]
+            if "," in snippet and ("}" in snippet or "]" in snippet):
                 # Find the trailing comma
-                for i in range(pos-1, max(0, pos-20), -1):
-                    if response[i] == ',':
+                for i in range(pos - 1, max(0, pos - 20), -1):
+                    if response[i] == ",":
                         # Check if only whitespace between comma and closing brace
-                        after_comma = response[i+1:pos+5].strip()
-                        if after_comma and after_comma[0] in ['}', ']']:
-                            return response[:i] + response[i+1:]
+                        after_comma = response[i + 1 : pos + 5].strip()
+                        if after_comma and after_comma[0] in ["}", "]"]:
+                            return response[:i] + response[i + 1 :]
 
         # Fix 3: Missing closing braces/brackets (simple heuristic)
         if "expecting" in error_msg and error.pos >= len(response) - 5:
             # Count opening and closing braces
-            open_braces = response.count('{')
-            close_braces = response.count('}')
-            open_brackets = response.count('[')
-            close_brackets = response.count(']')
+            open_braces = response.count("{")
+            close_braces = response.count("}")
+            open_brackets = response.count("[")
+            close_brackets = response.count("]")
 
             # Add missing closing characters
-            missing = ''
+            missing = ""
             if close_brackets < open_brackets:
-                missing += ']' * (open_brackets - close_brackets)
+                missing += "]" * (open_brackets - close_brackets)
             if close_braces < open_braces:
-                missing += '}' * (open_braces - close_braces)
+                missing += "}" * (open_braces - close_braces)
 
             if missing:
                 return response + missing

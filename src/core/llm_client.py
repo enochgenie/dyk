@@ -53,7 +53,7 @@ class OpenRouterClient:
         model: str = None,
         api_key: Optional[str] = None,
         rate_limiter: Optional[RateLimiter] = None,
-        max_retries: int = 3,
+        max_retries: int = 5,
     ):
         if not model:
             raise ValueError("Model not specified")
@@ -128,7 +128,7 @@ class OpenRouterClient:
                     self.base_url,
                     headers=headers,
                     json=data,
-                    timeout=aiohttp.ClientTimeout(total=60),
+                    timeout=aiohttp.ClientTimeout(total=120),
                 ) as response:
                     response.raise_for_status()
                     result = await response.json()

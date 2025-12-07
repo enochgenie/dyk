@@ -190,7 +190,7 @@ class DYKPipeline:
                         num_insights=insights_per_call,
                         model=self.generation_model,
                         temperature=self.generation_temperature,
-                        max_tokens=4000,
+                        max_tokens=6000,
                     )
                     generation_tasks.append(task)
                     task_metadata.append(
@@ -310,7 +310,7 @@ class DYKPipeline:
                     num_variations=num_variations,
                     model=self.creative_model,
                     temperature=self.creative_temperature,
-                    max_tokens=4000,
+                    max_tokens=6000,
                 )
                 for insight in unique_insights
             ]
@@ -394,7 +394,7 @@ class DYKPipeline:
                     market=self.market,
                     model=self.evaluation_model,
                     temperature=self.evaluation_temperature,
-                    max_tokens=4000,
+                    max_tokens=6000,
                 )
                 for variation in all_variations
             ]
@@ -451,7 +451,7 @@ class DYKPipeline:
                 "market": self.market,
                 "model": self.generation_model,
                 "temperature": self.generation_temperature,
-                "max_tokens": 4000,
+                "max_tokens": 6000,
                 "generated_at": generation_timestamp,
                 "total_calls": self.stats["generation_attempts"],
                 "successful_calls": self.stats["generation_successes"],
@@ -487,7 +487,7 @@ class DYKPipeline:
                 "market": self.market,
                 "model": self.creative_model,
                 "temperature": self.creative_temperature,
-                "max_tokens": 4000,
+                "max_tokens": 6000,
                 "generated_at": creative_timestamp,
                 "total_calls": self.stats["creative_attempts"],
                 "successful_calls": self.stats["creative_successes"],
@@ -498,7 +498,7 @@ class DYKPipeline:
                 "market": self.market,
                 "model": self.evaluation_model,
                 "temperature": self.evaluation_temperature,
-                "max_tokens": 4000,
+                "max_tokens": 6000,
                 "generated_at": evaluation_timestamp,
                 "total_calls": self.stats["evaluation_attempts"],
                 "successful_calls": self.stats["evaluation_successes"],
